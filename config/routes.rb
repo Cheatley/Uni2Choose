@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'application#hello'
-  get 'users/new'
-  
+ root 'pages#home'
+
+get 'users/new'
+
 end

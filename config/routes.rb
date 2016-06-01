@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+ root 'pages#home'
 
-  root 'application#home'
-  get 'layouts/application'
+  get 'users/new'
  
 
 end

@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 User.create!(name:  "Nathalie Cochard",
+            age: 22,
+            gender: "female",
+            postcode: "AB24 3EX",
              email: "nathalie.cochard7@gmail.com",
              password:              "password",
              password_confirmation: "password",

@@ -8,6 +8,20 @@
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %><br>
+      
+      <%= f.label :age %>
+      <%= f.text_field :age, class: 'form-control' %><br>
+      
+      <%= f.label :gender %>
+        <%= f.label :male %>
+          <%= f.radio_button :gender, 'male', :checked => true, class: 'form-control' %>
+        <%= f.label :female %>
+          <%= f.radio_button :gender, 'female', class: 'form-control' %>
+        <%= f.label :other %>
+          <%= f.radio_button :gender, 'other', class: 'form-control' %><br>
+
+      <%= f.label :postcode %>
+      <%= f.text_field :postcode, class: 'form-control' %><br>
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %><br>

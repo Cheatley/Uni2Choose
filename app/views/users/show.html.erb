@@ -7,7 +7,10 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </p></br>
-      <p><%= @user.email %></p>
+      <%= @user.email %></br>
+      <p>Your gender: <%= @user.gender %></p>
+      <p>Your age: <%= @user.age %></p>
+      <p>Your postcode: <%= @user.postcode %></p>
     </section>
   </aside>
 </div>

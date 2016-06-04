@@ -4,13 +4,12 @@
     <section class="user_info">
       <h1>My profile</h1></br>
       <p>
-        <%= gravatar_for @user %>
         <%= @user.name %>
       </p></br>
       <%= @user.email %></br>
-      <p>Your gender: <%= @user.gender %></p>
-      <p>Your age: <%= @user.age %></p>
-      <p>Your postcode: <%= @user.postcode %></p>
+      <p>Gender: <%= @user.gender %></p>
+      <p>Date of birth: <%= @user.dob.strftime("%d.%m.%Y") %></p>
+      <p>Postcode: <%= @user.postcode %></p>
     </section>
   </aside>
 </div>

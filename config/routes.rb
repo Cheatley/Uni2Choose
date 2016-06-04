@@ -6,7 +6,7 @@ Rails.application.routes.draw do
  get 'login'   => 'sessions#new'
  post 'login'   => 'sessions#create'
  get 'logout'  => 'sessions#destroy'
- get 'users/new'
+ get 'analysis' => 'analysis#user_analysis'
 
  resources :users
  resources :account_activations, only: [:edit]

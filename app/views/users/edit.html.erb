@@ -9,21 +9,30 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %><br>
 
+      <%= f.label :date_of_birth %>
+      <%= f.date_select :dob, :start_year=>1900, class: 'form-control' %><br>
+      
+      <%= f.label :gender %>
+        <%= f.label :male %>
+          <%= f.radio_button :gender, 'male', :checked => true, class: 'form-control' %>
+        <%= f.label :female %>
+          <%= f.radio_button :gender, 'female', class: 'form-control' %>
+        <%= f.label :other %>
+          <%= f.radio_button :gender, 'other', class: 'form-control' %><br>
+
+      <%= f.label :postcode %>
+      <%= f.text_field :postcode, class: 'form-control' %><br>
+      
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %><br>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %><br>
 
-      <%= f.label :password_confirmation, "Password confirmation" %>
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %><br>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %><br>
     <% end %>
-
-    <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">Change my picture</a>
-    </div>
   </div>
 </div>

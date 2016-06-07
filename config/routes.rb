@@ -11,6 +11,9 @@ Rails.application.routes.draw do
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'courses#index'
 
+
+
+
  resources :users
  resources :account_activations, only: [:edit]
  resources :password_resets, only: [:new, :create, :edit, :update]

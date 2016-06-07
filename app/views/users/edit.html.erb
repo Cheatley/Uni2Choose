@@ -4,13 +4,8 @@
   <div class= "row">
 <h1>Update your profile</h1>
 
-
-
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %><br>
 
       <%= f.label :date_of_birth %>
       <%= f.date_select :dob, :start_year=>1900, class: 'form-control' %><br>

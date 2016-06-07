@@ -17,16 +17,24 @@
   <%= render 'pages/navbar' %>
   <%= render 'pages/header' %>
 
-  <div class="container">
-    </br>
-    <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <%= yield %>
-  </div>
-    
-  <%= render 'pages/footer' %>
 
 
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      
+
+      <%= yield %>
+      
+
+
+
+<%= render 'pages/footer' %>
 </body>
+
+    
+
+
+      
 </html>
+

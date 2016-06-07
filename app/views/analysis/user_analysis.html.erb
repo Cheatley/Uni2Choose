@@ -1,5 +1,13 @@
+
+
 <% provide(:title, 'User Analysis') %>
+
+<div class="signinstyle">
+<div class="row">
 <h1>User Analysis</h1>
 
   <p><b>User gender proportion.</b></p>
   <%= pie_chart @data.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
+  
+  </div>
+  </div>

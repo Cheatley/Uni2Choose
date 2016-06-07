@@ -1,16 +1,11 @@
-<% provide(:title, @user.name) %>
-   <div class="signinstyle">
-                          <div class="row">
-
+<% provide(:title) %>
+<div class="signinstyle">
+<div class="row">
+  <aside class="col-md-6">
     <section class="user_info">
-      <h1>My profile</h1></br>
-      <p>
-        <%= @user.name %>
-      </p></br>
-      <%= @user.email %></br>
-      <p>Gender: <%= @user.gender %></p>
-      <p>Date of birth: <%= @user.dob.strftime("%d.%m.%Y") %></p>
-      <p>Postcode: <%= @user.postcode %></p>
+      <h1>My saved searches</h1></br>
+      <%= gravatar_for @user %>
+      <p>Search 1</p>
     </section>
  </div>
 </div>

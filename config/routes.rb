@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'courses/index'
+
  root 'pages#home'
  
  get 'signup'  => 'users#new'
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
  post 'login'   => 'sessions#create'
  get 'logout'  => 'sessions#destroy'
  get 'analysis' => 'analysis#user_analysis'
+ get 'courses' => 'courses#index'
 
  resources :users
  resources :account_activations, only: [:edit]

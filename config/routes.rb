@@ -10,7 +10,7 @@ Rails.application.routes.draw do
  get 'logout'  => 'sessions#destroy'
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'courses#index'
-
+ get 'search' => 'courses#search'
 
 
 

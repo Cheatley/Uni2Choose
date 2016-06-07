@@ -1,0 +1,17 @@
+
+
+
+<br><br><br><br><br><br><br>
+<p>Search courses by keyword</p>
+<%= form_tag(search_path, :method => "get", id: "search-data") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search course" %>
+<%= submit_tag "Search" %>
+<% end %></br>
+
+<div="search_data_results">
+<% if @search_course != nil %>
+  <% @search_course.each do |x| %>
+  <p><%= x.course_title %> 
+  <% end %>
+<% end %>
+</div></br>

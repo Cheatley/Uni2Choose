@@ -11,6 +11,7 @@ Rails.application.routes.draw do
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'courses#index'
  get 'search' => 'courses#search'
+ get 'searchbygrades' => 'courses#searchbygrades'
 
 
 

@@ -3,7 +3,8 @@ class Course < ActiveRecord::Base
     where("course_title LIKE :p", p: "%#{search}%")
   end
   
-  def self.gradesearch(grades)
-    where("highers LIKE :p", p: "%#{grades}%")
+  def self.advanced_search(interests)
+    where('departments LIKE ? OR course_title LIKE ?', "%#{interests}%", "%#{interests}%")
   end
+
 end

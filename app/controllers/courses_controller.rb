@@ -10,23 +10,39 @@ class CoursesController < ApplicationController
     end
   end
   
-  def searchbygrades
+  def advanced_search
+    @advancedsearch = Course.all.select(:departments, :course_title, :ucas_code, :highers, :degree_type)
+    
     @higher2_array = ["AABB", "ABBB"]
     @higher3_array = ["AAAB", "AABB", "ABBB"]
     @higher4_array = ["AAAB", "AABB", "ABBB", "AAAA", "AAAAB"]
+    
+    if params[:grades] == nil
+      @choice = "1"
+      @interests = "business"
+    end
+    
     if params[:grades]
-      choice = params[:grades]
-      if choice == "1"
-        @data = Course.all.where(highers: "ABBB")
-      elsif choice == "2"
-        @data = Course.all.where(highers: @higher2_array)
-      elsif choice == "3"
-        @data = Course.all.where(highers: @higher3_array)
-      elsif choice == "4"
-        @data = Course.all.where(highers: @higher4_array)
+      @choice = params[:grades]
+      if @choice == "1"
+        grades = Course.all.where(highers: "ABBB")
+      elsif @choice == "2"
+        grades = Course.all.where(highers: @higher2_array)
+      elsif @choice == "3"
+        grades = Course.all.where(highers: @higher3_array)
+      elsif @choice == "4"
+        grades = Course.all.where(highers: @higher4_array)
       end
     end
-  end
 
+    if params[:interests]
+      interests = Course.advanced_search(params[:interests]).order('course_title ASC')
+      @interests = params[:interests]
+    end
+    
+    if params[:grades]
+      @data = grades.merge(interests)
+    end
+  end
 
 end

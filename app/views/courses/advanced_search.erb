@@ -1,8 +1,11 @@
 <br><br><br><br><br><br><br>
-<p>How many A's do you have?</p>
+<p>Make your selections</p>
 
-<%= form_tag(searchbygrades_path, :method => "get", id: "search-data") do %>
-<%= select_tag "grades", options_for_select([ "1", "2", "3", "4"]) %>
+<%= form_tag(advanced_search_path, :method => "get") do %>
+  <%= label_tag :grades, "How many A's do you have?" %>
+  <%= select_tag "grades", options_for_select([ "1", "2", "3", "4"], @choice) %>
+  <%= label_tag :interets, "What are you interested in?" %>
+  <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
 <%= submit_tag "submit" %>
 <% end %></br>
 
@@ -15,6 +18,7 @@
     <thead>
       <tr>
         <th>Course title</th>
+        <th>Department</th>
         <th>Ucas code</th>
         <th>Highers required</th>
         <th>Degree type</th>
@@ -24,6 +28,7 @@
       <% @data.each do |course| %>
       <tr>
         <td><%= course.course_title %></td>
+        <td><%= course.departments %></td>
         <td><%= course.ucas_code %></td>
         <td><%= course.highers %></td>
         <td><%= course.degree_type %></td>

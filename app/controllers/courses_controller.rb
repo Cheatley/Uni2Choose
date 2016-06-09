@@ -24,7 +24,9 @@ class CoursesController < ApplicationController
     
     if params[:grades]
       @choice = params[:grades]
-      if @choice == "1"
+      if @choice == "0"
+        grades = Course.all.where(highers: "BBBB")
+      elsif @choice == "1"
         grades = Course.all.where(highers: "ABBB")
       elsif @choice == "2"
         grades = Course.all.where(highers: @higher2_array)

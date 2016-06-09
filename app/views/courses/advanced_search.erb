@@ -2,8 +2,8 @@
 <p>Make your selections</p>
 
 <%= form_tag(advanced_search_path, :method => "get") do %>
-  <%= label_tag :grades, "How many A's do you have?" %>
-  <%= select_tag "grades", options_for_select([ "1", "2", "3", "4"], @choice) %>
+  <%= label_tag :grades, "How many A's do you expect?" %>
+  <%= select_tag "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
   <%= label_tag :interets, "What are you interested in?" %>
   <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
 <%= submit_tag "submit" %>

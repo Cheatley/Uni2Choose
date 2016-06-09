@@ -1,12 +1,23 @@
 <br><br><br><br><br><br><br>
 <p>Make your selections</p>
 
-<%= form_tag(advanced_search_path, :method => "get") do %>
-  <%= label_tag :grades, "How many A's do you expect?" %>
-  <%= select_tag "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
-  <%= label_tag :interets, "What are you interested in?" %>
-  <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
-<%= submit_tag "submit" %>
+<%= form_for(advanced_search_path, :method => "get") do |y| %>
+
+  <%= y.label :standard_grades, "Do you have standard grades?" %><br>
+    <%= y.label :yes %><br>
+      <%= y.radio_button :standard_grades, true, class: 'form-control' %>
+    <%= y.label :no %><br>
+      <%= y.radio_button :standard_grades, false, onClick: "alert('You will need to do a summer school to be able to apply to those degree programs!');", 
+      class: 'form-control' %>
+  
+  
+  <%= y.label :grades, "How many A's do you expect?" %>
+  <%= y.select "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
+  
+  <%= y.label :interets, "What are you interested in?" %>
+  <%= y.select "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
+  
+<%= y.submit "submit" %>
 <% end %></br>
 
 <% if @data != nil %>
@@ -37,3 +48,4 @@
     </tbody>
   </table>
 <% end %>
+

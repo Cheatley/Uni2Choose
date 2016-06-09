@@ -1,28 +1,27 @@
 <br><br><br><br><br><br><br>
 <p>Make your selections</p>
 
-<%= form_for(advanced_search_path, :method => "get") do |y| %>
-
-  <%= y.label :standard_grades, "Do you have standard grades?" %><br>
-    <%= y.label :yes %><br>
-      <%= y.radio_button :standard_grades, true, class: 'form-control' %>
-    <%= y.label :no %><br>
-      <%= y.radio_button :standard_grades, false, onClick: "alert('You will need to do a summer school to be able to apply to those degree programs!');", 
-      class: 'form-control' %>
+<%= form_tag(advanced_search_path, :method => "get") do %>
   
+  <%= label_tag :standard_grades, "Do you have standard grades?" %><br>
+  <%= label_tag :yes %><br>
+    <%= radio_button_tag :standard_grades, true %>
+  <%= label_tag :no %><br>
+    <%= radio_button_tag :standard_grades, false %>  <!-- This radio buttons code don't do anything -->
+      
+  <%= label_tag :grades, "How many A's do you expect?" %>
+  <%= select_tag "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
   
-  <%= y.label :grades, "How many A's do you expect?" %>
-  <%= y.select "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
+  <%= label_tag :interets, "What are you interested in?" %>
+  <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
   
-  <%= y.label :interets, "What are you interested in?" %>
-  <%= y.select "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
-  
-<%= y.submit "submit" %>
+<%= submit_tag "submit" %>
 <% end %></br>
 
 <% if @data != nil %>
 <p><%= @data.count %> results</p>
 <% end %>
+
 
 <% if @data != nil %>
   <table border="1" class="table">

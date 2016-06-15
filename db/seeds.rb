@@ -6,8 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(name:  "Nathalie Cochard",
-            dob: DateTime.new(1993, 9, 13),
+User.create!(dob: DateTime.new(1993, 9, 13),
             gender: "Female",
             postcode: "AB24 3EX",
             email: "nathalie.cochard7@gmail.com",
@@ -17,8 +16,7 @@ User.create!(name:  "Nathalie Cochard",
             activated: true,
             activated_at: Time.zone.now)
              
-User.create!(name:  "Bruce Scharlau",
-            dob: DateTime.new(2015, 6, 22),
+User.create!(dob: DateTime.new(2015, 6, 22),
             gender: "Male",
             postcode: "AB10 9FG",
             email: "b.scharlau@abdn.ac.uk",
@@ -28,8 +26,7 @@ User.create!(name:  "Bruce Scharlau",
             activated: true,
             activated_at: Time.zone.now)
              
-User.create!(name:  "Example User",
-            dob: DateTime.new(2015, 6, 22),
+User.create!(dob: DateTime.new(2015, 6, 22),
             gender: "Female",
             postcode: "AB24 3EX",
             email: "example@user.com",
@@ -40,13 +37,11 @@ User.create!(name:  "Example User",
             activated_at: Time.zone.now)
 
 40.times do |n|
-  name  = Faker::Name.name
   email = Faker::Internet.email
   password = "password"
   dob = Faker::Date.between(18.year.ago, 13.year.ago)
   postcode = Faker::Address.zip_code
-  User.create!(name:  name,
-              dob: dob,
+  User.create!(dob: dob,
               gender: "Female",
               postcode: postcode,
               email: email,
@@ -58,13 +53,11 @@ User.create!(name:  "Example User",
 end
 
 40.times do |n|
-  name  = Faker::Name.name
   email = Faker::Internet.email
   password = "password"
   dob = Faker::Date.between(18.year.ago, 13.year.ago)
   postcode = Faker::Address.zip_code
-  User.create!(name:  name,
-              dob: dob,
+  User.create!(dob: dob,
               gender: "Male",
               postcode: postcode,
               email: email,

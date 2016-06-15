@@ -1,0 +1,35 @@
+<br><br><br><br><br><br><br>
+<p>Search courses by keyword</p>
+<%= form_tag(search_path, :method => "get", id: "search-data") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search course" %>
+<%= submit_tag "Search" %>
+<% end %></br>
+
+<% if @search_course != nil %>
+<p><%= @search_course.count %> results</p>
+<% end %>
+
+<% if @search_course != nil %>
+  <table border="1" class="table">
+    <thead>
+      <tr>
+        <th>Course title</th>
+        <th>Department</th>
+        <th>Ucas code</th>
+        <th>Highers required</th>
+        <th>Degree type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @search_course.each do |course| %>
+      <tr>
+        <td><%= course.course_title %></td>
+        <td><%= course.departments %></td>
+        <td><%= course.ucas_code %></td>
+        <td><%= course.highers %></td>
+        <td><%= course.degree_type %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

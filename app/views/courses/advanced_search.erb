@@ -1,9 +1,10 @@
-<br><br><br><br><br><br><br>
+<div class = "signinstyle">
+  <div class = "row">
 <p>Make your selections</p>
 
 <%= form_tag(advanced_search_path, :method => "get") do %>
   
-  <%= label_tag :standard_grades, "Do you have standard grades?" %><br>
+  <%= label_tag :standard_grades, "Do you have Standard Grade C's or above in both Maths and English" %><br>
   <%= label_tag :yes %><br>
     <%= radio_button_tag :standard_grades, true %>
   <%= label_tag :no %><br>
@@ -48,3 +49,5 @@
   </table>
 <% end %>
 
+</div>
+</div>

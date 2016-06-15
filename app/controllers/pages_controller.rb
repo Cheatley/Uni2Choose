@@ -129,4 +129,6 @@ end
 scraper = Scraper.new
 scraper.process_unis
 
+
+
 end

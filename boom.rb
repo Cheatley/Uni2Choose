@@ -1,4 +1,3 @@
-class PagesController < ApplicationController
 
 
 
@@ -189,5 +188,4 @@ end
 scraper = Scraper.new
 scraper.process_unis
 
-end
 end

@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
 
 
-
 require 'mechanize'
 
 class Scraper
@@ -177,12 +176,7 @@ end
                 
                 entry_array.push(entry_info)
                 print_entry_info(entry_info)
-            
-                 
-             
-        
-     end
-
+    end
 
 
 
@@ -190,3 +184,6 @@ scraper = Scraper.new
 scraper.process_unis
 
 end
+
+end 
+

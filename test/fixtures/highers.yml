@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  higher: MyString
+  code_letter: MyString
+
+two:
+  higher: MyString
+  code_letter: MyString

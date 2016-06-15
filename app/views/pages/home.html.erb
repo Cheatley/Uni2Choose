@@ -20,33 +20,9 @@
     <th>University</th>
 
   </tr>
-  <tr>
+
     
-    <td><%= @uninames_array[0] %></td>
-
-
-</tr>
-  <tr><td><%= @uninames_array[1] %></td></tr>
-   <tr><td><%= @uninames_array[2] %></td></tr>
-     <tr><td><%= @uninames_array[3] %></td></tr>
-       <tr><td><%= @uninames_array[4] %></td></tr>
-         <tr><td><%= @uninames_array[5] %></td></tr>
-           <tr><td><%= @uninames_array[6] %></td></tr>
-             <tr><td><%= @uninames_array[7] %></td></tr>
-               <tr><td><%= @uninames_array[8] %></td></tr>
-                 <tr><td><%= @uninames_array[9] %></td></tr>
-                 
-                     <tr><td><%= @uninames_array[11] %></td></tr>  
-                     <tr><td><%= @uninames_array[12] %></td></tr>
-                       <tr><td><%= @uninames_array[13] %></td></tr>
-                         <tr><td><%= @uninames_array[14] %></td></tr>
-                           <tr><td><%= @uninames_array[15] %></td></tr>
-                             <tr><td><%= @uninames_array[16] %></td></tr>
-                               <tr><td><%= @uninames_array[17] %></td></tr>
-                                 <tr><td><%= @uninames_array[18] %></td></tr>
-                                   <tr><td><%= @uninames_array[19] %></td></tr>
-                                     <tr><td><%= @uninames_array[20] %></td></tr>
-                                       <tr><td><%= @uninames_array[21] %></td></tr>
+   
 </table>  
 
 
@@ -58,8 +34,69 @@
     
     <div class="col-8 col-s-8">
             
-              <h2>Courses available:</h2>
-             
+
+            
+            <p>Make your selections</p>
+            
+            <!-- <%= form_tag(advanced_search_path, :method => "get") do %>
+              
+              <%= label_tag :standard_grades, "Do you have Standard Grade C's or above in both Maths and English" %><br>
+              <%= label_tag :yes %><br>
+                <%= radio_button_tag :standard_grades, true %>
+              <%= label_tag :no %><br>
+                <%= radio_button_tag :standard_grades, false %>  <!-- This radio buttons code don't do anything -->
+                  
+              <%= label_tag :highers, "Enter subject" %>
+                <select higher="subject"> 
+                <%= @subject each do |higher| %>
+                 <option value="<%= higher.higher %>"><%= higher.code_letter %></option>
+                <% end %>
+              </select>
+              
+              
+              
+                  <br>
+              <%= label_tag :grade, "How many A's do you expect?" %>
+              <%= select_tag "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
+              
+              <%= label_tag :interets, "What are you interested in?" %>
+              <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
+              
+            <%= submit_tag "submit" %>
+            <% end %></br>
+            
+            <% if @data != nil %>
+            <p><%= @data.count %> results</p>
+            <% end %>
+            
+            
+            <% if @data != nil %>
+              <table border="1" class="table">
+                <thead>
+                  <tr>
+                    <th>Course title</th>
+                    <th>Department</th>
+                    <th>Ucas code</th>
+                    <th>Highers required</th>
+                    <th>Degree type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @data.each do |course| %>
+                  <tr>
+                    <td><%= course.course_title %></td>
+                    <td><%= course.departments %></td>
+                    <td><%= course.ucas_code %></td>
+                    <td><%= course.highers %></td>
+                    <td><%= course.degree_type %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            <% end %>
+
+
+         
             
   
           </div>

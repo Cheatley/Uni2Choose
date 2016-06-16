@@ -1,6 +1,6 @@
 <br><br><br><br><br><br><br>
 <p>Search courses by keyword</p>
-<%= form_tag(search_path, :method => "get", id: "search-data") do %>
+<%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
 <%= submit_tag "Search" %>
 <% end %></br>

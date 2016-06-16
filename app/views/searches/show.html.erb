@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @search.keyword %>
+</p>
+
+<p>
+  <strong>Standard grades:</strong>
+  <%= @search.standard_grades %>
+</p>
+
+<p>
+  <strong>Select course:</strong>
+  <%= @search.select_course %>
+</p>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

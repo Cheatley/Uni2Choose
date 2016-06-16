@@ -1,0 +1,37 @@
+<%= form_for @search do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+      <% @search.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keyword %><br>
+    <%= f.text_field :keyword %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :standard_grades, "Do you have Standard Grade C's or above in both Maths and English?" %><br>
+      <%= f.label :yes %><br>
+        <%= f.radio_button :standard_grades, true %>
+      <%= f.label :no %><br>
+        <%= f.radio_button :standard_grades, false %>
+  </div>
+  <div class="field">
+    <%= f.label :select_course, "Select your courses." %><br>
+    <%= f.select :select_course, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'select course'} %>
+    <%= f.select :select_course, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'select course'} %>
+    <%= f.select :select_course, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'select course'} %>
+    <%= f.select :select_course, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'select course'} %>
+    <%= f.select :select_course, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'select course'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -12,14 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :keyword %><br>
-    <%= f.text_field :keyword %>
+    <%= f.label :keyword, "Not interested in..." %><br>
+    <%= f.select :keyword, options_from_collection_for_select(Course.all.to_a.uniq{ |o| o.departments}, :id, :departments) %>
+
   </div>
   
   <div class="field">
     <%= f.label :standard_grades, "Do you have Standard Grade C's or above in both Maths and English?" %><br>
       <%= f.label :yes %><br>
-        <%= f.radio_button :standard_grades, true %>
+        <%= f.radio_button :standard_grades, true, checked: true %>
       <%= f.label :no %><br>
         <%= f.radio_button :standard_grades, false %>
   </div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  standard_grades: false
+  select_course: MyString
+
+two:
+  keyword: MyString
+  standard_grades: false
+  select_course: MyString

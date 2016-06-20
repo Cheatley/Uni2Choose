@@ -181,4 +181,8 @@ end
 scraper = Scraper.new
 scraper.process_unis
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> newsearchscaffold

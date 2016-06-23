@@ -1,7 +1,7 @@
 require 'csv'
 
-namespace :import_data_csv do
-  task :create_data => :environment do
+namespace :import_courses_csv do
+  task :courses_data => :environment do
     csv_text = File.read("courses.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -16,6 +16,16 @@ namespace :import_highers_csv do
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       Higher.create!(row.to_hash)
+    end
+  end
+end 
+
+namespace :import_scotlandunis_csv do
+  task :scotlandunis_data => :environment do
+    csv_text = File.read("scotlandunis.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      University.create!(row.to_hash)
     end
   end
 end 

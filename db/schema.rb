@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616091812) do
+ActiveRecord::Schema.define(version: 20160623112726) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_title"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20160616091812) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "departments"
+  end
+
+  create_table "facebooks", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "highers", force: :cascade do |t|
@@ -36,6 +46,14 @@ ActiveRecord::Schema.define(version: 20160616091812) do
     t.string   "select_course"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "universities", force: :cascade do |t|
+    t.string   "uname"
+    t.string   "uregion"
+    t.string   "ulogo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

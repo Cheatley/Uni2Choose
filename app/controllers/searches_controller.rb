@@ -10,18 +10,33 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
+
   end
 
   # GET /searches/new
   def new
     @search = Search.new
-    @customsearch = Course.all.select(:departments, :course_title, :ucas_code, :highers, :degree_type, :id)
     
-    if params[:keyword]
-      keyword = Course.new(params[:keyword]).order('course_title ASC')
-      @keyword = params[:keyword]
+=begin
+
+    
+    @interests = Ucasletter.all.select(:ucas_letter, :subject_group)
+    if params[:search]
+      not_interested = Ucasletter.search(params[:search])
+    end
+    
+    @selectcourses = Higher.all.select(:higher, :code_letter)
+    if params[:selection]
+      selected_course = Higher.selection(params[:selection])
     end
 
+    if params[:selection]
+      @data = not_interested.merge(selected_course)
+    end
+  
+=end
+
+    
   end
 
   # GET /searches/1/edit
@@ -49,7 +64,7 @@ class SearchesController < ApplicationController
   def update
     respond_to do |format|
       if @search.update(search_params)
-        format.html { redirect_to @search, notice: 'Search was successfully updated.' }
+        format.html { redirect_to @search, notice: 'Search was successfully deleted.' }
         format.json { render :show, status: :ok, location: @search }
       else
         format.html { render :edit }
@@ -76,6 +91,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:keyword, :standard_grades, :select_course)
+      params.require(:search).permit(:not_interested, :select_course1, :select_course2, :select_course3, :select_course4, :select_course5)
     end
 end

@@ -1,18 +1,22 @@
+<br><br><br><br>
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Keyword:</strong>
-  <%= @search.keyword %>
+  <strong>Not interested in:</strong>
+  <%= Ucasletter.where(id: @search.not_interested).first.subject_group %>
+
 </p>
 
 <p>
-  <strong>Standard grades:</strong>
-  <%= @search.standard_grades %>
-</p>
+  <strong>Selected courses:</strong>
+  
+  <% desertfox = Higher.all.where(id: [@search.select_course1, @search.select_course2, @search.select_course3, @search.select_course4, @search.select_course5]).pluck(:higher) %>
+  <% desertfox.each do |x| %>
+    <li><%= x %></li>
+  <% end %>
+    
 
-<p>
-  <strong>Select course:</strong>
-  <%= @search.select_course %>
 </p>
 
 <%= link_to 'Edit', edit_search_path(@search) %> |

@@ -2,14 +2,19 @@ class CoursesController < ApplicationController
   def index
     @degrees = Course.all
   end
-  
+
   def keyword_search
     @search = Course.all.select(:course_title, :ucas_code, :highers, :degree_type).distinct.order(id: :ASC)
     if params[:search]
       @search_course = Course.search(params[:search]).order('ucas_code ASC')
     end
   end
-  
+
+
+=begin
+
+##Commented out because the advanced search has been changed now to solely asking for the location of the desired course.##
+
   def advanced_search
     @advancedsearch = Course.all.select(:departments, :course_title, :ucas_code, :highers, :degree_type)
     
@@ -46,5 +51,6 @@ class CoursesController < ApplicationController
       @data = grades.merge(interests)
     end
   end
+=end
 
 end

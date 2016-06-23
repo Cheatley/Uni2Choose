@@ -6,5 +6,10 @@ def home
 
 end
 
+=begin
+  def self.search(selection)
+    where("higher LIKE :p", p: "%#{selection}%")
+  end
+=end
 
 end

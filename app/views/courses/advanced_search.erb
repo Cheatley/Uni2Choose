@@ -1,23 +1,23 @@
 <div class = "signinstyle">
   <div class = "row">
-<p>Make your selections</p>
+    
+<p>#####Redirected on this page after going through the recommender system on the homepage, advanced search not available in navigation.#####</p>
 
 <%= form_tag(advanced_search_path, :method => "get") do %>
-  
-  <%= label_tag :standard_grades, "Do you have Standard Grade C's or above in both Maths and English" %><br>
-  <%= label_tag :yes %><br>
-    <%= radio_button_tag :standard_grades, true %>
-  <%= label_tag :no %><br>
-    <%= radio_button_tag :standard_grades, false %>  <!-- This radio buttons code don't do anything -->
       
-  <%= label_tag :grades, "How many A's do you expect?" %>
-  <%= select_tag "grades", options_for_select(["0", "1", "2", "3", "4"], @choice) %>
-  
-  <%= label_tag :interets, "What are you interested in?" %>
-  <%= select_tag "interests", options_for_select(["business", "sciences", "languages"], @interests) %>
+  <div class="field">
+    <%= label_tag :uregion, "Any preferences considering the location of your study place?" %><br>
+    <%= select_tag :uregion, options_from_collection_for_select(University.all.to_a.uniq{ |o| o.uregion}, :id, :uregion)  %>
+  </div>
   
 <%= submit_tag "submit" %>
 <% end %></br>
+
+<!-- 
+Following code has to be changed to show all courses available for the subject chosen in the recommender search, 
+and updates when/if a location is chosen.
+See courses_controller.rb 
+-->
 
 <% if @data != nil %>
 <p><%= @data.count %> results</p>

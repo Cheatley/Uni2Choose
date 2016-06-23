@@ -30,3 +30,12 @@ namespace :import_scotlandunis_csv do
   end
 end 
 
+namespace :import_ucasletters_csv do
+  task :ucasletters_data => :environment do
+    csv_text = File.read("ucasletters.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Ucasletter.create!(row.to_hash)
+    end
+  end
+end 

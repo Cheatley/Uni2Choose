@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160623112726) do
-=======
 ActiveRecord::Schema.define(version: 20160621152258) do
->>>>>>> ucas
 
   create_table "courses", force: :cascade do |t|
     t.string   "course_title"

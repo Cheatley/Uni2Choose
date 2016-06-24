@@ -1,10 +1,10 @@
 <div class = "signinstyle">
   <div class = "row">
-<p>Search courses by keyword</p>
+
 <%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
 <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
 <%= submit_tag "Search" %>
-<% end %></br>
+<% end %>
 
 <% if @search_course != nil %>
 <p><%= @search_course.count %> results</p>

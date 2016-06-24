@@ -1,10 +1,11 @@
+<!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
-    
-    
+    <!--Page information --> 
+       
     <p id="notice"><%= notice %></p>
 
-<h1>Listing Searches</h1>
+    <h1>Listing Searches</h1>
 
 
 <% if @searches != nil %>
@@ -45,3 +46,36 @@
 
 </div>
 </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Standard grades</th>
+              <th>Select course</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @searches.each do |search| %>
+              <tr>
+                <td><%= search.keyword %></td>
+                <td><%= search.standard_grades %></td>
+                <td><%= search.select_course %></td>
+                <td><%= link_to 'Show', search %></td>
+                <td><%= link_to 'Edit', edit_search_path(search) %></td>
+                <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        
+        <br>
+        
+        <%= link_to 'New Search', new_search_path %>
+
+    <!--closing the design/layout containers --> 
+    </div>
+</div>
+

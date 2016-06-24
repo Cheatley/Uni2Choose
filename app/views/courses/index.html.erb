@@ -1,34 +1,39 @@
-<% provide(:title, "Data Index") %>
+<!-- Index of all Courses -->
+<% provide(:title, "Course Index") %>
 
+<!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
-
-<h2>List of Scotland University degrees</h2>
-
-  <table border="1" class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>University Name</th>
-        <th>Course Name</th>
-        <th>Duration</th>
-        <th>Qualification</th>
-        <th>Entry Requirements</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @degrees.each do |course| %>
-      <tr>
-        <td><%= course.id %></td>
-        <td><%= course.uname %></td>
-        <td><%= course.cname %></td>
-        <td><%= course.duration %></td>
-        <td><%= course.qualification %></td>
-        <td><%= course.entry %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
+    <!--Page information --> 
+    
+          
+          <h2>List of Scotland University degrees</h2>
+          
+            <table border="1" class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>University Name</th>
+                  <th>Course Name</th>
+                  <th>Duration</th>
+                  <th>Qualification</th>
+                  <th>Entry Requirements</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @degrees.each do |course| %>
+                <tr>
+                  <td><%= course.id %></td>
+                  <td><%= course.uname %></td>
+                  <td><%= course.cname %></td>
+                  <td><%= course.duration %></td>
+                  <td><%= course.qualification %></td>
+                  <td><%= course.entry %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          
+    <!--closing the design/layout containers --> 
+    </div>
 </div>

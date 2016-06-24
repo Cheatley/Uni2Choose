@@ -1,12 +1,15 @@
+<!--Analysis Page --> 
 <% provide(:title, 'Sign up') %>
 
-   <div class="signinstyle">
-      <div class="row">
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
           <h1>Sign up</h1>
           
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-
+      <!--Calendar inserted instead of drop down menu? -->
       <%= f.label :date_of_birth %>
       <%= f.date_select :dob, :start_year=>1900, class: 'form-control' %><br>
       

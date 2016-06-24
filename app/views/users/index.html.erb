@@ -1,15 +1,21 @@
+<!--All users Page --> 
 <% provide(:title, 'All users') %>
+
+<!-- design/layout container-->
 <div class="contentcon">
-<h1>Users</h1>
-
-<div class="users">
-
-  <%= will_paginate %>
-  
-  <ul class="users">
-    <%= render @users %>
-  </ul>
-  
-  <%= will_paginate %>
-</div>
+      <h1>Users</h1>
+      
+      <div class="users">
+      
+        <%= will_paginate %>
+        
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        
+        <%= will_paginate %>
+     
+      </div>
+      
+      <!--closing design/layout container-->
 </div>

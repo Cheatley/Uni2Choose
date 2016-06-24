@@ -1,8 +1,9 @@
 <% provide(:title, "Edit user") %>
 
-<div class="signinstyle">
-  <div class= "row">
-<h1>Update your profile</h1>
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
 
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
@@ -37,5 +38,6 @@
       <%= gravatar_for @user %>
       <a href="http://gravatar.com/emails" target="_blank">Change my picture</a>
     </div>
-  </div>
+    <!--closing the design/layout containers --> 
+    </div>
 </div>

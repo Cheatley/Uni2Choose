@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
   # GET /searches.json
   def index
     @searches = Search.all
+    @degrees = Course.all
   end
 
   # GET /searches/1
@@ -16,6 +17,15 @@ class SearchesController < ApplicationController
   # GET /searches/new
   def new
     @search = Search.new
+    
+ 
+  def keyword_search
+    @search = Course.all.select(:uname, :cname, :duration, :qualification, :entry).distinct.order(id: :ASC)
+    if params[:search]
+      @search_course = Course.search(params[:search]).order('cname ASC')
+    end
+  end
+    
     
 =begin
 

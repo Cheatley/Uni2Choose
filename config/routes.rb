@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- root 'pages#home'
+ root 'searches#new'
  get 'summerschool' => 'pages#summerschool'
  get 'signup'  => 'users#new'
  get 'login'   => 'sessions#new'
@@ -8,8 +8,8 @@ Rails.application.routes.draw do
  get 'logout'  => 'sessions#destroy'
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'courses#index'
- get 'keyword_search' => 'courses#keyword_search'
- get 'advanced_search' => 'courses#advanced_search'
+ get 'keyword_search' => 'searches#keyword_search'
+ get 'advanced_search' => 'searches#advanced_search'
  
  resources :searches
  get 'recommender_search' => 'searches#new'

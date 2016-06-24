@@ -4,9 +4,9 @@ class CoursesController < ApplicationController
   end
 
   def keyword_search
-    @search = Course.all.select(:course_title, :ucas_code, :highers, :degree_type).distinct.order(id: :ASC)
+    @search = Course.all.select(:uname, :cname, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
-      @search_course = Course.search(params[:search]).order('ucas_code ASC')
+      @search_course = Course.search(params[:search]).order('cname ASC')
     end
   end
 

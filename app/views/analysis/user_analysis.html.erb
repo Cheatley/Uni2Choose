@@ -1,13 +1,16 @@
-
-
+<!--Analysis Page --> 
 <% provide(:title, 'User Analysis') %>
 
-<div class="signinstyle">
-<div class="row">
-<h1>User Analysis</h1>
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+    
+      <h1>User Analysis</h1>
 
-  <p><b>User gender proportion.</b></p>
-  <%= pie_chart @data.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
-  
-  </div>
-  </div>
+            <p><b>User gender proportion.</b></p>
+            <%= pie_chart @data.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
+            
+    <!--closing the design/layout containers --> 
+    </div>
+</div>

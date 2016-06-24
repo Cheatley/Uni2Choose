@@ -3,18 +3,15 @@
 <div class = "signinstyle">
   <div class = "row">
 
-<h2>List of Aberdeen University degrees</h2>
+<h2>Universities</h2>
 
   <table border="1" class="table">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Course title</th>
-        <th>Ucas code</th>
-        <th>Highers</th>
-        <th>Degree type</th>
-        <th>Department</th>
-      </tr>
+        <th>Name...</th>
+        <th>....</th>
+        <th>....</th>
+        </tr>
     </thead>
     <tbody>
       <% @degrees.each do |course| %>
@@ -22,9 +19,7 @@
         <td><%= course.id %></td>
         <td><%= course.course_title %></td>
         <td><%= course.ucas_code %></td>
-        <td><%= course.highers %></td>
-        <td><%= course.degree_type %></td>
-        <td><%= course.departments %></td>
+  
       </tr>
       <% end %>
     </tbody>

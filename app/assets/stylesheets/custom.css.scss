@@ -33,18 +33,18 @@ body {
     background-position: center center;
 	  background-attachment: fixed;
   	background-size: cover;
-	
+
 }
 
 
 
 .header {
-  
+
 	background-color: #e1e8ef;
 	text-align: center;
 	max-height: 30px;;
     max-width: 100%;
-	
+
 }
 
 .header img {
@@ -57,7 +57,7 @@ body {
 	margin-left:auto;
 	margin-right: auto;
 	font-size: 20px;
-	font-family:"Segoe UI"; 
+	font-family:"Segoe UI";
 	float: center;
 	background-color: #f5f8fa;
 }
@@ -72,7 +72,7 @@ body {
 .navbar .navbar-collapse {
     text-align: center;
     font-size: 15px;
-	font-family:"Segoe UI"; 
+	font-family:"Segoe UI";
 }
 
 
@@ -85,10 +85,10 @@ textarea {
   text-align: left;
   background-color: #0b0c0c;
   padding: 0px;
-  
+
   h1 {
     margin-bottom: 10px;
-    
+
   }
 }
 
@@ -146,7 +146,7 @@ p {
   padding-top: 0px;
   font-weight: bold;
   background-color: #0b0c0c;
-  
+
   &:hover {
     color: white;
     text-decoration: none;
@@ -157,7 +157,7 @@ p {
       img{
     width: 70%;
     height: auto;
-    padding: 5px; 
+    padding: 5px;
 }
 }
 
@@ -187,40 +187,40 @@ footer {
   position: relative;
   width: 100%;
 
- 
-  
+
+
   a {
-  
+
     &:hover {
       color: $gray-light;
     }
   }
   small {
     float: left;
- 
+
   }
   ul {
     float: right;
     list-style: none;
     font: Impact;
   }
-    
+
     li {
       float: left;
       margin-left: 15px;
       font: Impact;
     }
   }
-  
-  
+
+
 .container
 {
   padding: 0px ;
- 
+
 }
 
 
-.btn 
+.btn
 {
 	border-top:		2px solid #a3ceda;
 	border-left:		2px solid #a3ceda;
@@ -229,7 +229,7 @@ footer {
 	padding:		10px 20px !important;
 	font-size:		14px !important;
 	background-color:	#c4f1fe;
-	
+
 	font-weight:		bold;
 	color:			#2d525d;
 }
@@ -296,7 +296,7 @@ aside {
 }
 
 .user_avatars {
-  
+
   margin-top: 10px;
   .gravatar {
     margin: 1px 1px;
@@ -316,7 +316,7 @@ aside {
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
- 
+
   margin-bottom: 15px;
   @include box_sizing;
 
@@ -471,7 +471,7 @@ span.picture {
     margin: 5;
     padding: 5;
 
-    
+
 }
 .menu li {
     padding: 5px;
@@ -484,15 +484,15 @@ span.picture {
 }
 .menui li:hover {
     background-color: #363f43;
-    
+
 }
 .bside {
-   
+
     padding: 5px;
     color: #61585f;
     text-align: center;
     font-size: 8px;
-    
+
 
 }
 
@@ -504,9 +504,9 @@ span.picture {
 	font-size: 10px;
     max-width: 100%;
 	opacity: 0.85
-	
-	
-	
+
+
+
 }
 
 .navbar-brand {
@@ -516,8 +516,8 @@ span.picture {
 	font-size: 10px;
     max-width: 100%;
 	opacity: 0.8
-	
-	
+
+
 }
 
 .navbar-footer {
@@ -527,8 +527,8 @@ span.picture {
 	font-size: 10px;
     max-width: 100%;
 	opacity: 0.8
-	
-	
+
+
 }
 .footer {
 
@@ -539,17 +539,17 @@ span.picture {
     max-width: 100%;
 	opacity: 0.8;
 	padding-right:20px;
-	
-	
+
+
 }
-	
+
 
 
 .navbar-footer {
-	
+
 	font-size: 10px;
 	text-align: center;
-	
+
 }
 
 .contentcon {
@@ -560,14 +560,14 @@ span.picture {
 	margin-right: 50px;
 	padding: 25px;
 	opacity: 0.95;
-	
-	
+
+
 	padding-right: 50px;
 	padding-left: 50px;
 	text-align: left;
     font-size: 15px;
 	font-family: "Verdana, Geneva, sans-serif"
-	
+
 
 
 }
@@ -581,14 +581,14 @@ span.picture {
 	margin-right: 30px;
 	padding: 15px;
 	opacity: 0.8;
-	
-	
+
+
 	padding-right: 30px;
 	padding-left: 30px;
 	text-align: left;
     font-size: 15px;
 	font-family: "Verdana, Geneva, sans-serif"
-	
+
 
 
 }
@@ -601,7 +601,7 @@ span.picture {
 	width: 100%;
 	min-width: 10px
 
-    
+
 
 }
 
@@ -614,15 +614,15 @@ span.picture {
 	margin-right: 150px;
 	padding: 25px;
 	opacity: 0.8;
-	
-	
+
+
 	padding-right: 150px;
 	padding-left: 150px;
 	padding-bottom: 50px;
 	text-align: left;
     font-size: 15px;
 	font-family: "Verdana, Geneva, sans-serif"
-	
+
 
 
 }
@@ -633,12 +633,12 @@ span.picture {
 
 
 table  {
-    width: 100%; 
+    width: 100%;
     font-size: 15px;
-    
+
     border-spacing: 20px;
     min-width: 250px;
-    border-collapse: collapse; 
+    border-collapse: collapse;
 	text-align: left;
     font-size: 15px;
 	font-family: "Verdana, Geneva, sans-serif"
@@ -651,8 +651,8 @@ table  img {
 	width: 350px;
 	height: 350px;
 	min-width: 250px;
-	
-	
+
+
 	text-align: center;
 	width:100% !important;
     height:100% !important;
@@ -660,63 +660,96 @@ table  img {
 }
 
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #eee; 
+tr:nth-of-type(odd) {
+  background: #eee;
 }
-th { 
-  background: #333; 
-  color: white; 
+th {
+  background: #333;
+  color: white;
   font-weight: bold;
-  text-align: center; 
+  text-align: center;
 }
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
+td, th {
+  padding: 6px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 
-@media 
+@media
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
 	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
+	table, thead, tbody, th, td, tr {
+		display: block;
 	}
-	
+
 	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
+	thead tr {
 		position: absolute;
 		top: -9999px;
 		left: -9999px;
 	}
-	
+
 	tr { border: 1px solid #ccc; }
-	
-	td { 
+
+	td {
 		/* Behave  like a "row" */
 		border: none;
-		border-bottom: 1px solid #eee; 
+		border-bottom: 1px solid #eee;
 		position: relative;
-		 
+
 	}
-	
-	td:before { 
+
+	td:before {
 		/* Now like a table header */
 		position: absolute;
 		/* Top/left values mimic padding */
 		top: 6px;
 		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
+		width: 45%;
+		padding-right: 10px;
 		white-space: nowrap;
 	}
-	
-	
+
+
 
 }
 
 .errorthing {
   text-align: center;
-  
+
+}
+.hidden {
+  display: none;
+}
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
 }

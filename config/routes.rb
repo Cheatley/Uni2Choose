@@ -16,5 +16,9 @@ Rails.application.routes.draw do
  resources :users
  resources :account_activations, only: [:edit]
  resources :password_resets, only: [:new, :create, :edit, :update]
+ 
+ #contact form routes
+ match '/contacts',     to: 'contacts#new',             via: 'get'
+ resources "contacts", only: [:new, :create]
 
 end

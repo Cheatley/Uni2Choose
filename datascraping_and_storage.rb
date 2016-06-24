@@ -7,7 +7,7 @@ require 'mechanize'
 db = SQLite3::Database.new('uni2choose.sqlite3')    
 #Creating tables to store info from arrays
 db.execute 'CREATE TABLE "su" ("uname" string(60) NOT NULL)'
-db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "entry" string(100))'
+db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "ucas" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "entry" string(100))'
 
 
 #Class to run the data scrape 
@@ -63,6 +63,7 @@ class Scraper
     # Just a function to print what has been added. To test pulling correct data
     def print_course_info(course_info)
         puts "--- Adding course: #{course_info[:name]}" 
+        puts "--- UCAS Number: #{course_info[:ucas]}"
         puts "---- Duration: #{course_info[:duration]}"
         puts "---- Qualification: #{course_info[:qualification]}"
     end
@@ -83,10 +84,20 @@ class Scraper
     def clean_text(text)
         return text.gsub!('  ', '').gsub!("\n", '').gsub!("\r", '')
     end
+    
+    #Removes apostrophe from University names     
+   def clean_ucas(text)
+       text.gsub!(/[()]/, "")
+       
+       text
+   end    
+
+
 
     #Removes apostrophe from University names     
    def clean_uniname(text)
        text.gsub!("'", '')
+       
        text
    end
    
@@ -105,7 +116,8 @@ class Scraper
         # Loops through all courses, saves their info into a hash and pushes it to an array
         uni.search('.courseresult').each do |course|
             course_info = {}
-            course_info[:name]          = course.search('h4').text
+            course_info[:name]          = course.search('.title').text
+            course_info[:ucas]          = course.search('h4').text
             course_info[:duration]      = course.search('.durationValue').text
             course_info[:qualification] = course.search('.outcomequalValue').text
 
@@ -131,21 +143,29 @@ class Scraper
             # Loops through all courses and adds their info into a hash
             course_page.search('ol.resultscontainer li').each do |course|
                 course_info = {}
+                  # Sets all data in hash
+                @course_name = course.search('.courseTitle').text
+                @course_name = clean_uniname(@course_name)
+                course_info[:name] = @course_name
                 
                 # Removes excess html which was interferring with text
                 course.search(
                     '.courseinfoduration span, 
-                     .courseinfoduration br, 
+                     .courseinfoduration br,
+                     .coursenamearea a span, 
                      .courseinfooutcome span, 
                      .courseinfooutcome br').remove
                
-                # Sets all data in hash
-                @course_name = clean_text(course.search('h4').text)
-                @course_name = clean_uniname(@course_name)
-                course_info[:name]          = @course_name
+              
+                
+                @ucas_numb = clean_ucas(course.search('.coursenamearea a').text.strip)
+                @ucas_numb = @ucas_numb
+                course_info[:ucas] = @ucas_numb
+                
                 @course_duration = clean_text(course.search('.courseinfoduration').text)
                 @course_duration = clean_uniname(@course_duration)
                 course_info[:duration]      = @course_duration
+
                 @course_qual = clean_text(course.search('.courseinfooutcome').text)
                 @course_qual = clean_uniname(@course_qual)
                 course_info[:qualification] = @course_qual
@@ -178,8 +198,14 @@ class Scraper
         entry_link = true
    
             details_info = {}
+            
+            
+    
+            
             # Sets all data in hash
             @details_url = course_details.search('div.coursedetails_programmeurl a')
+            
+            
             
             details_info[:url]  = @details_url
             
@@ -211,7 +237,7 @@ class Scraper
             print_entry_info(entry_info)
                 
             db = SQLite3::Database.open('uni2choose.sqlite3')
-            db.execute "INSERT INTO suc (uname, cname, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@course_duration}', '#{@course_qual}', '#{@requirements}')"
+            db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@requirements}')"
     end
 
 

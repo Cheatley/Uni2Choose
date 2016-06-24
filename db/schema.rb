@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20160621152258) do
     t.string   "departments"
   end
 
-  create_table "facebooks", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
   create_table "highers", force: :cascade do |t|
     t.string   "higher"
     t.string   "code_letter"
@@ -71,6 +61,11 @@ ActiveRecord::Schema.define(version: 20160621152258) do
     t.datetime "dob"
     t.string   "gender"
     t.string   "postcode"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

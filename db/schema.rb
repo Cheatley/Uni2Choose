@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621152258) do
+ActiveRecord::Schema.define(version: 20160624110018) do
 
   create_table "courses", force: :cascade do |t|
-    t.string   "course_title"
-    t.string   "ucas_code"
-    t.string   "highers"
-    t.string   "degree_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "departments"
+    t.string   "uname"
+    t.string   "cname"
+    t.string   "duration"
+    t.string   "qualification"
+    t.string   "entry"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "highers", force: :cascade do |t|
@@ -49,11 +49,9 @@ ActiveRecord::Schema.define(version: 20160621152258) do
   end
 
   create_table "universities", force: :cascade do |t|
-    t.string   "uname"
-    t.string   "uregion"
-    t.string   "ulogo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "uname"
+    t.string "uregion"
+    t.string "ulogo"
   end
 
   create_table "users", force: :cascade do |t|

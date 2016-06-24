@@ -1,8 +1,8 @@
 require 'csv'
 
-namespace :import_courses_csv do
-  task :courses_data => :environment do
-    csv_text = File.read("courses.csv")
+namespace :import_suc_csv do
+  task :suc_data => :environment do
+    csv_text = File.read("suc.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
       Course.create!(row.to_hash)

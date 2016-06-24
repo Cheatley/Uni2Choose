@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624110018) do
+ActiveRecord::Schema.define(version: 20160624145747) do
 
   create_table "courses", force: :cascade do |t|
     t.string   "uname"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 20160624110018) do
     t.string   "select_course3"
     t.string   "select_course4"
     t.string   "select_course5"
+  end
+
+  create_table "similarities", force: :cascade do |t|
+    t.string   "ucas_letter"
+    t.string   "compared_ucas_letter"
+    t.float    "similarity"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "ucasletters", force: :cascade do |t|

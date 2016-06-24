@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ucas_letter: MyString
+  compared_ucas_letter: MyString
+  similarity: 1.5
+
+two:
+  ucas_letter: MyString
+  compared_ucas_letter: MyString
+  similarity: 1.5

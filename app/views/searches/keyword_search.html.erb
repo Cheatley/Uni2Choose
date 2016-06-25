@@ -6,41 +6,41 @@
   <div class = "row">
     <!--Page information --> 
     
-    <!-- add in search uni, not just course -->
+    <!-- add in refine search == link to advanced search -->
                     
-                    <%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
-                    <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
-                    <%= submit_tag "Search" %>
-                    <% end %>
-                    
-                    <% if @search_course != nil %>
-                    <p><%= @search_course.count %> results</p>
-                    <% end %>
-                    
-                    <% if @search_course != nil %>
-                      <table border="1" class="table">
-                        <thead>
-                          <tr>
-                            <th>University Name</th>
-                            <th>Course Name</th>
-                            <th>Duration</th>
-                            <th>Qualification</th>
-                            <th>Entry Requirements</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <% @search_course.each do |course| %>
-                          <tr>
-                            <td><%= course.uname %></td>
-                            <td><%= course.cname %></td>
-                            <td><%= course.duration %></td>
-                            <td><%= course.qualification %></td>
-                            <td><%= course.entry %></td>
-                          </tr>
-                          <% end %>
-                        </tbody>
-                      </table>
-                    <% end %>
+      <%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
+      <%= submit_tag "Search" %>
+      <% end %>
+      
+      <% if @search_course != nil %>
+      <p><%= @search_course.count %> results</p>
+      <% end %>
+      
+      <% if @search_course != nil %>
+        <table border="1" class="table">
+          <thead>
+            <tr>
+              <th>University Name</th>
+              <th>Course Name</th>
+              <th>Duration</th>
+              <th>Qualification</th>
+              <th>Entry Requirements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @search_course.each do |course| %>
+            <tr>
+              <td><%= course.uname %></td>
+              <td><%= course.cname %></td>
+              <td><%= course.duration %></td>
+              <td><%= course.qualification %></td>
+              <td><%= course.entry %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
 
     <!--closing the design/layout containers --> 
     </div>

@@ -39,3 +39,13 @@ namespace :import_ucasletters_csv do
     end
   end
 end 
+
+namespace :import_similarities_csv do
+  task :similarities_data => :environment do
+    csv_text = File.read("similarities.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Similarity.create!(row.to_hash)
+    end
+  end
+end 

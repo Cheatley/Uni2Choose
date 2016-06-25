@@ -7,7 +7,7 @@ require 'mechanize'
 db = SQLite3::Database.new('uni2choose.sqlite3')    
 #Creating tables to store info from arrays
 db.execute 'CREATE TABLE "su" ("uname" string(60) NOT NULL)'
-db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "entry" string(100))'
+db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "ucas" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "entry" string(100))'
 
 
 #Class to run the data scrape 
@@ -47,8 +47,8 @@ class Scraper
                 @unis_array.push(uni_info)
                 
                 #Opening the Database created, and storing the uni_array                
-       #         db = SQLite3::Database.open('uni2choose.sqlite3')
-        #        db.execute "INSERT INTO su (uname) VALUES ('#{@uni_name[0..60]}')"
+                db = SQLite3::Database.open('uni2choose.sqlite3')
+                db.execute "INSERT INTO su (uname) VALUES ('#{@uni_name[0..60]}')"
             end
             
             # Checks if there is a next page and navigates if so
@@ -144,21 +144,17 @@ class Scraper
             course_page.search('ol.resultscontainer li').each do |course|
                 course_info = {}
                   # Sets all data in hash
-                    course.search(
-                    '.courseinfoduration span, 
-                     .courseinfoduration br,
-                     
-                     .courseinfooutcome span, 
-                     .courseinfooutcome br').remove
-                  
-                  
-                @course_name = clean_text(course.search('.courseTitle').text.strip)
+                @course_name = course.search('.courseTitle').text
                 @course_name = clean_uniname(@course_name)
                 course_info[:name] = @course_name
                 
                 # Removes excess html which was interferring with text
                 course.search(
-                    '.coursenamearea a span,').remove
+                    '.courseinfoduration span, 
+                     .courseinfoduration br,
+                     .coursenamearea a span, 
+                     .courseinfooutcome span, 
+                     .courseinfooutcome br').remove
                
               
                 
@@ -241,7 +237,7 @@ class Scraper
             print_entry_info(entry_info)
                 
             db = SQLite3::Database.open('uni2choose.sqlite3')
-            db.execute "INSERT INTO suc (uname, cname, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@course_duration}', '#{@course_qual}', '#{@requirements}')"
+            db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@requirements}')"
     end
 
 

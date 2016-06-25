@@ -36,16 +36,12 @@ ActiveRecord::Schema.define(version: 20160624145747) do
     t.string   "select_course5"
   end
 
-<<<<<<< HEAD
-  create_table "sucs", force: :cascade do |t|
-=======
   create_table "similarities", force: :cascade do |t|
     t.string   "ucas_letter"
     t.string   "compared_ucas_letter"
     t.float    "similarity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
->>>>>>> 601f954e93e18cc0b2aed138919066fb31e6640c
   end
 
   create_table "ucasletters", force: :cascade do |t|

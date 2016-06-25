@@ -11,17 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624110018) do
+ActiveRecord::Schema.define(version: 20160624192238) do
 
-  create_table "courses", force: :cascade do |t|
-    t.string   "uname"
-    t.string   "cname"
-    t.string   "duration"
-    t.string   "qualification"
-    t.string   "entry"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
 
   create_table "highers", force: :cascade do |t|
     t.string   "higher"
@@ -39,6 +30,9 @@ ActiveRecord::Schema.define(version: 20160624110018) do
     t.string   "select_course3"
     t.string   "select_course4"
     t.string   "select_course5"
+  end
+
+  create_table "sucs", force: :cascade do |t|
   end
 
   create_table "ucasletters", force: :cascade do |t|

@@ -17,7 +17,7 @@ class SearchesController < ApplicationController
   # GET /searches/new
   def new
     @search = Search.new
-    
+  end  
  
   def keyword_search
     @search = Course.all.select(:uname, :cname, :duration, :qualification, :entry).distinct.order(id: :ASC)
@@ -25,30 +25,10 @@ class SearchesController < ApplicationController
       @search_course = Course.search(params[:search]).order('cname ASC')
     end
   end
-    
-    
-=begin
-
-    
-    @interests = Ucasletter.all.select(:ucas_letter, :subject_group)
-    if params[:search]
-      not_interested = Ucasletter.search(params[:search])
-    end
-    
-    @selectcourses = Higher.all.select(:higher, :code_letter)
-    if params[:selection]
-      selected_course = Higher.selection(params[:selection])
-    end
-
-    if params[:selection]
-      @data = not_interested.merge(selected_course)
-    end
   
-=end
-
-    
+  def advanced_search
   end
-
+    
   # GET /searches/1/edit
   def edit
   end

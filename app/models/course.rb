@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
   
-  def self.search(search)
+  def Course.search(search)
     where("cname LIKE :p", p: "%#{search}%")
   end
   

@@ -7,11 +7,13 @@ class SearchesController < ApplicationController
     @searches = Search.all
     @degreecourses = Degree.all
   end
-  
+
+=begin
    def f
     @types = Reccomend.select(:topic).distinct
 
   end
+=end
 
   # GET /searches/1
   # GET /searches/1.json

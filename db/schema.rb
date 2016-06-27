@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627110559) do
-
-  create_table "courses", force: :cascade do |t|
-    t.string   "uname"
-    t.string   "cname"
-    t.string   "duration"
-    t.string   "qualification"
-    t.string   "entry"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
+ActiveRecord::Schema.define(version: 20160627121547) do
 
   create_table "degrees", force: :cascade do |t|
     t.string   "uname"
@@ -71,7 +61,6 @@ ActiveRecord::Schema.define(version: 20160627110559) do
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "not_interested"
     t.string   "select_course1"
     t.string   "select_course2"
     t.string   "select_course3"
@@ -85,9 +74,6 @@ ActiveRecord::Schema.define(version: 20160627110559) do
     t.float    "similarity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-  end
-
-  create_table "sucs", force: :cascade do |t|
   end
 
   create_table "ucasletters", force: :cascade do |t|

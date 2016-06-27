@@ -6,7 +6,7 @@
   <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
   <input type="submit" value="Submit">
 </form> 
-
+  <%= f.select :select_course1, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
   
 </div>
 </div>

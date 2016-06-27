@@ -11,18 +11,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160624192238) do
-=======
-ActiveRecord::Schema.define(version: 20160624145747) do
->>>>>>> 601f954e93e18cc0b2aed138919066fb31e6640c
+ActiveRecord::Schema.define(version: 20160627110559) do
 
+  create_table "courses", force: :cascade do |t|
+    t.string   "uname"
+    t.string   "cname"
+    t.string   "duration"
+    t.string   "qualification"
+    t.string   "entry"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "degrees", force: :cascade do |t|
+    t.string   "uname"
+    t.string   "cname"
+    t.string   "ucas"
+    t.string   "duration"
+    t.string   "qualification"
+    t.string   "entry"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "highers", force: :cascade do |t|
     t.string   "higher"
     t.string   "code_letter"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "recommenders", force: :cascade do |t|
+  end
+
+  create_table "recommends", force: :cascade do |t|
+    t.string   "topic"
+    t.integer  "a"
+    t.integer  "b"
+    t.integer  "c"
+    t.integer  "d"
+    t.integer  "f"
+    t.integer  "g"
+    t.integer  "h"
+    t.integer  "j"
+    t.integer  "k"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "p"
+    t.integer  "q"
+    t.integer  "r"
+    t.integer  "t"
+    t.integer  "v"
+    t.integer  "w"
+    t.integer  "x"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "searches", force: :cascade do |t|
@@ -42,6 +85,9 @@ ActiveRecord::Schema.define(version: 20160624145747) do
     t.float    "similarity"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "sucs", force: :cascade do |t|
   end
 
   create_table "ucasletters", force: :cascade do |t|

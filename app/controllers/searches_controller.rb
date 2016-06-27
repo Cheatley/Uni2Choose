@@ -5,7 +5,12 @@ class SearchesController < ApplicationController
   # GET /searches.json
   def index
     @searches = Search.all
-    @degrees = Course.all
+    @degreecourses = Degree.all
+  end
+  
+   def f
+    @types = Reccomend.select(:topic).distinct
+
   end
 
   # GET /searches/1
@@ -20,9 +25,9 @@ class SearchesController < ApplicationController
   end  
  
   def keyword_search
-    @search = Course.all.select(:uname, :cname, :duration, :qualification, :entry).distinct.order(id: :ASC)
+    @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
-      @search_course = Course.search(params[:search]).order('cname ASC')
+      @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
   

@@ -4,10 +4,10 @@ require 'mechanize'
 
 
 #Creating database to store tables with info from arrays  
-db = SQLite3::Database.new('uni2choose.sqlite3')    
+#db = SQLite3::Database.new('uni2choose.sqlite3')    
 #Creating tables to store info from arrays
-db.execute 'CREATE TABLE "su" ("uname" string(60) NOT NULL)'
-db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "ucas" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "entry" string(100))'
+#db.execute 'CREATE TABLE "su" ("uname" string(60) NOT NULL)'
+#db.execute 'CREATE TABLE "suc" ("uname" string(60), "cname" string(300) NOT NULL, "ucas" string(300) NOT NULL, "duration" string(300), "qualification" string(100), "ahighers" string(500) "highers" string(500))'
 
 
 #Class to run the data scrape 
@@ -76,7 +76,8 @@ class Scraper
     
     # Just a function to print what has been added. To test pulling correct data
     def print_entry_info(entry_info)
-        puts "---- Requirements: #{entry_info[:req]}"
+        puts "---- Advanced highers: #{entry_info[:ahigh]}"
+        puts "---- Highers: #{entry_info[:high]}"
         puts ""
     end 
 
@@ -227,17 +228,38 @@ class Scraper
     def process_entry(entry_req)
         entry_array = []
         entry_info = {}
-                
+               
+               
+                            entry_req.search(
+                    '.div.qual-group-qual span, 
+                     .div.qual-group-qual br,
+                     .div.qual-group-qual li').remove
+              
+              
+                     
             # Sets all data in hash
-            @requirements = entry_req.search('li.qual-element.qual_range').text.strip
-            entry_info[:req]          = @requirements
+            @ahighers = clean_link(entry_req.search('li.qual-element.qual_range').text.strip)
+            entry_info[:ahigh] = @ahighers
+            
+            #@ahigherinfo = entry_req.search('li.qual-element.qual_req_subgrade').text.strip
+            #entry_info[:ahighinfo]          = @ahighersinfo
+            
+           
+            @highers = entry_req.search('li.qual-element.qual_req_subgrade').text.strip
+            entry_info[:high]          = @highers
+            
+            #@highersinfo = entry_req.search('li.qual-element.qual_range').text.strip
+            #entry_info[:highinfo]          = @highersinfo
+            
+            
             
             #Pushes to array, and prints     
             entry_array.push(entry_info)
             print_entry_info(entry_info)
-                
-            db = SQLite3::Database.open('uni2choose.sqlite3')
-            db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@requirements}')"
+            
+            
+           # db = SQLite3::Database.open('uni2choose.sqlite3')
+            #db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@ahighers}', '#{@highers}')"
     end
 
 

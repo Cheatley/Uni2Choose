@@ -1,15 +1,28 @@
+
 require 'csv'
 
+#importing the CSV file into the Degree table 
+namespace :import_rsystem_csv do
+  task :rsystem_data => :environment do
+    csv_text = File.read("rsystem.csv")
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      Recommend.create!(row.to_hash)
+    end
+  end
+end 
+
+#importing the CSV file into the Degree table 
 namespace :import_suc_csv do
   task :suc_data => :environment do
     csv_text = File.read("suc.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
-      Course.create!(row.to_hash)
+      Degree.create!(row.to_hash)
     end
   end
 end 
-
+#importing the CSV 
 namespace :import_highers_csv do
   task :highers_data => :environment do
     csv_text = File.read("highers.csv")

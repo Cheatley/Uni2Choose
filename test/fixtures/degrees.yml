@@ -3,7 +3,7 @@
 one:
   uname: MyString
   cname: MyString
-  ucas:  MyString
+  ucas: MyString
   duration: MyString
   qualification: MyString
   entry: MyString
@@ -11,7 +11,7 @@ one:
 two:
   uname: MyString
   cname: MyString
-  ucas:  MyString
+  ucas: MyString
   duration: MyString
   qualification: MyString
   entry: MyString

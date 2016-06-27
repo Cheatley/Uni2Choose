@@ -15,20 +15,22 @@
                   <th>ID</th>
                   <th>University Name</th>
                   <th>Course Name</th>
+                  <th>Ucas Number</th>
                   <th>Duration</th>
                   <th>Qualification</th>
                   <th>Entry Requirements</th>
                 </tr>
               </thead>
               <tbody>
-                <% @degrees.each do |course| %>
+                <% @degreecourses.each do |degree| %>
                 <tr>
-                  <td><%= course.id %></td>
-                  <td><%= course.uname %></td>
-                  <td><%= course.cname %></td>
-                  <td><%= course.duration %></td>
-                  <td><%= course.qualification %></td>
-                  <td><%= course.entry %></td>
+                  <td><%= degree.id %></td>
+                  <td><%= degree.uname %></td>
+                  <td><%= degree.cname %></td>
+                  <td><%= degree.ucas %></td>
+                  <td><%= degree.duration %></td>
+                  <td><%= degree.qualification %></td>
+                  <td><%= degree.entry %></td>
                 </tr>
                 <% end %>
               </tbody>

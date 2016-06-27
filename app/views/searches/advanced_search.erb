@@ -10,8 +10,8 @@
       
       <%= form_tag(advanced_search_path, :method => "get") do %>
         <div class="field">
-          <%= label_tag :keyword, "Course subject:" %><br>
-          <%= text_field_tag :keyword, @choice, placeholder: "Search course" %>
+          <%= label_tag :keyword, "Degree subject:" %><br>
+          <%= text_field_tag :keyword, @choice, placeholder: "Search degree" %>
         </div>
             
         <div class="field">
@@ -44,13 +44,13 @@
             </tr>
           </thead>
           <tbody>
-            <% @data.each do |course| %>
+            <% @data.each do |degree| %>
             <tr>
-              <td><%= course.uname %></td>
-              <td><%= course.cname %></td>
-              <td><%= course.duration %></td>
-              <td><%= course.qualification %></td>
-              <td><%= course.entry %></td>
+              <td><%= degree.uname %></td>
+              <td><%= degree.cname %></td>
+              <td><%= degree.duration %></td>
+              <td><%= degree.qualification %></td>
+              <td><%= degree.entry %></td>
             </tr>
             <% end %>
           </tbody>

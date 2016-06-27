@@ -1,9 +1,16 @@
 <div class = "signinstyle">
   <div class = "row">
-    
+      
+<% form_for(@types) do |f| %>
+  <%= f.radio_button :topics, 'topic', :checked => true %> 
+  <%= label :topics, 'topics' %>
+  <%= f.radio_button :topics, 'topic' %>
+  <%= label :topics, 'topic' %>
+<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', searches_path %>
+
 </div>
 </div>
+
+

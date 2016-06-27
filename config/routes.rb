@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'recommends/new'
+
+  get 'degree/new'
+
  root 'searches#new'
  get 'summerschool' => 'pages#summerschool'
  get 'signup'  => 'users#new'
@@ -7,7 +11,7 @@ Rails.application.routes.draw do
  post 'login'   => 'sessions#create'
  get 'logout'  => 'sessions#destroy'
  get 'analysis' => 'analysis#user_analysis'
- get 'courses' => 'courses#index'
+ get 'courses' => 'degree#index'
  get 'keyword_search' => 'searches#keyword_search'
  get 'advanced_search' => 'searches#advanced_search'
  

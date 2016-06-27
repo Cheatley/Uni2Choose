@@ -3,7 +3,7 @@ class RecommendsController < ApplicationController
   end
   
      def f
-    @types = Reccomend.select(:topic).distinct
+    @topics = Reccomend.find(params[:topic])
 
   end
 end

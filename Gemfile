@@ -16,6 +16,13 @@ gem 'chartkick'
 gem 'rails_admin'
 gem 'kaminari'
 
+
+#anthentication system & social media logins
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'

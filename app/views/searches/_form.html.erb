@@ -1,4 +1,14 @@
 
+from searches/new.html.erb
+<% form_for(@types) do |f| %>
+  <%= f.radio_button :topics, 'topic', :checked => true %> 
+  <%= label :topics, 'topics' %>
+  <%= f.radio_button :topics, 'topic' %>
+  <%= label :topics, 'topic' %>
+<% end %>
+
+
+
 
 <% form_for(@types) do |f| %>
   <%= f.radio_button :topics, 'topic', :checked => true %> 

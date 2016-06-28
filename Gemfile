@@ -12,6 +12,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'chartkick'
 # gem 'therubyracer', platforms: :ruby
 
+#https://github.com/sferik/rails_admin
+gem 'rails_admin'
+gem 'kaminari'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627121547) do
+ActiveRecord::Schema.define(version: 20160627110559) do
 
   create_table "degrees", force: :cascade do |t|
     t.string   "uname"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160627121547) do
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "not_interested"
     t.string   "select_course1"
     t.string   "select_course2"
     t.string   "select_course3"
@@ -104,11 +105,6 @@ ActiveRecord::Schema.define(version: 20160627121547) do
     t.datetime "dob"
     t.string   "gender"
     t.string   "postcode"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

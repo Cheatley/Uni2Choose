@@ -18,6 +18,7 @@ gem 'kaminari'
 
 
 #anthentication system & social media logins
+#http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'

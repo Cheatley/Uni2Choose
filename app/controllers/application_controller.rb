@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-  #protect_from_forgery with: :null_session
-  
+  protect_from_forgery with: :null_session
+
+=begin
   before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
-  
+
   def ensure_signup_complete
     # Ensure we don't go into an infinite loop
     return if action_name == 'finish_signup'
@@ -13,4 +14,5 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_user)
     end
   end
+=end
 end

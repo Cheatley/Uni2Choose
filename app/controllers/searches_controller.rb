@@ -7,11 +7,13 @@ class SearchesController < ApplicationController
     @searches = Search.all
     @degreecourses = Degree.all
   end
-  
+
+=begin
    def f
     @types = Reccomend.select(:topic).distinct
 
   end
+=end
 
   # GET /searches/1
   # GET /searches/1.json
@@ -86,6 +88,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:not_interested, :select_course1, :select_course2, :select_course3, :select_course4, :select_course5)
+      params.require(:search).permit(:select_course1, :select_course2, :select_course3, :select_course4, :select_course5)
     end
 end

@@ -18,7 +18,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   host = 'rails-tutorial-nathalie-c.c9users.io'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { :host => host }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -42,7 +42,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  
+
+###Trying something new below to make the email validation work for register functionality, Nathalie 29.06.2016
+=begin 
     # General Settings
   config.app_domain = 'somedomain.com'
 
@@ -58,4 +60,31 @@ Rails.application.configure do
     authentication: :plain,
     domain: 'somedomain.com'
   }
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {:address => "rails-tutorial-nathalie-c.c9users.io", :port => 8080}
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+   :tls => true,
+   :address => "smtp.gmail.com",
+   :port => "587",
+   :domain => "gmail.com",
+   :authentication => :login,
+   :user_name => "[username]",
+   :password => "[password]"
+ }
+=end
+ 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'rails-tutorial-nathalie-c.c9users.io',
+  user_name:            '<username>',
+  password:             '<password>',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+  
+#http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail
 end

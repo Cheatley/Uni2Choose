@@ -89,7 +89,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  
+###Trying something new below to make the email validation work for register functionality, Nathalie 29.06.2016
+=begin   
    # General Settings
   config.app_domain = 'heroku.com'
 
@@ -106,5 +107,15 @@ Rails.application.configure do
     authentication: :plain,
     domain: 'heroku.com'
   }
+=end
 
+  config.action_mailer.default_url_options = {:host => 'uni2choose.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "127.0.0.1",
+    :port    => 25,
+    :domain  => 'heroku.com'
+  }
+  
+#http://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration-for-gmail
 end

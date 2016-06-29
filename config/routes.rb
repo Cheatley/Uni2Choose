@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  get 'registration/new'
 
+ devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+ #devise_for :users, :controllers => { registrations: 'devise/registrations' }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -28,3 +30,4 @@ Rails.application.routes.draw do
  resources "contacts", only: [:new, :create]
 
 end
+   

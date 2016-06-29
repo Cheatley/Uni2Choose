@@ -1,4 +1,11 @@
-<h2>Sign up</h2>
+<!--Analysis Page --> 
+<% provide(:title, 'Register') %>
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+         <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -15,3 +22,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>

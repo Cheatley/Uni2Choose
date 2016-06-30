@@ -13,8 +13,7 @@ User.create!(dob: DateTime.new(1993, 9, 13),
             password:              "password",
             password_confirmation: "password",
             admin:     true,
-            activated: true,
-            activated_at: Time.zone.now)
+            confirmed_at: Time.zone.now)
              
 User.create!(dob: DateTime.new(2015, 6, 22),
             gender: "Male",
@@ -23,8 +22,7 @@ User.create!(dob: DateTime.new(2015, 6, 22),
             password:              "RoR-master",
             password_confirmation: "RoR-master",
             admin:     true,
-            activated: true,
-            activated_at: Time.zone.now)
+            confirmed_at: Time.zone.now)
              
 User.create!(dob: DateTime.new(2015, 6, 22),
             gender: "Female",
@@ -33,8 +31,7 @@ User.create!(dob: DateTime.new(2015, 6, 22),
             password:              "foobar",
             password_confirmation: "foobar",
             admin:     false,
-            activated: true,
-            activated_at: Time.zone.now)
+            confirmed_at: Time.zone.now)
 
 40.times do |n|
   email = Faker::Internet.email
@@ -48,8 +45,7 @@ User.create!(dob: DateTime.new(2015, 6, 22),
               password: password,
               password_confirmation: password,
               admin: false,              
-              activated: true,
-              activated_at: Time.zone.now)
+              confirmed_at: Time.zone.now)  
 end
 
 40.times do |n|
@@ -64,7 +60,6 @@ end
               password: password,
               password_confirmation: password,
               admin: false,              
-              activated: true,
-              activated_at: Time.zone.now)
+              confirmed_at: Time.zone.now)
 
 end

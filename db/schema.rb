@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160627110559) do
+ActiveRecord::Schema.define(version: 20160627132428) do
 
   create_table "degrees", force: :cascade do |t|
     t.string   "uname"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20160627110559) do
   create_table "highers", force: :cascade do |t|
     t.string   "higher"
     t.string   "code_letter"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -77,6 +85,9 @@ ActiveRecord::Schema.define(version: 20160627110559) do
     t.datetime "updated_at",           null: false
   end
 
+  create_table "sucs", force: :cascade do |t|
+  end
+
   create_table "ucasletters", force: :cascade do |t|
     t.string   "ucas_letter"
     t.string   "subject_group"
@@ -105,6 +116,8 @@ ActiveRecord::Schema.define(version: 20160627110559) do
     t.datetime "dob"
     t.string   "gender"
     t.string   "postcode"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -6,7 +6,7 @@
   <div class = "row">
     <!--Page information --> 
         
-         <h2>Hi you</h2></br>
+         <h2>Hi <%= @user.name %></h2></br>
                 <%= gravatar_for @user %>
                     <%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %>
                       

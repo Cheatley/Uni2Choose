@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
 
-
-  get 'registration/new'
-
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
- #devise_for :users, :controllers => { registrations: 'devise/registrations' }
+ resources :users, :only => [:show, :index]
+ get 'registration/new'
+      
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+ mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+ get 'users_list' => 'rails_admin/main#show'
   
-  
-  get 'recommends/new'
+ get 'recommends/new'
 
-  get 'degree/new'
+ get 'degree/new'
 
  root 'searches#new'
  get 'summerschool' => 'pages#summerschool'
@@ -22,8 +21,6 @@ Rails.application.routes.draw do
  
  resources :searches
  get 'recommender_search' => 'searches#new'
- resources :account_activations, only: [:edit]
- resources :password_resets, only: [:new, :create, :edit, :update]
  
  #contact form routes
  match '/contacts',     to: 'contacts#new',             via: 'get'

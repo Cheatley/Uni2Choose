@@ -1,6 +1,6 @@
 class Degree < ActiveRecord::Base
 
-  def Degree.search(search)
+  def self.search(search)
     where("cname LIKE :p", p: "%#{search}%")
   end
 end

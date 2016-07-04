@@ -15,7 +15,7 @@ Rails.application.routes.draw do
  get 'courses' => 'degree#index'
  get 'keyword_search' => 'searches#keyword_search'
  get 'advanced_search' => 'searches#advanced_search'
- 
+ get 'recquiz'  => 'searches#recquiz'
  resources :searches
  get 'recommender_search' => 'searches#new'
  resources :users

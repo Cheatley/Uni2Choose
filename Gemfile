@@ -13,11 +13,24 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'chartkick'
 
+gem 'ransack'
+# gem 'therubyracer', platforms: :ruby
+
+
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 #https://github.com/sferik/rails_admin
 gem 'rails_admin'
 gem 'kaminari'
+
+
+#anthentication system & social media logins
+#http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'mail'
 
 gem 'jquery-rails'
 gem 'turbolinks'

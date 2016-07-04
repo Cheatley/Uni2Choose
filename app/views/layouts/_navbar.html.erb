@@ -20,22 +20,14 @@
                 
                 <li><%= link_to "Search", keyword_search_path %></li> 
                 
+                <% if !user_signed_in? %>
+                <li><%= link_to "Register", new_user_registration_path %></li>
+                <li><%= link_to "Login", new_user_session_path %></li>
                 
-                <!-- displays only if user logged in-->
-
-                <% if logged_in? %>
-                 
-                  <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Logout", logout_path %></li>
-                
-                <!-- displays only if user not logged in-->  
                 <% else %>
-                
-                  <li><%= link_to "Sign up", signup_path %></li>
-                  <li><%= link_to "Login", login_path %></li>
-                  
+                <li><%= link_to "My Profile", user_path(current_user) %></li>
+                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
                 <% end %>
-
               </ul>
               
             </div>

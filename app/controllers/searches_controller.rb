@@ -1,6 +1,14 @@
 class SearchesController < ApplicationController
   before_action :set_search, only: [:show, :edit, :update, :destroy]
 
+  #ransack advanced searches
+  def adsearch
+    @adsearch = Degree.ransack(params[:q])
+    @data = @adsearch.result
+    @adsearch.build_condition if @adsearch.conditions.empty?
+    @adsearch.build_sort if @adsearch.sorts.empty?
+  end
+
   # GET /searches
   # GET /searches.json
   def index
@@ -24,18 +32,18 @@ class SearchesController < ApplicationController
   # GET /searches/new
   def new
     @search = Search.new
-  end  
- 
+  end
+
   def keyword_search
     @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
-  
+
   def advanced_search
   end
-    
+
   # GET /searches/1/edit
   def edit
   end

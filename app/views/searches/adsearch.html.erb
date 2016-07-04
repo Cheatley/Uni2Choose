@@ -1,0 +1,44 @@
+<%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  <div class="field">
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+
+
+      <% if @data != nil %>
+      <p><%= @data.count %> results</p>
+      <% end %>
+
+
+      <% if @data != nil %>
+        <table border="1" class="table">
+          <thead>
+            <tr>
+              <th>University Name</th>
+              <th>Course Name</th>
+              <th>Duration</th>
+              <th>Qualification</th>
+              <th>Entry Requirements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @data.each do |degree| %>
+            <tr>
+              <td><%= degree.uname %></td>
+              <td><%= degree.cname %></td>
+              <td><%= degree.duration %></td>
+              <td><%= degree.qualification %></td>
+              <td><%= degree.entry %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>

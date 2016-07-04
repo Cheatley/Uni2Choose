@@ -1,4 +1,3 @@
-
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -26,7 +25,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  config.omniauth :facebook, "1792332894333029", "ebfcc2d9fceee4448f3a93a573ee8d42"
+  config.omniauth :facebook, "1099941930077096", "b0c1ded4a34c3a13b98b8505466ae628"
   # config.omniauth :twitter, "KEY", "SECRET"
   
   # ==> Configuration for any authentication mechanism

@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'chartkick'
+gem 'ransack'
 # gem 'therubyracer', platforms: :ruby
 
 #https://github.com/sferik/rails_admin

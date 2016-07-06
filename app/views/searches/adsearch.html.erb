@@ -1,8 +1,7 @@
-
-
 <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
-  <%= label_tag :uregion, "Refine by region:" %><br>
-  <%= select_tag :uregion, options_for_select(["Northern", "Central belt", "South from Dundee", "Islands"]), {:include_blank => 'Select Region'}  %>
+
+          <%= label_tag :uregion, "Refine by region:" %><br>
+          <%= select_tag :uregion, options_for_select(["Northern", "Central belt", "South from Dundee"])  %>
 
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>

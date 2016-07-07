@@ -2,8 +2,8 @@
 require 'csv'
 
 #importing the CSV file into the Degree table 
-namespace :import_rsystem_csv do
-  task :rsystem_data => :environment do
+namespace :rsystem do
+  task :data => :environment do
     csv_text = File.read("rsystem.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -13,8 +13,8 @@ namespace :import_rsystem_csv do
 end 
 
 #importing the CSV file into the Degree table 
-namespace :import_suc_csv do
-  task :suc_data => :environment do
+namespace :suc do
+  task :data => :environment do
     csv_text = File.read("suc.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -23,8 +23,8 @@ namespace :import_suc_csv do
   end
 end 
 #importing the CSV 
-namespace :import_highers_csv do
-  task :highers_data => :environment do
+namespace :highers do
+  task :data => :environment do
     csv_text = File.read("highers.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -33,8 +33,8 @@ namespace :import_highers_csv do
   end
 end 
 
-namespace :import_scotlandunis_csv do
-  task :scotlandunis_data => :environment do
+namespace :scotlandunis do
+  task :data => :environment do
     csv_text = File.read("scotlandunis.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -43,8 +43,8 @@ namespace :import_scotlandunis_csv do
   end
 end 
 
-namespace :import_ucasletters_csv do
-  task :ucasletters_data => :environment do
+namespace :ucasletters do
+  task :data => :environment do
     csv_text = File.read("ucasletters.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|
@@ -53,8 +53,8 @@ namespace :import_ucasletters_csv do
   end
 end 
 
-namespace :import_similarities_csv do
-  task :similarities_data => :environment do
+namespace :similarities do
+  task :data => :environment do
     csv_text = File.read("similarities.csv")
     csv = CSV.parse(csv_text, :headers => true)
     csv.each do |row|

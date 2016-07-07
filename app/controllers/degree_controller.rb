@@ -10,15 +10,6 @@ class DegreeController < ApplicationController
     end
   end
 
-  def course
-    @ads = Ucasletter.all.select(:ucas_letter, :subject_group).distinct.order(id: :ASC) 
-    @select = Degree.all.select(:cname, :ucas).distinct.order(id: :ASC)
-    if params[:select]
-    @select_degree = Degree.search.(params[:ucas])
-    @search = Degree.all.select(:ucas)
-  end
-  end
-
 
 =begin
 

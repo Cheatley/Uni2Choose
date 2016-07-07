@@ -1,6 +1,6 @@
 class Degree < ActiveRecord::Base
 
-  def Degree.search(search)
-    where("cname LIKE ? OR ucas LIKE ?", "%#{search}%", "%#{search}%")
+  def self.search(search)
+    where("cname LIKE :p", p: "%#{search}%")
   end
 end

@@ -1,8 +1,8 @@
 class Recommend < ActiveRecord::Base
     
-    def f
-    @topics = Reccomend.find(params[:topic])
+    def actionname
+    @types = Reccomend.select(:topics).distinct
 
-    end
+  end
   
 end

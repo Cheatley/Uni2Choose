@@ -1,3 +1,11 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+<!--containers for design/layout --> 
+<div class = "contenty">
+  <div class = "row">
+    <!--Page information --> 
+
 <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
 
           <%= label_tag :uregion, "Refine by region:" %><br>
@@ -46,3 +54,6 @@
           </tbody>
         </table>
       <% end %>
+      
+      </div>
+      </div>

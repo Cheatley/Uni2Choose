@@ -1,40 +1,25 @@
 <div class = "signinstyle">
   <div class = "row">
-
-<form action="">
-  <label for="standard_grades">Do you have at least National 5's in English and Math at C or above?</label><br>
-  <label for="yes">Yes</label>
-  <input type="radio" id="yes" name="standard_grades" value="yes" checked> 
-  <label for="no">No</label>
-  <input type="radio" id="no" name="standard_grades" value="no" onclick = "document.location.href='/summerschool'">
-</form>
-
-<%= form_for @search do |f| %>
-
-  <% if @search.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :select_course, "Select your courses." %><br>
-    <%= f.select :select_course1, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
-    <%= f.select :select_course2, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
-    <%= f.select :select_course3, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
-    <%= f.select :select_course4, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
-    <%= f.select :select_course5, options_from_collection_for_select(Higher.all, :id, :higher), {:include_blank => 'Select course'} %>
-  </div>
+    
   
-  <div class="actions">
-    <%= f.submit "Continue" %>
-  </div>
-  
-<% end %>
+	<div id="wrapAll">
+		<div id="wrapper">
+			
+				<img id="logo" src="img/geek.png" alt=""><br>
+				 <h1>Help us recommend a <span>Course</span></h1>
+				 
+				 </div>
+				 </div>
+				 </div>
+				 <div class ="row">
+					<div id="wrapper">
+				<input class="start-btn" type="submit" value="Start!" onclick="redirect('ques.html')">
+		
+		</div>
+	</div>
 
 
 
-</div>
 </div>
 
 

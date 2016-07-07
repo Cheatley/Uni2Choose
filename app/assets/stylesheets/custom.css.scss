@@ -186,11 +186,15 @@ footer {
   padding-top: 5px;
   border-top: 1px solid ;
   background-color: #0b0c0c;
-  float: left;
+  float: center;
   position: relative;
   width: 100%;
 
-
+p {
+  text-align: center;
+  color: $gray-light;
+  
+}
 
   a {
 
@@ -203,7 +207,7 @@ footer {
 
   }
   ul {
-    float: right;
+    float: center;
     list-style: none;
     font: Impact;
   }
@@ -766,7 +770,7 @@ text-align: left;
  height:650px;
  position:relative;
  overflow:hidden;
- color: #fff;
+ color: #000;
 }
 
 #myQuiz h1 { 

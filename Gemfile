@@ -32,7 +32,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'mail'
 
-gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

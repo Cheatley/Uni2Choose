@@ -1,4 +1,16 @@
-<%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+<!--containers for design/layout --> 
+<div class = "contenty">
+  <div class = "row">
+    <!--Page information --> 
+    <h1>Advanced Search </h1>
+    </div>
+    <div class = "row">
+
+    <div class="col-s-4 col-s-4";>
+  <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
   <% end %>
@@ -11,6 +23,13 @@
   </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
+
+      
+    </div>
+    
+    
+        <div class="col-s-8 col-s-8";>
+
 
 
       <% if @data != nil %>
@@ -42,3 +61,6 @@
           </tbody>
         </table>
       <% end %>
+      
+      </div>
+      </div>

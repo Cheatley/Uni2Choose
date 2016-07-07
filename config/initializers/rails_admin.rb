@@ -34,4 +34,7 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+  
+  config.assets.initialize_on_precompile = false
+  
 end

@@ -41,26 +41,26 @@ var data = {
 		}],
 	geeks: [
 		{
-			name: "Linus Torvalds",
-			info: "Linus Benedict Torvalds is a Finnish American software engineer, who was the principal force behind the development of the Linux kernel that became the most popular kernel for operating systems."
+			name: "Medicine and Related subjects",
+			info: "Such as Medicine, Nursing, Psychology, or Vetinary studies. "
 		}, {
-			name: "Dennis Ritchie",
-			info: "Dennis MacAlistair Ritchie was an American computer scientist. He created the C programming language and, with long-time colleague Ken Thompson, the Unix operating system."
+			name: "Science courses",
+			info: "Such as physics, biology, chemistry, or geography."
 		}, {
-			name: "Bill Gates",
-			info: "William Henry 'Bill' Gates III is an American business magnate, philanthropist, investor, computer programmer, and inventor."
+			name: "Law and Business courses",
+			info: "Such as Law, Business Management, or Economics."
 		}, {
-			name: "Steve Jobs",
-			info: "Steven Paul 'Steve' Jobs was an American entrepreneur, marketer, and inventor, who was the cofounder, chairman, and CEO of Apple Inc."
+			name: "Art and Design courses",
+			info: "Such as Media Design, Graphics or Painting."
 		}, {
-			name: "Steve Wozniak",
-			info: "Stephen Gary 'Steve' Wozniak, known as 'Woz', is an American inventor, electronics engineer, and computer programmer who co-founded Apple Computer with Steve Jobs and Ronald Wayne."
+			name: "Arts and Humanities courses",
+			info: "Such as Archaeology, History or Philosophy."
 		}, {
-			name: "Mark Zuckerberg",
-			info: "Mark Elliot Zuckerberg is an American computer programmer and Internet entrepreneur. He is best known as one of five co-founders of the social networking website Facebook. Zuckerberg is the chairman and chief executive of Facebook, Inc."
+			name: "Computing and Engineering courses",
+			info: "Such as Engineering, Computer Engineering, or Software Development."
 		}, {
-			name: "Tim Berners-Lee",
-			info: "Sir Timothy John 'Tim' Berners-Lee, also known as TimBL, is an English computer scientist, best known as the inventor of the World Wide Web."
+			name: "Language courses",
+			info: "Such as Spanish Studies, French or Gaelic."
 		}]
 };
 

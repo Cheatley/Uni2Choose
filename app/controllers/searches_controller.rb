@@ -29,6 +29,18 @@ class SearchesController < ApplicationController
 
   end
 
+
+def ques
+  
+end
+
+def results
+end 
+
+def quiz
+end
+
+
   # GET /searches/new
   def new
     @search = Search.new

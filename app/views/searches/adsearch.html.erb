@@ -1,3 +1,11 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+<!--containers for design/layout --> 
+<div class = "contenty">
+  <div class = "row">
+    <!--Page information --> 
+
 <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
@@ -42,3 +50,6 @@
           </tbody>
         </table>
       <% end %>
+      
+      </div>
+      </div>

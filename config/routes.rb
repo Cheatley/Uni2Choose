@@ -12,18 +12,18 @@ Rails.application.routes.draw do
 
  get 'degree/new'
 
- root 'searches#new'
+ root 'pages#home'
+ get 'about' => 'pages#about'
+ get 'quiz' => 'searches#quiz'
+ get 'course' => 'degree#course'
  get 'summerschool' => 'pages#summerschool'
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'degree#index'
  get 'keyword_search' => 'searches#keyword_search'
  get 'advanced_search' => 'searches#advanced_search'
-<<<<<<< HEAD
- get 'recquiz'  => 'searches#recquiz'
-=======
  get 'adsearch' => 'searches#adsearch'
+ get 'recquiz' => 'searches#recquiz'
 
->>>>>>> 1af18bf76b7b575de46d335761742e6c4f957f25
  resources :searches
  get 'recommender_search' => 'searches#new'
 

@@ -67,8 +67,19 @@ class SearchesController < ApplicationController
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
+  
+  def course
+    @select = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
+    if params[:search]
+      @select_degree = Degree.search(params[:search])
+    end
+  end
+ 
 
   def advanced_search
+  end
+
+  def quiz
   end
 
   # GET /searches/1/edit

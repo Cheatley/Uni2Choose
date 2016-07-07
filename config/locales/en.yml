@@ -26,9 +26,10 @@ en:
   ransack:
     asc: ascending
     desc: descending
-    predicates:
+    predicate:
       cont: contains
     attributes:
+      degree: 
         uname: University Name
         cname: Course Name
         ucas: Ucas Code

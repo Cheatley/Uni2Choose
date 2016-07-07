@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= recsystem.js
+//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require bootstrap/affix
@@ -16,12 +16,5 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 //= require chartkick
-//= require turbolinks
-//= require quiz
+
 //= require_tree .
-
-
-$( document ).ready(function() {
-    console.log( "ready!" );
-    
-});

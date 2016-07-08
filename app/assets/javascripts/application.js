@@ -16,5 +16,5 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 //= require chartkick
-
 //= require_tree .
+//= require social-share-button

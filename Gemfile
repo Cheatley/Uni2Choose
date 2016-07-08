@@ -16,7 +16,6 @@ gem 'chartkick'
 gem 'ransack'
 # gem 'therubyracer', platforms: :ruby
 
-
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 #https://github.com/sferik/rails_admin

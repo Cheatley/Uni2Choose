@@ -7,16 +7,16 @@ class SearchesController < ApplicationController
     ransackresults = @adsearch.result
     @adsearch.build_condition if @adsearch.conditions.empty?
     @adsearch.build_sort if @adsearch.sorts.empty?
-    
-    
+
+
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
-    @central = ["Abertay University", "City of Glasgow College", "University of Dundee", "The University of Edinburgh", 
-      "Edinburgh Napier University", "University of Glasgow", "Glasgow Caledonian University", "The Glasgow School of Art", 
-      "Heriot-Watt University, Edinburgh", "Middlesex University", "Queen Margaret University, Edinburgh", "Robert Gordon University", 
-      "Royal Conservatoire of Scotland", "SAE Institute", "University of St Andrews", "The University of Stirling", 
+    @central = ["Abertay University", "City of Glasgow College", "University of Dundee", "The University of Edinburgh",
+      "Edinburgh Napier University", "University of Glasgow", "Glasgow Caledonian University", "The Glasgow School of Art",
+      "Heriot-Watt University, Edinburgh", "Middlesex University", "Queen Margaret University, Edinburgh", "Robert Gordon University",
+      "Royal Conservatoire of Scotland", "SAE Institute", "University of St Andrews", "The University of Stirling",
       "The University of Strathclyde", "The Open University"]
-     
+
     if params[:uregion]
       @uregion = params[:uregion]
       if @uregion == "Northern"
@@ -27,7 +27,7 @@ class SearchesController < ApplicationController
         uregion = Degree.all.where(uname: @southern)
       end
     end
-    
+
     if params[:discipline]
       @discipline = params[:discipline]
       if @discipline == "Medicine and Dentistry"
@@ -72,11 +72,15 @@ class SearchesController < ApplicationController
         discipline = Degree.where('ucas LIKE ?', "X%")
       end
     end
-    
+
     if params[:uregion] != nil
       @data = discipline.merge(ransackresults).merge(uregion)
     else
       @data = ransackresults
+    end
+
+    if params[:discipline] = nil
+      @data = nil
     end
   end
 
@@ -102,11 +106,11 @@ class SearchesController < ApplicationController
 
 
 def ques
-  
+
 end
 
 def results
-end 
+end
 
 def quiz
 end

@@ -6,23 +6,17 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title><%= yield(:title) %> | Uni2choose</title>
-  
+
   <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
   <%= csrf_meta_tags %>
-  
-  <!-- Share buttons begin here -->
-<script>
-  var a2a_config = a2a_config || {};
-  a2a_config.num_services = 18;
-</script>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- Share buttons end here -->
 
-  
+
+
+
 </head>
 <body>
 <br><br><br><br>
@@ -33,12 +27,19 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      
-      
-      
+
+
+
       <%= yield %>
-      
+
   <%= render 'layouts/footer' %>
+  <!-- Share buttons begin here -->
+<script>
+  var a2a_config = a2a_config || {};
+  a2a_config.num_services = 18;
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- Share buttons end here -->
 </body>
 </html>
 

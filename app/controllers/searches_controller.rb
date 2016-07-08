@@ -16,24 +16,68 @@ class SearchesController < ApplicationController
       "Heriot-Watt University, Edinburgh", "Middlesex University", "Queen Margaret University, Edinburgh", "Robert Gordon University", 
       "Royal Conservatoire of Scotland", "SAE Institute", "University of St Andrews", "The University of Stirling", 
       "The University of Strathclyde", "The Open University"]
-    
+     
     if params[:uregion]
-      @choice = params[:uregion]
-      if @choice == "Northern"
+      @uregion = params[:uregion]
+      if @uregion == "Northern"
         uregion = Degree.all.where(uname: @northern)
-      elsif @choice == "Central belt"
+      elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
-      elsif @choice == "South from Dundee"
-        uregion = Degree.all.where(highers: @southern)
+      elsif @uregion == "South from Dundee"
+        uregion = Degree.all.where(uname: @southern)
+      end
+    end
+    
+    if params[:discipline]
+      @discipline = params[:discipline]
+      if @discipline == "Medicine and Dentistry"
+        discipline = Degree.where('ucas LIKE ?', "A%")
+      elsif @discipline == "Subjects allied to Medicine"
+        discipline = Degree.where('ucas LIKE ?', "B%")
+      elsif @discipline == "Biological Sciences"
+        discipline = Degree.where('ucas LIKE ?', "C%")
+      elsif @discipline == "Veterinary Sciences, Agriculture and Related Subjects"
+        discipline = Degree.where('ucas LIKE ?', "D%")
+      elsif @discipline == "Physical Sciences"
+        discipline = Degree.where('ucas LIKE ?', "F%")
+      elsif @discipline == "Mathematical Sciences"
+        discipline = Degree.where('ucas LIKE ?', "G%")
+      elsif @discipline == "Engineering"
+        discipline = Degree.where('ucas LIKE ?', "H%")
+      elsif @discipline == "Computer Sciences"
+        discipline = Degree.where('ucas LIKE ?', "I%")
+      elsif @discipline == "Technologies"
+        discipline = Degree.where('ucas LIKE ?', "J%")
+      elsif @discipline == "Architecture, Building and Planning"
+        discipline = Degree.where('ucas LIKE ?', "K%")
+      elsif @discipline == "Social Studies"
+        discipline = Degree.where('ucas LIKE ?', "L%")
+      elsif @discipline == "Law"
+        discipline = Degree.where('ucas LIKE ?', "M%")
+      elsif @discipline == "Business and Administrative Studies"
+        discipline = Degree.where('ucas LIKE ?', "N%")
+      elsif @discipline == "Mass Communication and Documentation"
+        discipline = Degree.where('ucas LIKE ?', "P%")
+      elsif @discipline == "Linguistics, Classics and Related Subjects"
+        discipline = Degree.where('ucas LIKE ?', "Q%")
+      elsif @discipline == "European Languages, Literature and Related Subjects"
+        discipline = Degree.where('ucas LIKE ?', "R%")
+      elsif @discipline == "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects"
+        discipline = Degree.where('ucas LIKE ?', "T%")
+      elsif @discipline == "Historical and Philosophical Studies"
+        discipline = Degree.where('ucas LIKE ?', "V%")
+      elsif @discipline == "Creative Arts and Design"
+        discipline = Degree.where('ucas LIKE ?', "W%")
+      elsif @discipline == "Education"
+        discipline = Degree.where('ucas LIKE ?', "X%")
       end
     end
     
     if params[:uregion] != nil
-      @data = uregion.merge(ransackresults)
+      @data = discipline.merge(ransackresults).merge(uregion)
     else
       @data = ransackresults
     end
-    
   end
 
   # GET /searches

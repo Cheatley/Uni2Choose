@@ -3,10 +3,8 @@ Rails.application.routes.draw do
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
  resources :users, :only => [:show, :index]
  get 'registration/new'
-
-
+ 
  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
- get 'users_list' => 'rails_admin/main#show'
 
  get 'recommends/new'
 

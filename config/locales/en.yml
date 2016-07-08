@@ -19,5 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
+  
+  # locales/en.yml
 en:
-  hello: "Hello world"
+  ransack:
+    asc: ascending
+    desc: descending
+    predicate:
+      cont: contains
+    attributes:
+      degree: 
+        uname: University Name
+        cname: Course Name
+        ucas: Ucas Code
+        duration: Duration (number of years)
+

@@ -19,5 +19,6 @@
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%= link_to "Login with #{OmniAuth::Utils.camelize(:facebook)}", omniauth_authorize_path(resource_name, :facebook) %><br />
+  <%= link_to "Login with #{OmniAuth::Utils.camelize(:t)}", omniauth_authorize_path(resource_name, :t) %><br />
 <% end -%>
+

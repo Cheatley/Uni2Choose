@@ -4,78 +4,38 @@
 <!--containers for design/layout --> 
 <div class = "contenty">
   <div class = "row">
+    
     <div class="col-s-6 col-s-6";>
-
     <!--Page information --> 
-    <p>Uni2Choose is a website designed to help you find the degree best suited to you. Through our recommender system, quiz, and search functions.</p>
+    <p>Uni2choose is a website designed to help you find the degree best suited to you, at the University you prefer.</p>
     <h4>Search for a degree:</h4>
-    <%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
-      <%= submit_tag "Search" %>
+      <%= form_tag(keyword_search_path, :method => "get", id: "search-data") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
+        <%= submit_tag "Search" %>
       <% end %>
-      
-      <% if @search_degree != nil %>
-      <p><%= @search_degree.count %> results</p>
-      <% end %>
-      
-      <% if @search_degree != nil %>
-        <table border="1" class="table">
-          <thead>
-            <tr>
-              <th>University Name</th>
-              <th>Course Name</th>
-              <th>Duration</th>
-              <th>Qualification</th>
-              <th>Entry Requirements</th>
-            </tr>
-          </thead>
-          <br>
-          <tbody>
-            <% @search_degree.each do |degree| %>
-            <tr>
-              <td><%= degree.uname %></td>
-              <td><%= degree.cname %></td>
-              <td><%= degree.duration %></td>
-              <td><%= degree.qualification %></td>
-              <td><%= degree.entry %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-      <% end %>
-    <%= button_to "Advanced Search", adsearch_path, :method => "get" %>
-    
-    
     </div>
     
-    
-        <div class="col-s-6 col-s-6";>
-        <%= link_to root_path do %>
-        <%= image_tag "logoplaceholder.png" , :alt => "logo"%>
-<% end %>    
-        </div>
-        
-    
+    <div class="col-s-6 col-s-6";>
+      <%= link_to root_path do %>
+      <%= image_tag "logoplaceholder.png" , :alt => "logo"%>
+      <% end %>    
     </div>
-    <div class ="row"> 
     
     <div class="col-s-4 col-s-4";>
-    <%= link_to new_path do %>
-    <%= image_tag "rec.jpg" , :alt => "recbutton"%>
-    <% end %>
+      <%= link_to new_path do %>
+      <%= image_tag "rec.jpg" , :alt => "recbutton"%>
+      <% end %>
     </div>
     <div class="col-s-4 col-s-4";>
-    <%= link_to quiz_path do %>
-    <%= image_tag "quiz.jpg" , :alt => "quizbutton" %>
-    <% end %>
+      <%= link_to quiz_path do %>
+      <%= image_tag "quiz.jpg" , :alt => "quizbutton" %>
+      <% end %>
     </div>
     <div class="col-s-4 col-s-4";>
-    <%= link_to about_path do %>
-    <%= image_tag "about.jpg" , :alt => "aboutbutton" %>
-    <% end %>
+      <%= link_to summerschool_path do %>
+      <%= image_tag "about.jpg" , :alt => "aboutbutton" %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
-        
-    
-    </div>
-    
-    </div>

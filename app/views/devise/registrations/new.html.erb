@@ -19,11 +19,11 @@
       
     <%= f.label :gender %>
         <%= f.label :male %>
-          <%= f.radio_button :gender, 'male', :checked => true, required: true %>
+          <%= f.radio_button :gender, 'Male', :checked => true, required: true %>
         <%= f.label :female %>
-          <%= f.radio_button :gender, 'female', required: true %>
-        <%= f.label :other %>
-          <%= f.radio_button :gender, 'other', required: true %><br>
+          <%= f.radio_button :gender, 'Female', required: true %>
+        <%= f.label :prefer_not_to_say %>
+          <%= f.radio_button :gender, 'Prefer not to say', required: true %><br>
           
     <%= f.label :postcode %>
       <%= f.text_field :postcode, required: true %><br>

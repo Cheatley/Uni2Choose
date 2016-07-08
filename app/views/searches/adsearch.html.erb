@@ -36,6 +36,7 @@
               <th>Duration</th>
               <th>Qualification</th>
               <th>Entry Requirements</th>
+              <th>Share</th>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +47,7 @@
               <td><%= degree.duration %></td>
               <td><%= degree.qualification %></td>
               <td><%= degree.entry %></td>
+              <td><%= render "share_by_email"%></td>
             </tr>
             <% end %>
           </tbody>

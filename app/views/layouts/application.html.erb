@@ -14,8 +14,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
   <%= csrf_meta_tags %>
   
+  <!-- Share buttons begin here -->
+<script>
+  var a2a_config = a2a_config || {};
+  a2a_config.num_services = 18;
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- Share buttons end here -->
+
+  
 </head>
 <body>
+  
 
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/header' %>
@@ -23,6 +33,8 @@
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
+      
+      
       
       <%= yield %>
       

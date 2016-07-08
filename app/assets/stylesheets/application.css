@@ -10,6 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ 
  */
+ /*
+ *= require_self
+ *= require_tree .
+ *= require social-share-button
+ */
+.social-share-button-facebook {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url("/social/facebook.png") no-repeat;
+}

@@ -1,51 +1,58 @@
-<%= link_to 'Back', current_user %>
 
-<h2>Edit my Account Details</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class = "signinstyle">
+  <div class = "row">
     
-    <%= f.input :name, required: true, autofocus: true, placeholder: "Choose a Username" %>
+    <%= link_to 'Back', current_user %>
     
-    <%= f.label :date_of_birth %>
-      <%= f.date_select :dob, :start_year=>1900, required: true %><br>
-      
-    <%= f.label :gender %>
-        <%= f.label :male %>
-          <%= f.radio_button :gender, 'Male', :checked => true, required: true %>
-        <%= f.label :female %>
-          <%= f.radio_button :gender, 'Female', required: true %>
-        <%= f.label :prefer_not_to_say %>
-          <%= f.radio_button :gender, 'Prefer not to say', required: true %><br>
+    <h2>Edit my Account Details</h2>
+    
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+    
+      <div class="form-inputs">
+        
+        <%= f.input :name, required: true, autofocus: true, placeholder: "Choose a Username" %>
+        
+        <%= f.label :date_of_birth %>
+          <%= f.date_select :dob, :start_year=>1900, required: true %><br>
           
-    <%= f.label :postcode %>
-      <%= f.text_field :postcode, required: true %><br>
-      
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <%= f.label :gender %>
+            <%= f.label :male %>
+              <%= f.radio_button :gender, 'Male', :checked => true, required: true %>
+            <%= f.label :female %>
+              <%= f.radio_button :gender, 'Female', required: true %>
+            <%= f.label :prefer_not_to_say %>
+              <%= f.radio_button :gender, 'Prefer not to say', required: true %><br>
+              
+        <%= f.label :postcode %>
+          <%= f.text_field :postcode, required: true %><br>
+          
+        <%= f.input :email, required: true, autofocus: true %>
+    
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+    
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+        <%= f.input :password_confirmation, required: false %>
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+      </div>
+    
+      <div class="form-actions">
+        <%= f.button :submit, "Update" %>
+      </div>
     <% end %>
+    
+      <div class="gravatar_edit">
+        <%= gravatar_for @user %>
+        <a href="http://gravatar.com/emails" target"_blank">Change my picture</a>
+      </div>
+    <br>
+    <h3>Cancel my account</h3>
+    
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= link_to "Back", :back %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-  <div class="gravatar_edit">
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails" target"_blank">Change my picture</a>
-  </div>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

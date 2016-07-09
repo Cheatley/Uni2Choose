@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
- resources :users, :only => [:show, :index, :destroy, :update]
+ resources :users, :only => [:show, :index]
  
  get 'registration/new'
  

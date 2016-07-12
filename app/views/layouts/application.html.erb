@@ -14,10 +14,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
   <%= csrf_meta_tags %>
 
-<script type="text/javascript">
-  Shadowbox.init();
-</script>
-
 
 </head>
 <body>
@@ -36,10 +32,17 @@
 
   <%= render 'layouts/footer' %>
   <!-- Share buttons begin here -->
+  
+  <!-- JS for email, share and print buttons // adsearch  -->
 <script>
   var a2a_config = a2a_config || {};
   a2a_config.num_services = 18;
 </script>
+  <!-- JS for scotland regions popup // adsearch -->
+<script type="text/javascript">
+  Shadowbox.init();
+</script>
+
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <!-- Share buttons end here -->
 </body>

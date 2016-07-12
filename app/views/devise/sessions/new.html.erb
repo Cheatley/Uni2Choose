@@ -7,19 +7,32 @@
     <!--Page information --> 
          <h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-
+    <div class="col-s-6 col-s-6";>
+      <p>Login using your account:</p>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+      
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="col-s-1 col-s-1";>
+      <div class="line"></div>
+    </div>
+    
+    <div class="col-s-5 col-s-5";> 
+      <p>Login with Facebook:</p>
+      <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png", :style => "height: 220px; width: 220px;"), omniauth_authorize_path(resource_name, :facebook) %><br />
+    </div>
+    
+    <div class="col-s-12 col-s-12";> 
+      <%= render "devise/shared/links" %>
+    </div>
 </div>
 </div>

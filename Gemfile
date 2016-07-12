@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'rails_admin'
 gem 'kaminari'
 
+gem 'shadowbox-rails'
 
 #anthentication system & social media logins
 #http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/

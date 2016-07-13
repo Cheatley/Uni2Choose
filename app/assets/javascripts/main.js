@@ -123,7 +123,7 @@ function showResult() {
 	if( id > totalGeeks || id < 0 || !id ) redirect("new.html");
 	var name = document.getElementById("geekName");
 	var info = document.getElementById("geekInfo");
-	var img = document.getElementById("geekImage");
+	/** var img = document.getElementById("geekImage"); **/
 	name.innerHTML = Geeks[id].name;
 	img.src = "img/"+id+".png";
 	img.alt =Geeks[id].name;

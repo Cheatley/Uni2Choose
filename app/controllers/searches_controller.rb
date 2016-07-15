@@ -5,9 +5,6 @@ class SearchesController < ApplicationController
   def adsearch
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
-    @adsearch.build_condition if @adsearch.conditions.empty?
-    @adsearch.build_sort if @adsearch.sorts.empty?
-
 
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
@@ -82,7 +79,8 @@ class SearchesController < ApplicationController
     end
 
     if params[:discipline] = nil
-      @data = nil
+      params[:uregion] = "Anywhere"
+      params[:discipline] = "Any"
     end
   end
 

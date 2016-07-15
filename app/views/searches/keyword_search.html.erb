@@ -13,7 +13,7 @@
       <%= submit_tag "Search" %>
       <% end %>
       
-       <%= button_to "Refine your Search", adsearch_path, :method => "get" %>
+       <%= button_to "Advanced Search", adsearch_path, :method => "get" %>
       
       <% if @search_degree != nil %>
       <p><%= @search_degree.count %> results</p>

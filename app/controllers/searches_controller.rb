@@ -5,9 +5,6 @@ class SearchesController < ApplicationController
   def adsearch
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
-    @adsearch.build_condition if @adsearch.conditions.empty?
-    @adsearch.build_sort if @adsearch.sorts.empty?
-
 
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
@@ -19,7 +16,9 @@ class SearchesController < ApplicationController
 
     if params[:uregion]
       @uregion = params[:uregion]
-      if @uregion == "Northern"
+      if @uregion == "Anywhere"
+        uregion = Degree.all
+      elsif @uregion == "Northern"
         uregion = Degree.all.where(uname: @northern)
       elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
@@ -30,7 +29,9 @@ class SearchesController < ApplicationController
 
     if params[:discipline]
       @discipline = params[:discipline]
-      if @discipline == "Medicine and Dentistry"
+      if @discipline == "Any"
+        discipline= Degree.all
+      elsif @discipline == "Medicine and Dentistry"
         discipline = Degree.where('ucas LIKE ?', "A%")
       elsif @discipline == "Subjects allied to Medicine"
         discipline = Degree.where('ucas LIKE ?', "B%")
@@ -74,13 +75,7 @@ class SearchesController < ApplicationController
     end
 
     if params[:uregion] != nil
-      @data = discipline.merge(ransackresults).merge(uregion)
-    else
-      @data = ransackresults
-    end
-
-    if params[:discipline] = nil
-      @data = nil
+      @data = uregion.merge(ransackresults).merge(discipline)
     end
   end
 

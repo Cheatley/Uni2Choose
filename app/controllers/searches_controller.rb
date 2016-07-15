@@ -77,11 +77,6 @@ class SearchesController < ApplicationController
     if params[:uregion] != nil
       @data = uregion.merge(ransackresults).merge(discipline)
     end
-
-    if params[:discipline] = nil
-      params[:uregion] = "Anywhere"
-      params[:discipline] = "Any"
-    end
   end
 
   # GET /searches

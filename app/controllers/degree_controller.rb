@@ -1,5 +1,5 @@
 class DegreeController < ApplicationController
- def index
+  def index
     @degreecourses = Degree.all
   end
 
@@ -10,7 +10,11 @@ class DegreeController < ApplicationController
     end
   end
 
-
+  def coursepage
+    @a = params[:indcoursepage]
+    @coursepage = Degree.all.where(id: @a).first
+  end
+  
 =begin
 
 ##Commented out because the advanced search has been changed now to solely asking for the location of the desired course.##

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
  get 'keyword_search' => 'searches#keyword_search'
  get 'advanced_search' => 'searches#advanced_search'
  get 'adsearch' => 'searches#adsearch'
+ get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'searches#ques'
  get 'result' => 'searches#result'
 

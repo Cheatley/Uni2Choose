@@ -1,0 +1,18 @@
+<!-- Index of all Courses -->
+<% provide(:title, "Degree Page") %>
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+
+    <h1><%= @coursepage.uname %></h1>
+    
+    <p>Degree Name: <%= @coursepage.cname %></p>
+    <p>Ucas Code: <%= @coursepage.ucas %></p>
+    <p>Duration: <%= @coursepage.duration %></p>
+    <p>Qualification: <%= @coursepage.qualification %></p>
+    <p>Entry Requirements: <%= @coursepage.entry %></p>
+
+
+  </div>
+</div>

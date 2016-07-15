@@ -22,7 +22,9 @@ $gray-medium-light: #eaeaea;
   margin-top: 45px;
   @include box_sizing;
 }
-
+.hidden {
+  display: none;
+}
 /* universal */
 
 

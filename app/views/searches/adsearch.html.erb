@@ -39,22 +39,22 @@
       <% if @data != nil %>
       <p><%= @data.count %> results</p>
       <% end %>
-      
-      <%= render "share_by_email"%>
   
       <% if @data != nil %>
         <table border="1" class="table">
           <thead>
             <tr>
-              <th>University</th>
               <th>Degree</th>
+              <th>University</th>
+              <th>Qualification</th>
             </tr>
           </thead>
           <tbody>
             <% @data.each do |degree| %>
             <tr>
-              <td><%= degree.uname %></td>
               <td><%= link_to degree.cname, coursepage_path(indcoursepage: degree.id), :"data-no-turbolink" => true %></td>
+              <td><%= degree.uname %></td>
+              <td><%= degree.qualification %></td>
             </tr>
           <% end %>
           </tbody>

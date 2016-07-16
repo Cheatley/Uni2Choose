@@ -12,7 +12,10 @@
     <p>Duration: <%= @coursepage.duration %></p>
     <p>Qualification: <%= @coursepage.qualification %></p>
     <p>Entry Requirements: <%= @coursepage.entry %></p>
-
+    
+    <% if user_signed_in? %>
+      <%= link_to('Save Search', save_search_path(current_user, :q => request.fullpath)) %>
+    <% end %>
     <%= render "share_email_print"%>
   </div>
 </div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update]
   
   def index
     @users = User.paginate(page: params[:page])
@@ -7,9 +7,10 @@ class UsersController < ApplicationController
   
   # GET /users/:id.:format
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @showsearches = Search.all.where(users_id: current_user)
   end
-
+  
   # GET /users/:id/edit
   def edit
     authorize! :update, @user
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      accessible = [ :name, :email, :dob, :postcode, :gender ] 
+      accessible = [ :name, :email, :dob, :postcode, :gender, :id ] 
       accessible << [ :password, :password_confirmation ] unless params[:user][:password].blank?
       params.require(:user).permit(accessible)
     end

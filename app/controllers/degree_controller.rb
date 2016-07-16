@@ -13,7 +13,7 @@ class DegreeController < ApplicationController
   def coursepage
     @a = params[:indcoursepage]
     @coursepage = Degree.all.where(id: @a).first
+    @save_search = Search.create(:saved_search => request.fullpath, :users_id => current_user.id)
   end
-
 
 end

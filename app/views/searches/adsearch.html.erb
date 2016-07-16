@@ -10,7 +10,7 @@
       
         <%= label_tag :uregion, "Refine By Region:" %><br>
         <%= render "regions" %><br>
-        <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "South from Dundee"], selected: "Anywhere")  %>
+        <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "South from Dundee"], selected: @uregion)  %>
   
         <%= label_tag :discipline, "Refine By Degree Category:" %><br>
         <%= select_tag :discipline, options_for_select(["Any", "Medicine and Dentistry", "Subjects allied to Medicine", "Biological Sciences",
@@ -19,7 +19,7 @@
           "Business and Administrative Studies", "Mass Communication and Documentation", "Linguistics, Classics and Related Subjects",
           "European Languages, Literature and Related Subjects", 
           "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects", 
-          "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: "Any") %>
+          "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: @discipline ) %>
       
         <div>
           <%= f.label :cname_cont, "Degree Name Contains:" %>

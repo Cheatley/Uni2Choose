@@ -6,7 +6,7 @@
   <div class = "row">
     <!--Page information --> 
         
-         <h2>Hi <%= @user.name %></h2></br>
+          <h2>Hi <%= @user.name %></h2></br>
                 <%= gravatar_for @user %>
                     <%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %>
 
@@ -30,7 +30,7 @@
                 <tr>
                   <td><a href="<%= search.saved_search %>">Show</a></td>
                   <td><%= search.created_at %></td>
-                  <td><%= link_to 'Delete', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Delete', search, method: :delete, data: { confirm: 'Are you sure?' } %></td> <!-- to fix -->
                 </tr>
               <% end %>
             </tbody>

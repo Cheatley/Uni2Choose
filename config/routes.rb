@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
- get '/users/sign_out' => 'devise/sessions#destroy' 
  
  resources :users, :only => [:show, :index]
  
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
  get 'keyword_search' => 'searches#keyword_search'
  get 'advanced_search' => 'searches#advanced_search'
  get 'adsearch' => 'searches#adsearch'
+ get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'searches#ques'
  get 'result' => 'searches#result'
 

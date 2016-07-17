@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require shadowbox
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require bootstrap/affix
@@ -17,5 +18,4 @@
 //= require bootstrap/popover
 //= require chartkick
 //= require_tree .
-//=require shadowbox
 

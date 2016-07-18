@@ -13,7 +13,8 @@ class DegreeController < ApplicationController
   def coursepage
     @a = params[:indcoursepage]
     @coursepage = Degree.all.where(id: @a).first
+    #http://stackoverflow.com/questions/14531426/how-can-i-save-ransack-searches-to-the-database
+    @save_search = Search.create(:saved_search => request.fullpath, :users_id => current_user.id)
   end
-
-
+  
 end

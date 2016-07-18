@@ -4,7 +4,10 @@
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
-
+    
+    <%= link_to 'Back to the search form', adsearch_path %>
+    
+    
     <h1><%= @coursepage.uname %></h1>
     
     <p>Degree Name: <%= @coursepage.cname %></p>
@@ -13,6 +16,9 @@
     <p>Qualification: <%= @coursepage.qualification %></p>
     <p>Entry Requirements: <%= @coursepage.entry %></p>
 
+    <% if user_signed_in? %>
+      <%= link_to('Save Search', save_search_path(current_user, :q => request.fullpath)) %>
+    <% end %>
     <%= render "share_email_print"%>
   </div>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630104428) do
+ActiveRecord::Schema.define(version: 20160716105522) do
 
   create_table "degrees", force: :cascade do |t|
     t.string   "uname"
@@ -69,15 +69,13 @@ ActiveRecord::Schema.define(version: 20160630104428) do
   end
 
   create_table "searches", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "not_interested"
-    t.string   "select_course1"
-    t.string   "select_course2"
-    t.string   "select_course3"
-    t.string   "select_course4"
-    t.string   "select_course5"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "saved_search"
+    t.integer  "users_id"
   end
+
+  add_index "searches", ["users_id"], name: "index_searches_on_users_id"
 
   create_table "similarities", force: :cascade do |t|
     t.string   "ucas_letter"

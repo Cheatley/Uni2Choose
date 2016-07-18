@@ -20,13 +20,12 @@ Rails.application.routes.draw do
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'degree#index'
  get 'keyword_search' => 'searches#keyword_search'
- get 'advanced_search' => 'searches#advanced_search'
  get 'adsearch' => 'searches#adsearch'
  get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'searches#ques'
  get 'result' => 'searches#result'
-
- resources :searches
+ get 'save_search' => 'users#show'
+ resources :searches, only: [:destroy]
  get 'recommender_search' => 'searches#new'
 
  #contact form routes

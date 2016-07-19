@@ -8,6 +8,9 @@ class UsersController < ApplicationController
   # GET /users/:id.:format
   def show
     @user = current_user
+  end
+  
+  def save_search
     @showsearches = Search.all.where(users_id: current_user)
   end
   

@@ -11,7 +11,6 @@
                 <th>Saved Search</th>
                 <th>Date - Time</th>
                 <th>ID</th>
-                <th>Delete?</th>
               </tr>
             </thead>
             <tbody>
@@ -20,11 +19,12 @@
                   <td><a href="<%= search.saved_search %>">Show</a></td>
                   <td><%= search.created_at %></td>
                   <td><%= search.id %></td>
-                  <td><%= link_to 'Delete', search_path, method: :delete, data: { confirm: 'Are you sure?' } %></td> <!-- to fix -->
                 </tr>
               <% end %>
             </tbody>
           </table>
           <% end %>
+      <br>
+      <%= link_to 'Delete My Saved Searches', search_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
   </div>
 </div>

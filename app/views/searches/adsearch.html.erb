@@ -41,30 +41,17 @@
       <% end %>
   
       <% if @data != nil %>
-        <table border="1" class="table">
-          <thead>
-            <tr>
-              <th>Degree</th>
-              <th>University</th>
-              <th>Qualification</th>
-              <% if user_signed_in? %>
-                <th>Save?</th>
-              <% end %>
-            </tr>
-          </thead>
-          <tbody>
-            <% @data.each do |degree| %>
-            <tr>
-              <td><%= degree.cname %></td>
-              <td><%= degree.uname %></td>
-              <td><%= degree.qualification %></td>
-              <% if user_signed_in? %>
-                <td><%= link_to "Save", coursepage_path(indcoursepage: degree.id), :"data-no-turbolink" => true %></td>
-              <% end %>
-            </tr>
+        <% @data.each do |degree| %>
+        <hr>
+          <strong><%= degree.cname %></strong><br>
+          <%= degree.uname %><br>
+          <%= degree.qualification %><br>
+          <%= degree.duration %><br>
+          <%= degree.entry %><br>
+          <% if user_signed_in? %><br>
+            <%= link_to "Save", coursepage_path(indcoursepage: degree.id), :"data-no-turbolink" => true, :class => "btn btn-default"%>
           <% end %>
-          </tbody>
-        </table>
+        <% end %>
       <% end %>
     </div>
   </div>

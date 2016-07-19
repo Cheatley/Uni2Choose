@@ -96,7 +96,7 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    Search.destroy(93)
+    Search.destroy_all()
     redirect_to save_search_path
   end
   

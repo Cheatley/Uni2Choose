@@ -1,0 +1,30 @@
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information -->    
+      <%= link_to 'Back', current_user %>
+      <h1>My Saved Searches</h1>
+          <% if @showsearches != nil %>
+          <table>
+            <thead>
+              <tr>
+                <th>Saved Search</th>
+                <th>Date - Time</th>
+                <th>ID</th>
+                <th>Delete?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @showsearches.each do |search| %>
+                <tr>
+                  <td><a href="<%= search.saved_search %>">Show</a></td>
+                  <td><%= search.created_at %></td>
+                  <td><%= search.id %></td>
+                  <td><%= link_to 'Delete', search_path, method: :delete, data: { confirm: 'Are you sure?' } %></td> <!-- to fix -->
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <% end %>
+  </div>
+</div>

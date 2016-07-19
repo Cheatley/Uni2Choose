@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
  get '/users/sign_out' => 'devise/sessions#destroy' 
- 
+ match 'users/:id/save_search' => 'users#save_search', :as => :save_search, via: 'get'
+ resources :searches, only: [:destroy]
  resources :users, :only => [:show, :index]
  
  get 'registration/new'
@@ -25,8 +26,7 @@ Rails.application.routes.draw do
  get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'searches#ques'
  get 'result' => 'searches#result'
- get 'save_search' => 'users#show'
- resources :searches, only: [:destroy]
+
  get 'recommender_search' => 'searches#new'
 
  #contact form routes

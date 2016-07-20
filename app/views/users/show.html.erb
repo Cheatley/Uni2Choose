@@ -14,29 +14,8 @@
                     <% if current_user.admin? %>
                       <li><%= link_to "Analysis", analysis_path %></li>
                       <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
+                      <li><%= link_to "My Saved Searches", save_search_path %></li>
                     <% end %>
-<br>
-
-          <% if @showsearches != nil %>
-          <table>
-            <thead>
-              <tr>
-                <th>Saved Search</th>
-                <th>Date - Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @showsearches.each do |search| %>
-                <tr>
-                  <td><a href="<%= search.saved_search %>">Show</a></td>
-                  <td><%= search.created_at %></td>
-                  <td><%= link_to 'Delete', search, method: :delete, data: { confirm: 'Are you sure?' } %></td> <!-- to fix -->
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-          <% end %>
-
 
 
     <!--closing the design/layout containers --> 

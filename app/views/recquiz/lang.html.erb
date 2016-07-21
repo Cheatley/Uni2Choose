@@ -1,0 +1,22 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+
+<%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
+<p> Based on your answers you may be interested in:</p>
+<li><ol><%= link_to "French", keyword_search_path(search: "French") %></ol></li>
+<li><ol><%= link_to "Spanish", keyword_search_path(search: "Spanish") %></ol></li>
+<li><ol><%= link_to "Modern Languages", keyword_search_path(search: "Modern Languages") %></ol></li>
+<li><ol><%= link_to "Languages", keyword_search_path(search: "Languages") %></ol></li>
+<li><ol><%= link_to "Linguistics", keyword_search_path(search: "Linguistics") %></ol></li>
+
+
+      <% end %>
+   
+</div>
+</div>

@@ -1,0 +1,25 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+
+<%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
+<p> Based on your answers you may be interested in:</p>
+<li>
+  <ol><%= link_to "History or History of Arts", keyword_search_path(search: "History") %></ol>
+  <ol><%= link_to "Film and Television Studies", keyword_search_path(search: "Film and Television") %></ol>
+  <ol><%= link_to "Archaeology", keyword_search_path(search: "Archaeology") %></ol>
+  <ol><%= link_to "Philosophy", keyword_search_path(search: "Philosophy") %></ol>
+  <ol><%= link_to "Education", keyword_search_path(search: "Education") %></ol>
+  <ol><%= link_to "Geography", keyword_search_path(search: "Geography") %></ol>
+</li>
+
+
+      <% end %>
+   
+</div>
+</div>

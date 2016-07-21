@@ -1,0 +1,24 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+
+<%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
+<p> Based on your answers you may be interested in:</p>
+<li>
+  <ol><%= link_to "Art courses", keyword_search_path(search: "Art") %></ol>
+  <ol><%= link_to "Design courses", keyword_search_path(search: "Design") %></ol>
+  <ol><%= link_to "Animation courses", keyword_search_path(search: "Animation") %></ol>
+  <ol><%= link_to "Ceramics courses", keyword_search_path(search: "Ceramics") %></ol>
+  <ol><%= link_to "Illustration courses", keyword_search_path(search: "Illustration") %></ol>
+</li>
+
+
+      <% end %>
+   
+</div>
+</div>

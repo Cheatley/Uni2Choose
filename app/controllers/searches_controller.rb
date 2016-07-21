@@ -88,9 +88,10 @@ class SearchesController < ApplicationController
     end
   end
 
-  def ques
-  
-  end
+
+
+
+
   
   def results
   end

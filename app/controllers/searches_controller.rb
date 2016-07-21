@@ -99,6 +99,12 @@ class SearchesController < ApplicationController
   def quiz
   end
 
+  def destroy
+    Search.destroy_all(users_id: current_user)
+    redirect_to save_search_path
+  end
+  
+=begin
   # DELETE /searches/1
   # DELETE /searches/1.json
   def destroy
@@ -108,5 +114,6 @@ class SearchesController < ApplicationController
       format.json { head :no_content }
     end
   end
+=end
 
 end

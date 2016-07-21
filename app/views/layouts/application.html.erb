@@ -17,21 +17,16 @@
 
 </head>
 <body>
-<br><br><br><br>
-
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/header' %>
+  
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
 
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-
-
-
-      <%= yield %>
+  <%= yield %>
 
   <%= render 'layouts/footer' %>
-  <!-- Share buttons begin here -->
   
   <!-- JS for email, share and print buttons // adsearch  -->
 <script>

@@ -101,7 +101,7 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    Search.destroy_all()
+    Search.destroy_all(users_id: current_user)
     redirect_to save_search_path
   end
   

@@ -21,7 +21,7 @@ Rails.application.routes.draw do
  get 'summerschool' => 'pages#summerschool'
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'degree#index'
- get 'keyword_search' => 'searches#keyword_search'
+ #get 'keyword_search' => 'searches#keyword_search'
  get 'adsearch' => 'searches#adsearch'
  get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'searches#ques'

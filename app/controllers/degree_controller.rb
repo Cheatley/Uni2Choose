@@ -11,6 +11,7 @@ class DegreeController < ApplicationController
   end
 
   def coursepage
+    add_crumb "Degree Page", coursepage_path, links: false
     @a = params[:indcoursepage]
     @coursepage = Degree.all.where(id: @a).first
     if Search.exists?(:saved_search => request.fullpath, :users_id => current_user.id)

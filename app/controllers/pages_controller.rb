@@ -88,6 +88,7 @@ def about
 end
 
 def summerschool
+  add_crumb "Prepare for University", summerschool_path, links: false
 end
 
 def new

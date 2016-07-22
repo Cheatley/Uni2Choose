@@ -9,11 +9,17 @@
     <!--Page information --> 
     
       <h1>User Analysis</h1>
-        <p><b>User gender proportion:</b></p>
+        <p><b>User Gender Proportion:</b></p>
         <%= pie_chart @users.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
         
-        <p><b>Users' saved degrees:</b></p>
-        <%= column_chart @searches.group("saved_search").count, {library: {backgroundColor:'transparent'}} %></br>
+        <p><b>Users' Saved Degrees:</b></p>
+        <%= column_chart @searches.group("cname").count, {library: {backgroundColor:'transparent'}} %></br>
+        
+        <p><b>Use of Social Media login:</b></p>
+        <%= column_chart @socialmedialogin.group("provider").count, {library: {backgroundColor:'transparent'}} %></br>
+
+        <p><b>Use of Social Media login:</b></p>
+        <%= column_chart @postcodes.group("postcode").count, {library: {backgroundColor:'transparent'}} %></br>
     <!--closing the design/layout containers --> 
     </div>
 </div>

@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-
+  
+  add_crumb "Home", '/'
+  
   def home
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result

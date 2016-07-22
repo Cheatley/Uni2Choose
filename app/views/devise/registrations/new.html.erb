@@ -40,5 +40,8 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+  <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    <%= link_to "Didn't receive account activation instructions?", new_confirmation_path(resource_name) %><br />
+  <% end -%>
 </div>
 </div>

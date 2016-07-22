@@ -1,14 +1,16 @@
 class SearchesController < ApplicationController
-
+  add_crumb "Home", '/'
+=begin
   def keyword_search
     @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
+=end
   
-  #ransack advanced searches
   def adsearch
+    add_crumb "Detailed Search", adsearch_path, links: false
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
 
@@ -101,7 +103,7 @@ class SearchesController < ApplicationController
   end
 
   def destroy
-    Search.destroy_all()
+    Search.destroy_all(users_id: current_user)
     redirect_to save_search_path
   end
   

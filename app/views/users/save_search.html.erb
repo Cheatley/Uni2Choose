@@ -8,17 +8,17 @@
           <table>
             <thead>
               <tr>
-                <th>Saved Search</th>
-                <th>Date - Time</th>
-                <th>ID</th>
+                <th>Saved Degree</th>
+                <th>University Name</th>
+                <th>Date / Time</th>
               </tr>
             </thead>
             <tbody>
               <% @showsearches.each do |search| %>
                 <tr>
-                  <td><a href="<%= search.saved_search %>">Show</a></td>
+                  <td><a href="<%= search.saved_search %>"><%= search.cname %></a></td>
+                  <td><%= search.uname %></td>
                   <td><%= search.created_at %></td>
-                  <td><%= search.id %></td>
                 </tr>
               <% end %>
             </tbody>

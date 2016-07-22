@@ -1,13 +1,14 @@
 class SearchesController < ApplicationController
 
+=begin
   def keyword_search
     @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
+=end
   
-  #ransack advanced searches
   def adsearch
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result

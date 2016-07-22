@@ -1,7 +1,10 @@
 class AnalysisController < ApplicationController
   
   def user_analysis
-    @data = User.all
+    @users = User.all
+    @searches = Search.all
+    @registrations = User.all
+    @socialmedialogin = Identity.all
   end
   
 

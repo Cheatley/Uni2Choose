@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   
   # GET /users/:id.:format
   def show
-    add_crumb "My Profile Page", user_path, links: false
+    add_crumb "My Profile", user_path, links: false
     @user = current_user
   end
   
   def save_search
-    add_crumb "My Profile Page", user_path
+    add_crumb "My Profile", user_path
     add_crumb "My Saved Searches", save_search_path, links: false
     @showsearches = Search.all.where(users_id: current_user)
   end

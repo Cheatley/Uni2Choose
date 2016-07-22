@@ -1,6 +1,6 @@
 <!--Analysis Page --> 
 <% provide(:title, 'User Analysis') %>
-
+<a href="/">Home</a> / <%= link_to 'My Profile', current_user %> / User Analysis
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <%= link_to 'Back', current_user %>
@@ -9,11 +9,8 @@
     <!--Page information --> 
     
       <h1>User Analysis</h1>
- 
-
-            <p><b>User gender proportion.</b></p>
-            <%= pie_chart @data.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
-            
+          <p><b>User gender proportion.</b></p>
+          <%= pie_chart @data.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
     <!--closing the design/layout containers --> 
     </div>
 </div>

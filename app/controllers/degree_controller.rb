@@ -11,6 +11,8 @@ class DegreeController < ApplicationController
   end
 
   def coursepage
+    add_crumb "Home", '/'
+    add_crumb "Detailed Search", adsearch_path
     add_crumb "Degree Page", coursepage_path, links: false
     @a = params[:indcoursepage]
     @coursepage = Degree.all.where(id: @a).first

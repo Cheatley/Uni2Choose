@@ -14,12 +14,6 @@
         
         <p><b>Users' saved degrees:</b></p>
         <%= column_chart @searches.group("saved_search").count, {library: {backgroundColor:'transparent'}} %></br>
-        
-        <p><b>Users registrations:</b></p>
-        <%= column_chart @registrations.group_by_day("created_at").count, {library: {backgroundColor:'transparent'}} %></br>
-
-        <p><b>Users social media login usage:</b></p>
-        <%= column_chart @registrations.group_by_day("created_at").count, {library: {backgroundColor:'transparent'}} %></br>
     <!--closing the design/layout containers --> 
     </div>
 </div>

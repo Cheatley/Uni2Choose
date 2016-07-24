@@ -24,10 +24,6 @@ Rails.application.routes.draw do
   get 'adsearch' => 'searches#adsearch'
   #individual degree pages route
   get 'coursepage' => 'degree#coursepage'
-
-  #recommender search routes
-  get 'new' => 'searches#new'
-  get 'result' => 'searches#result'
   
   #quiz route
   get 'quiz' => 'searches#quiz'
@@ -40,4 +36,45 @@ Rails.application.routes.draw do
   match "/404", :to => "errors#not_found", :via => :all
   match "/500", :to => "errors#internal_server_error", :via => :all
   match "/422", :to => "errors#unprocessable_entity", :via => :all
+
+  #Recommender system routes
+  get 'new' => 'searches#new'
+  get 'result' => 'searches#result'
+  
+  get 'computer' => 'recquiz#computer'
+  get 'design' => 'recquiz#design'
+  get 'human' => 'recquiz#human'
+  get 'lang' => 'recquiz#lang'
+  get 'sci' => 'recquiz#sci'
+  get 'medicine' => 'recquiz#medicine'
+  get 'designvslaw' => 'recquiz#designvslaw'
+  get 'scivslaw' => 'recquiz#scivslaw'
+  get 'designvshuman' => 'recquiz#designvshuman'
+  get 'designvsmedicine' => 'recquiz#designvsmedicine'
+  get 'designvslang' => 'recquiz#designvslang'
+  get 'design' => 'recquiz#design'
+  get 'designvscomputer' => 'recquiz#designvscomputer'
+  get 'scivscomputer' => 'recquiz#scivscomputer'
+  get 'scivsmedicine' => 'recquiz#scivsmedicine'
+  get 'scivslang' => 'recquiz#scivslang'
+  get 'scivshuman' => 'recquiz#scivshuman'
+  
+  get 'sci' => 'recquiz#sci'
+  get 'human' => 'recquiz#human'
+  get 'humanvscomputer' => 'recquiz#humanvscomputer'
+  get 'humanvsmedicine' => 'recquiz#humanvsmedicine'
+  get 'medicinevslang' => 'recquiz#medicinevslang'
+  get 'humanvs=medicine' => 'recquiz#humanvsmedicine'
+  get 'humanvslang' => 'recquiz#humanvslang'
+  get 'computervsmedicine' => 'recquiz#computervsmedicine'
+  get 'computervslang' => 'recquiz#computervslang'
+  get 'computer' => 'recquiz#aah'
+  get 'medicine' => 'recquiz#comp'
+  get 'lang' => 'recquiz#lang'
+  get 'law' => 'recquiz#law'
+  get 'lawvshuman' => 'recquiz#lawvshuman'
+  get 'lawvscomputer' => 'recquiz#lawvscomputer'
+  get 'lawvsmedicine' => 'recquiz#lawvsmedicine'
+  get 'lawvslang' => 'recquiz#lawvslang'
+
 end

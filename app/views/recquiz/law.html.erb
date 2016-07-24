@@ -1,0 +1,23 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+
+<%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
+<p> Based on your answers you may be interested in:</p>
+
+<li><ol> <a href="">Law</a> </ol></li>
+<li><ol> <a href="">Business</a> </ol></li>
+<li><ol> <a href="">Management</a> </ol></li>
+<li><ol> <a href="">Accounting</a> </ol></li>
+<li><ol> <a href="">Economics</a> </ol></li>
+
+
+      <% end %>
+   
+</div>
+</div>

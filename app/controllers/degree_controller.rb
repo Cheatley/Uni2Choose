@@ -18,4 +18,14 @@ class DegreeController < ApplicationController
       @save_search = Search.create(:saved_search => request.fullpath, :users_id => current_user.id, :cname => @coursepage.cname, :uname => @coursepage.uname)
     end
   end
+  
+  def computer
+    @select = Degree.all.select(:cname).distinct.order(id: :ASC)
+    if params[:select]
+    @select_degree = Degree.search.(params[:cname])
+    @search = Degree.all.select(:cname)
+  end
+  
+  end
+  
 end

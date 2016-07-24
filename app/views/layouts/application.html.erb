@@ -17,7 +17,10 @@
 
 </head>
 <body>
+  
+  
   <%= render 'layouts/navbar' %>
+
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
@@ -26,6 +29,11 @@
   <%= render_crumbs separator: ' / ' %>
 
   <%= yield %>
+  
+
+
+<%= breadcrumbs pretext: "You are here: ", display_single_fragment: true %>
+
 
   <%= render 'layouts/footer' %>
   

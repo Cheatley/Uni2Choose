@@ -2,8 +2,7 @@ class SearchesController < ApplicationController
   
   #breadcrumbs
   add_crumb "Home", '/'
-  
-  #advanced search funtionality
+ 
   def adsearch
     #breadcrumbs
     add_crumb "Detailed Search", adsearch_path, links: false
@@ -12,7 +11,7 @@ class SearchesController < ApplicationController
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
 
-    #refine by region drop-down
+    #define uni region for advanced search 
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
     @central = ["Abertay University", "City of Glasgow College", "University of Dundee", "The University of Edinburgh",
@@ -32,13 +31,11 @@ class SearchesController < ApplicationController
         uregion = Degree.all.where(uname: @southern)
       end
     end
-
-    #refine by discipline drop-down
+    
+    #define discipline for the ucas letters
     if params[:discipline]
       @discipline = params[:discipline]
-      if @discipline == "Any"
-        discipline= Degree.all
-      elsif @discipline == "Medicine and Dentistry"
+      if @discipline == "Medicine and Dentistry"
         discipline = Degree.where('ucas LIKE ?', "A%")
       elsif @discipline == "Subjects allied to Medicine"
         discipline = Degree.where('ucas LIKE ?', "B%")
@@ -93,14 +90,14 @@ class SearchesController < ApplicationController
       @uregion = "Anywhere"
     end
   end
-  
-  #Result page of the Recommender system
+
+  #recommender system
+  def ques
+  end
   def results
   end
 
   #quiz functionality
-  def ques
-  end
   def quiz
   end
   

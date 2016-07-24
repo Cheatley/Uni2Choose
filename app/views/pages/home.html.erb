@@ -1,42 +1,70 @@
-<!--Functionality of recommender?? --> 
+<!--Home page--> 
 <% provide(:title, 'Uni2choose') %>
 
 <!--containers for design/layout --> 
 <div class = "contenty">
   <div class = "row">
-    
     <div class="col-s-12 col-s-12";>
-      <!--Page information --> 
-      <p>Uni2choose is a website designed to help you find the degree best suited to you, at the University you prefer.</p>
+      <p>Uni2Choose is a website designed to help you find the degree best suited to you. Through our recommender system, quiz, and search functions.</p>
     </div>
-    <div class="col-s-4 col-s-4";>
-      <div class="home-box">
-        <div class="content-home-box">
-          <h4>Search for a degree by keyword (e.g. history, computing...)</h4>
-            <%= form_tag(keyword_search_path, :method => "get") do %>
-              <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
-              <%= submit_tag "Search", :class => "btn btn-default" %>
-            <% end %>
+
+    <div class="col-s-6 col-s-6";>
+      <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
+        <div class="hidden">
+          <%= label_tag :uregion, "Refine By Region:" %><br>
+          <%= render "regions" %><br>
+          <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "South from Dundee"], selected: @uregion)  %>
+    
+          <%= label_tag :discipline, "Refine By Degree Category:" %><br>
+          <%= select_tag :discipline, options_for_select(["Any", "Medicine and Dentistry", "Subjects allied to Medicine", "Biological Sciences",
+            "Veterinary Sciences, Agriculture and Related Subjects", "Physical Sciences", "Mathematical Sciences", "Engineering", 
+            "Computer Sciences", "Technologies", "Architecture, Building and Planning", "Social Studies", "Law", 
+            "Business and Administrative Studies", "Mass Communication and Documentation", "Linguistics, Classics and Related Subjects",
+            "European Languages, Literature and Related Subjects", 
+            "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects", 
+            "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: @discipline ) %>
         </div>
-      </div>
-    </div>
-    <div class="col-s-4 col-s-4";>
-      <div class="home-box">
-        <div class="content2-home-box">
-          <h4>Do a detailed search:</h4>
-          <%= link_to "To the detailed search!", adsearch_path, :class => "btn btn-default" %>
+        
+        <div>
+          <%= f.text_field :cname_cont, placeholder: "Search for a Degree" %>
         </div>
-      </div>
-    </div>
-    <div class="col-s-4 col-s-4";>
-      <div class="home-box">
-        <div class="content2-home-box">
-          <h4>Want to take a quizz and get a degree subject suggested?</h4>
-          <%= link_to "Get a degree suggested to me!", new_path, :class => "btn btn-default" %>
+        
+        <div class="hidden">
+          <div>
+            <%= f.label :uname_cont, "University Name Contains:" %>
+            <%= f.text_field :uname_cont, placeholder: "University Name" %>
+          </div>
         </div>
-      </div>
+        <div class="actions"><%= f.submit "Search", :class => "btn btn-default" %></div>
+      <% end %>
     </div>
     
-
+    <div class="col-s-6 col-s-6";>
+      <%= link_to root_path do %>
+      <%= image_tag "logoplaceholder.png" , :alt => "logo"%>
+      <% end %>    
+    </div>
+  </div>
+    
+  <div class ="row"> 
+    <div class="col-s-4 col-s-4";>
+      <%= link_to new_path do %>
+      <%= image_tag "rec.jpg" , :alt => "recbutton"%>
+      <% end %>
+    </div>
+    
+    <div class="col-s-4 col-s-4";>
+      <%= link_to quiz_path do %>
+      <%= image_tag "quiz.jpg" , :alt => "quizbutton" %>
+      <% end %>
+      
+    </div>
+    <div class="col-s-4 col-s-4";>
+      <%= link_to about_path do %>
+      <%= image_tag "about.jpg" , :alt => "aboutbutton" %>
+      <% end %>
+    </div>
+  </div>
+    
   </div>
 </div>

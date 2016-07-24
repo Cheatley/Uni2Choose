@@ -1,25 +1,29 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   
-  def index
-    @users = User.paginate(page: params[:page])
-  end
+  #breadcrumbs
+  add_crumb "Home", '/'
   
-  # GET /users/:id.:format
+  #user's individual My profile page
   def show
+    #breadcrumbs
+    add_crumb "My Profile", user_path, links: false
     @user = current_user
   end
   
+  #user's saved searches page
   def save_search
+    #breadcrumbs
+    add_crumb "My Profile", user_path
+    add_crumb "My Saved Searches", save_search_path, links: false
     @showsearches = Search.all.where(users_id: current_user)
   end
   
-  # GET /users/:id/edit
+  #user's edit my personal details
   def edit
     authorize! :update, @user
   end
-
-  # PATCH/PUT /users/:id.:format
+  #user's edit my personal details
   def update
     authorize! :update, @user
     respond_to do |format|
@@ -34,7 +38,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # DELETE /users/:id.:format
+  #delete a user functionality, admin can delete users through their access to the admin dashboard
   def destroy
     @user.destroy
     respond_to do |format|
@@ -44,6 +48,7 @@ class UsersController < ApplicationController
   end
   
   private
+  #devise to access the right user
     def set_user
       @user = User.find(params[:id])
     end

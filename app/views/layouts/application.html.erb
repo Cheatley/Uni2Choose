@@ -17,31 +17,35 @@
 
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
-  <%= render 'layouts/header' %>
   
+  
+  <%= render 'layouts/navbar' %>
+
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
+    <!-- break tags because otherwise breadcrumbs are hidden behind the navigation -->
+  <br><br><br><br>
+  <%= render_crumbs separator: ' / ' %>
 
   <%= yield %>
 
   <%= render 'layouts/footer' %>
   
-  <!-- JS for email, share and print buttons // adsearch  -->
-<script>
-  var a2a_config = a2a_config || {};
-  a2a_config.linkname = "Uni2choose - Check out my degree!";
-  a2a_config.linkurl = window.location.href;
-</script>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- JS for email, share and print buttons -->
+  <script>
+    var a2a_config = a2a_config || {};
+    a2a_config.linkname = "Uni2choose - Check out my degree!";
+    a2a_config.linkurl = window.location.href;
+  </script>
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
   <!-- Share buttons end here -->
 
-  <!-- JS for scotland regions popup // adsearch -->
-<script type="text/javascript">
-  Shadowbox.init();
-</script>
-
+  <!-- JS for scotland regions popup -->
+  <script type="text/javascript">
+    Shadowbox.init();
+  </script>
+  <!-- Map pop up script ends here -->
+  
 </body>
 </html>
-

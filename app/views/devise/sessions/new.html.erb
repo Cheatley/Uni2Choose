@@ -1,12 +1,14 @@
-<a href='/'>Home</a> / Login
+<!-- Login page -->
+<% provide(:title, "Login") %>
 
-<% provide(:title, 'Login') %>
+<!-- breadcrumbs -->
+<a href='/'>Home</a> / Login
 
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
     <!--Page information --> 
-         <h2>Log in</h2>
+    <h2>Log in</h2>
 
     <div class="col-s-6 col-s-6";>
       <p>Login using your account:</p>
@@ -37,5 +39,5 @@
     <div class="col-s-12 col-s-12";> 
       <%= render "devise/shared/links" %>
     </div>
-</div>
+  </div>
 </div>

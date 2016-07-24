@@ -5,16 +5,12 @@
 <div class = "signinstyle">
   <div class = "row">
     <!--Page information --> 
-    
-              
-            <% flash.each do |key, value| %>
-              <div>
-                <a href="#" data-dismiss="alert">×</a>
-                  <%= value %>
-              </div>
-            <% end %>
-
-
+      <% flash.each do |key, value| %>
+        <div>
+          <a href="#" data-dismiss="alert">×</a>
+            <%= value %>
+        </div>
+      <% end %>
     <!--closing the design/layout containers --> 
     </div>
 </div>

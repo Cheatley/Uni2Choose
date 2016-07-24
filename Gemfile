@@ -40,13 +40,6 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-gem "gretel"
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development do
   gem 'web-console', '~> 2.0'

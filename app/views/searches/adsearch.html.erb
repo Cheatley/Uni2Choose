@@ -5,7 +5,8 @@
 <div class = "contenty">
   <div class = "row">
     <div class="col-s-4 col-s-4";>
-      <%= link_to 'Back', root_url %><br><br>
+      <%= link_to "Back", :back %><br><br>
+      
       <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
       
         <%= label_tag :uregion, "Refine By Region:" %><br>

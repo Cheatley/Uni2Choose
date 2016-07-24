@@ -4,6 +4,7 @@
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
+    <%= link_to "Back", :back %>
     <!--Page information --> 
     <h2>Hi <%= @user.name %></h2></br>
       <%= gravatar_for @user %>

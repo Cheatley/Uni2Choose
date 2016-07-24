@@ -91,7 +91,6 @@ end
       @uregion = "Anywhere"
     end
   end
->>>>>>> 6e0bebc5f9f30ee8538ab377f08b2aef7ef90e5e
 
 def about
 end

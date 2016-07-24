@@ -43,7 +43,7 @@ Rails.application.routes.draw do
  get 'scivslang' => 'recquiz#scivslang'
  get 'scivshuman' => 'recquiz#scivshuman'
  get 'result' => 'searches#result'
-<<<<<<< HEAD
+
  get 'sci' => 'recquiz#sci'
  get 'human' => 'recquiz#human'
  get 'humanvscomputer' => 'recquiz#humanvscomputer'
@@ -63,9 +63,7 @@ Rails.application.routes.draw do
  get 'lawvslang' => 'recquiz#lawvslang'
  get 'save_search' => 'users#show'
  resources :searches, only: [:destroy]
-=======
 
->>>>>>> 1cf7884c9558fdba60e5f4f4f8cedf9bddeb518a
  get 'recommender_search' => 'searches#new'
 
  #contact form routes

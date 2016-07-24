@@ -9,11 +9,12 @@
 
 <%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
 <p> Based on your answers you may be interested in:</p>
-<li><ol><%= link_to "becoming a doctor", keyword_search_path(search: "Medicine") %></ol></li>
-<li><ol><%= link_to "becoming a nurse", keyword_search_path(search: "Nursing") %></ol></li>
-<li><ol><%= link_to "becoming a dentist", keyword_search_path(search: "Dentistry") %></ol></li>
-<li><ol><%= link_to "becoming a vet", keyword_search_path(search: "Veterinary") %></ol></li>
-<li><ol><%= link_to "becoming a psychologist", keyword_search_path(search: "Psychology") %></ol></li>
+
+<li><ol> <a href="Medicine">becoming a doctor</a> </ol></li>
+<li><ol> <a href="Nursing">becoming a nurse</a> </ol></li>
+<li><ol> <a href="Dentistry">becoming a dentist</a> </ol></li>
+<li><ol> <a href="Veterinary">becoming a vet</a> </ol></li>
+<li><ol> <a href="Psychology">becoming a psychologist</a> </ol></li>
 
 
       <% end %>

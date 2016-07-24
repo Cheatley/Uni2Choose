@@ -40,7 +40,7 @@ gem 'mail_form'
 gem 'simple_form'
 gem 'bower-rails'
 gem 'angular-rails-templates'
-
+gem "gretel"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

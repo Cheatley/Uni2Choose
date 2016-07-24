@@ -6,15 +6,12 @@
 <div class = "signinstyle">
   <div class = "row">
     <!--Page information --> 
-
 <%= form_tag(degree_new_path, :method => "get", id: "search-data") do %>
 <p> Based on your answers you may be interested in:</p>
-<li><ol><%= link_to "Physics courses", keyword_search_path(search: "Physics") %></ol></li>
-<li><ol><%= link_to "Astronomy", keyword_search_path(search: "Astronomy") %></ol></li>
-<li><ol><%= link_to "Chemistry courses", keyword_search_path(search: "Chemistry") %></ol></li>
-<li><ol><%= link_to "Biology courses", keyword_search_path(search: "Biology") %></ol></li>
-<li><ol><%= link_to "Forensic Sciences", keyword_search_path(search: "Forensic Science") %></ol></li>
-
-
+<li><ol> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=Physics&q%5Buname_cont%5D=&commit=Search">Physics</a> </ol></li>
+<li><ol> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=Astronomy&q%5Buname_cont%5D=&commit=Search">Astronomy</a> </ol></li>
+<li><ol> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=Chemistry&q%5Buname_cont%5D=&commit=Search">Chemistry</a> </ol></li>
+<li><ol> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=Biology&q%5Buname_cont%5D=&commit=Search">Biology</a> </ol></li>
+<li><ol> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=Forensic+Science&q%5Buname_cont%5D=&commit=Search">Forensic Science</a> </ol></li>
       <% end %>
    

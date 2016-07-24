@@ -40,6 +40,9 @@ def sci
     if params[:search]
       @select_degree = Degree.search(params[:search])
     end
+    #ransack advanced searches
+    @adsearch = Degree.ransack(params[:q])
+    ransackresults = @adsearch.result
 end
 
 def medicine

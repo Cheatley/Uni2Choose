@@ -1,17 +1,21 @@
 class SearchesController < ApplicationController
 
+
   def keyword_search
+    #Keyword search code
     @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
     if params[:search]
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
   
-  #ransack advanced searches
+
   def adsearch
+    #ransack advanced searches
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
-
+    
+    #define uni region for advanced search 
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
     @central = ["Abertay University", "City of Glasgow College", "University of Dundee", "The University of Edinburgh",
@@ -32,7 +36,8 @@ class SearchesController < ApplicationController
         uregion = Degree.all.where(uname: @southern)
       end
     end
-
+    
+    #define discipline for the ucas letters
     if params[:discipline]
       @discipline = params[:discipline]
       if @discipline == "Medicine and Dentistry"
@@ -89,10 +94,6 @@ class SearchesController < ApplicationController
   end
 
 
-
-
-
-  
   def results
   end
   
@@ -104,16 +105,4 @@ class SearchesController < ApplicationController
     redirect_to save_search_path
   end
   
-=begin
-  # DELETE /searches/1
-  # DELETE /searches/1.json
-  def destroy
-    @showsearches.destroy
-    respond_to do |format|
-      format.html { redirect_to user_url(current_user), notice: 'Search was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-=end
-
 end

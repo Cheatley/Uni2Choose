@@ -17,14 +17,23 @@
 
 </head>
 <body>
+  
+  
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/header' %>
+  
+
   
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
 
   <%= yield %>
+  
+
+
+<%= breadcrumbs pretext: "You are here: ", display_single_fragment: true %>
+
 
   <%= render 'layouts/footer' %>
   

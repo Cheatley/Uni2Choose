@@ -44,30 +44,6 @@ ActiveRecord::Schema.define(version: 20160722135413) do
   create_table "recommenders", force: :cascade do |t|
   end
 
-  create_table "recommends", force: :cascade do |t|
-    t.string   "topic"
-    t.integer  "a"
-    t.integer  "b"
-    t.integer  "c"
-    t.integer  "d"
-    t.integer  "f"
-    t.integer  "g"
-    t.integer  "h"
-    t.integer  "j"
-    t.integer  "k"
-    t.integer  "l"
-    t.integer  "m"
-    t.integer  "p"
-    t.integer  "q"
-    t.integer  "r"
-    t.integer  "t"
-    t.integer  "v"
-    t.integer  "w"
-    t.integer  "x"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false

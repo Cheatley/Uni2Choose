@@ -1,19 +1,18 @@
 class SearchesController < ApplicationController
-  add_crumb "Home", '/'
-=begin
-  def keyword_search
-    @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
-    if params[:search]
-      @search_degree = Degree.search(params[:search]).order('cname ASC')
-    end
-  end
-=end
   
+  #breadcrumbs
+  add_crumb "Home", '/'
+  
+  #advanced search funtionality
   def adsearch
+    #breadcrumbs
     add_crumb "Detailed Search", adsearch_path, links: false
+    
+    #Ransack search: keyword searches for degree title and university name
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
 
+    #refine by region drop-down
     @northern = ["The University of Aberdeen", "University of the Highlands and Islands", "The Open University"]
     @southern = ["SRUC - Scotlands Rural College", "University of the West of Scotland", "The Open University"]
     @central = ["Abertay University", "City of Glasgow College", "University of Dundee", "The University of Edinburgh",
@@ -21,7 +20,6 @@ class SearchesController < ApplicationController
       "Heriot-Watt University, Edinburgh", "Middlesex University", "Queen Margaret University, Edinburgh", "Robert Gordon University",
       "Royal Conservatoire of Scotland", "SAE Institute", "University of St Andrews", "The University of Stirling",
       "The University of Strathclyde", "The Open University"]
-
     if params[:uregion]
       @uregion = params[:uregion]
       if @uregion == "Anywhere"
@@ -35,6 +33,7 @@ class SearchesController < ApplicationController
       end
     end
 
+    #refine by discipline drop-down
     if params[:discipline]
       @discipline = params[:discipline]
       if @discipline == "Any"
@@ -81,42 +80,34 @@ class SearchesController < ApplicationController
         discipline = Degree.where('ucas LIKE ?', "X%")
       end
     end
-
+    
+    #merge all selected and entered values of the advanced serach to do a specific search
     if params[:uregion] != nil
       @data = uregion.merge(ransackresults).merge(discipline)
     end
-    
+
+    #the drop-downs refine by region and discipline will have if not selected otherwise by the user
+    #the selected default values of Any and Anywhere, otherwise the selected value persists in the form when the page is reloaded
     if params[:discipline] = nil
       @discipline = "Any"
       @uregion = "Anywhere"
     end
   end
-
-  def ques
   
-  end
-  
+  #Result page of the Recommender system
   def results
   end
-  
+
+  #quiz functionality
+  def ques
+  end
   def quiz
   end
-
+  
+  #delete all my search results functionality
   def destroy
     Search.destroy_all(users_id: current_user)
     redirect_to save_search_path
   end
   
-=begin
-  # DELETE /searches/1
-  # DELETE /searches/1.json
-  def destroy
-    @showsearches.destroy
-    respond_to do |format|
-      format.html { redirect_to user_url(current_user), notice: 'Search was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-=end
-
 end

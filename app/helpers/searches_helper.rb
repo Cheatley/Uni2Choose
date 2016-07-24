@@ -1,4 +1,7 @@
 module SearchesHelper
+  
+  #Ransack search Helper method - not used in the current version used, could be 
+  #implemented back in the future if additional fields should be added to the advanced search
   def link_to_add_fields(name, f, type)
     new_object = f.object.send "build_#{type}"
     id = "new_#{type}"

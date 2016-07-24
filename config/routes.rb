@@ -1,41 +1,43 @@
 Rails.application.routes.draw do
+  
+  #root homepage
+  root 'pages#home'
+  
+  #about page
+  get 'about' => 'pages#about'
 
+  #Users and Devise authentication system routes
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  get '/users/sign_out' => 'devise/sessions#destroy' 
+  resources :users, :only => [:show, :index]
+  
+  #rails_admin gem: Admin dashboard route
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  #User analysis page for admin users
+  get 'analysis' => 'analysis#user_analysis'
+  
+  #Search and Save search result to profile routes
+  match 'users/:id/save_search' => 'users#save_search', :as => :save_search, via: 'get'
+  resources :searches, only: [:destroy]
+
+  #advanced search route
+  get 'adsearch' => 'searches#adsearch'
+  #individual degree pages route
+  get 'coursepage' => 'degree#coursepage'
+
+  #recommender search routes
+  get 'new' => 'searches#new'
+  get 'result' => 'searches#result'
+  
+  #quiz route
+  get 'quiz' => 'searches#quiz'
+  
+  #contact form routes
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+  
+  #error pages routes
   match "/404", :to => "errors#not_found", :via => :all
   match "/500", :to => "errors#internal_server_error", :via => :all
   match "/422", :to => "errors#unprocessable_entity", :via => :all
-
- devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
- get '/users/sign_out' => 'devise/sessions#destroy' 
- match 'users/:id/save_search' => 'users#save_search', :as => :save_search, via: 'get'
- resources :searches, only: [:destroy]
- resources :users, :only => [:show, :index]
- 
- get 'registration/new'
- 
- mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
- get 'recommends/new'
-
- get 'degree/new'
-
- root 'pages#home'
- get 'about' => 'pages#about'
- get 'new' => 'searches#new'
- get 'quiz' => 'searches#quiz'
- get 'summerschool' => 'pages#summerschool'
- get 'analysis' => 'analysis#user_analysis'
- get 'courses' => 'degree#index'
- #get 'keyword_search' => 'searches#keyword_search'
- get 'adsearch' => 'searches#adsearch'
- get 'coursepage' => 'degree#coursepage'
- get 'ques' => 'searches#ques'
- get 'result' => 'searches#result'
-
- get 'recommender_search' => 'searches#new'
-
- #contact form routes
- match '/contacts',     to: 'contacts#new',             via: 'get'
- resources "contacts", only: [:new, :create]
-
-
 end

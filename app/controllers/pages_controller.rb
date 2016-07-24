@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   
+  #Homepage, with advanced search feature hidden as a simple keyword feature 
+  #which leads to the complete advanced search to refine search results
+  #Solely the search by keyword for degree title appears (part of Ransack)
+  #See the Searches Controller for code explanation of the advanced search feature
   def home
+    #Ransack
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
 
@@ -11,7 +16,6 @@ class PagesController < ApplicationController
       "Heriot-Watt University, Edinburgh", "Middlesex University", "Queen Margaret University, Edinburgh", "Robert Gordon University",
       "Royal Conservatoire of Scotland", "SAE Institute", "University of St Andrews", "The University of Stirling",
       "The University of Strathclyde", "The Open University"]
-
     if params[:uregion]
       @uregion = params[:uregion]
       if @uregion == "Anywhere"
@@ -71,7 +75,7 @@ class PagesController < ApplicationController
         discipline = Degree.where('ucas LIKE ?', "X%")
       end
     end
-
+    
     if params[:uregion] != nil
       @data = uregion.merge(ransackresults).merge(discipline)
     end
@@ -82,16 +86,16 @@ class PagesController < ApplicationController
     end
   end
 
-def about
-end
-
-def summerschool
-  add_crumb "Home", '/'
-  add_crumb "Prepare for University", summerschool_path, links: false
-end
-
-def new
-end
+  #About page
+  def about
+    #breadcrumbs
+    add_crumb "Home", '/'
+    add_crumb "Prepare for University", about_path, links: false
+  end
+  
+  #Recommender System
+  def new
+  end
 
 end 
 

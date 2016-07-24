@@ -24,8 +24,7 @@ class DegreeController < ApplicationController
     if params[:select]
     @select_degree = Degree.search.(params[:cname])
     @search = Degree.all.select(:cname)
-  end
-  
-  end
+    end
+  end 
   
 end

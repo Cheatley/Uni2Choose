@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   #Recommender system routes
   get 'new' => 'searches#new'
+  get 'ques' => 'recquiz#ques'
   get 'result' => 'searches#result'
   
   get 'computer' => 'recquiz#computer'

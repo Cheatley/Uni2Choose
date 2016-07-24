@@ -49,7 +49,7 @@
           <%= degree.duration %><br>
           <%= degree.entry %><br>
           <% if user_signed_in? %><br>
-            <%= link_to "Save", coursepage_path(indcoursepage: degree.id), :"data-no-turbolink" => true, :class => "btn btn-default"%>
+            <%= link_to "Save", coursepage_path(indcoursepage: degree.id), :class => "btn btn-default"%>
           <% else %>
             <p>Login to save this degree to your Profile page.</p>
           <% end %>

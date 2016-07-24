@@ -1,11 +1,14 @@
 class ContactsController < ApplicationController
   
     def new
+      add_crumb "Home", '/'
+      add_crumb "Contact Us", contacts_path, links: false
       @contact = Contact.new
     end
   
     def create
-      
+      add_crumb "Home", '/'
+      add_crumb "Contact Us", contacts_path, links: false
       @contact = Contact.new(params[:contact])
       @contact.request = request
       

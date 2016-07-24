@@ -8,13 +8,12 @@
         
           <h2>Hi <%= @user.name %></h2></br>
                 <%= gravatar_for @user %>
-                    <%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %>
-
+                    <li><%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %></li>
+                    <li><%= link_to "My Saved Searches", save_search_path %></li>
                     <!--limits below to Admin-->
                     <% if current_user.admin? %>
-                      <li><%= link_to "Analysis", analysis_path %></li>
+                      <li><%= link_to "User Analysis", analysis_path %></li>
                       <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
-                      <li><%= link_to "My Saved Searches", save_search_path %></li>
                     <% end %>
 
 

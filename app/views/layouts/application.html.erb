@@ -21,12 +21,13 @@
   
   <%= render 'layouts/navbar' %>
   <%= render 'layouts/header' %>
-  
 
-  
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
+    <!-- break tags because otherwise breadcrumbs are hidden behind the navigation -->
+  <br><br><br><br>
+  <%= render_crumbs separator: ' / ' %>
 
   <%= yield %>
   

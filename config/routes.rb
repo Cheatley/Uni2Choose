@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
+  match "/422", :to => "errors#unprocessable_entity", :via => :all
+
  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
  get '/users/sign_out' => 'devise/sessions#destroy' 
  match 'users/:id/save_search' => 'users#save_search', :as => :save_search, via: 'get'
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
  get 'summerschool' => 'pages#summerschool'
  get 'analysis' => 'analysis#user_analysis'
  get 'courses' => 'degree#index'
- get 'keyword_search' => 'searches#keyword_search'
+ #get 'keyword_search' => 'searches#keyword_search'
  get 'adsearch' => 'searches#adsearch'
  get 'coursepage' => 'degree#coursepage'
  get 'ques' => 'recquiz#ques'

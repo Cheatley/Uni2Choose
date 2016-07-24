@@ -1,6 +1,6 @@
 <!--Analysis Page --> 
 <% provide(:title, 'Register') %>
-
+<a href='/'>Home</a> / Register
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
@@ -40,5 +40,8 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+  <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    <%= link_to "Didn't receive account activation instructions?", new_confirmation_path(resource_name) %><br />
+  <% end -%>
 </div>
 </div>

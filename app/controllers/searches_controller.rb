@@ -1,6 +1,9 @@
 class SearchesController < ApplicationController
 
 
+  add_crumb "Home", '/'
+=begin
+>>>>>>> 6e0bebc5f9f30ee8538ab377f08b2aef7ef90e5e
   def keyword_search
     #Keyword search code
     @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
@@ -8,10 +11,14 @@ class SearchesController < ApplicationController
       @search_degree = Degree.search(params[:search]).order('cname ASC')
     end
   end
+=end
   
 
   def adsearch
     #ransack advanced searches
+
+  def adsearch
+    add_crumb "Detailed Search", adsearch_path, links: false
     @adsearch = Degree.ransack(params[:q])
     ransackresults = @adsearch.result
     

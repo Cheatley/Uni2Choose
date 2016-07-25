@@ -34,45 +34,45 @@ class PagesController < ApplicationController
       if @discipline == "Any"
         discipline= Degree.all
       elsif @discipline == "Medicine and Dentistry"
-        discipline = Degree.where('ucas LIKE ?', "A%")
+        discipline = Degree.where('ucas ILIKE ?', "A%")
       elsif @discipline == "Subjects allied to Medicine"
-        discipline = Degree.where('ucas LIKE ?', "B%")
+        discipline = Degree.where('ucas ILIKE ?', "B%")
       elsif @discipline == "Biological Sciences"
-        discipline = Degree.where('ucas LIKE ?', "C%")
+        discipline = Degree.where('ucas ILIKE ?', "C%")
       elsif @discipline == "Veterinary Sciences, Agriculture and Related Subjects"
-        discipline = Degree.where('ucas LIKE ?', "D%")
+        discipline = Degree.where('ucas ILIKE ?', "D%")
       elsif @discipline == "Physical Sciences"
-        discipline = Degree.where('ucas LIKE ?', "F%")
+        discipline = Degree.where('ucas ILIKE ?', "F%")
       elsif @discipline == "Mathematical Sciences"
-        discipline = Degree.where('ucas LIKE ?', "G%")
+        discipline = Degree.where('ucas ILIKE ?', "G%")
       elsif @discipline == "Engineering"
-        discipline = Degree.where('ucas LIKE ?', "H%")
+        discipline = Degree.where('ucas ILIKE ?', "H%")
       elsif @discipline == "Computer Sciences"
-        discipline = Degree.where('ucas LIKE ?', "I%")
+        discipline = Degree.where('ucas ILIKE ?', "I%")
       elsif @discipline == "Technologies"
-        discipline = Degree.where('ucas LIKE ?', "J%")
+        discipline = Degree.where('ucas ILIKE ?', "J%")
       elsif @discipline == "Architecture, Building and Planning"
-        discipline = Degree.where('ucas LIKE ?', "K%")
+        discipline = Degree.where('ucas ILIKE ?', "K%")
       elsif @discipline == "Social Studies"
-        discipline = Degree.where('ucas LIKE ?', "L%")
+        discipline = Degree.where('ucas ILIKE ?', "L%")
       elsif @discipline == "Law"
-        discipline = Degree.where('ucas LIKE ?', "M%")
+        discipline = Degree.where('ucas ILIKE ?', "M%")
       elsif @discipline == "Business and Administrative Studies"
-        discipline = Degree.where('ucas LIKE ?', "N%")
+        discipline = Degree.where('ucas ILIKE ?', "N%")
       elsif @discipline == "Mass Communication and Documentation"
-        discipline = Degree.where('ucas LIKE ?', "P%")
+        discipline = Degree.where('ucas ILIKE ?', "P%")
       elsif @discipline == "Linguistics, Classics and Related Subjects"
-        discipline = Degree.where('ucas LIKE ?', "Q%")
+        discipline = Degree.where('ucas ILIKE ?', "Q%")
       elsif @discipline == "European Languages, Literature and Related Subjects"
-        discipline = Degree.where('ucas LIKE ?', "R%")
+        discipline = Degree.where('ucas ILIKE ?', "R%")
       elsif @discipline == "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects"
-        discipline = Degree.where('ucas LIKE ?', "T%")
+        discipline = Degree.where('ucas ILIKE ?', "T%")
       elsif @discipline == "Historical and Philosophical Studies"
-        discipline = Degree.where('ucas LIKE ?', "V%")
+        discipline = Degree.where('ucas ILIKE ?', "V%")
       elsif @discipline == "Creative Arts and Design"
-        discipline = Degree.where('ucas LIKE ?', "W%")
+        discipline = Degree.where('ucas ILIKE ?', "W%")
       elsif @discipline == "Education"
-        discipline = Degree.where('ucas LIKE ?', "X%")
+        discipline = Degree.where('ucas ILIKE ?', "X%")
       end
     end
     

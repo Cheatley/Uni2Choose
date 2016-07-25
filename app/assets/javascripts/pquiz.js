@@ -72,9 +72,9 @@ function optionClick(ans) {
 }
 
 function generateResult(answers) {
-	if( answers =="00000" || answers =="00001" || answers=="00010" || answers=="00100" || answers=="01000" || answers=="10000" || answers=="00011" || answers=="00110" || answers=="01100" || answers=="11000" || answers=="00101" || answers=="01010" || answers=="10100" || answers=="01001" || answers=="10010" || answers=="10001" ) return "scivslaw.html";
-	else if( answers=="11111" || answers=="11110" || answers=="11101" || answers=="11011" || answers=="10111" || answers=="01111" || answers=="11100" || answers=="11001" || answers=="10011" || answers=="00111" || answers=="11010" || answers=="10101" || answers=="01011" || answers=="10110" || answers=="01101" || answers=="01110" ) return "designvslaw.html";
-	else return "new.html"; 
+	if( answers =="00000" || answers =="00001" || answers=="00010" || answers=="00100" || answers=="01000" || answers=="10000" || answers=="00011" || answers=="00110" || answers=="01100" || answers=="11000" || answers=="00101" || answers=="01010" || answers=="10100" || answers=="01001" || answers=="10010" || answers=="10001" ) return "sbear.html";
+	else if( answers=="11111" || answers=="11110" || answers=="11101" || answers=="11011" || answers=="10111" || answers=="01111" || answers=="11100" || answers=="11001" || answers=="10011" || answers=="00111" || answers=="11010" || answers=="10101" || answers=="01011" || answers=="10110" || answers=="01101" || answers=="01110" ) return "rpanda.html";
+	else return "eleph.html"; 
 }
 
 

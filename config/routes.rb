@@ -26,7 +26,6 @@ Rails.application.routes.draw do
   get 'coursepage' => 'degree#coursepage'
   
   #quiz route
-  get 'quiz' => 'searches#quiz'
   get 'quiz' => 'personquiz#pquiz'
   
   #contact form routes

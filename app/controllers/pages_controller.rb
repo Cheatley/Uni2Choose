@@ -96,6 +96,7 @@ class PagesController < ApplicationController
   #Recommender System
   def new
   end
+  
 
 end 
 

@@ -22,6 +22,8 @@ gem 'jquery-rails'
 gem 'rails_admin'
 gem 'kaminari'
 
+gem "crummy", "~> 1.8.0"
+
 gem 'shadowbox-rails'
 
 #anthentication system & social media logins

@@ -1,4 +1,6 @@
 class ErrorsController < ApplicationController
+  
+  #error pages redesigned: 404, 422 and 500
   def not_found
     render(:status => 404)
   end

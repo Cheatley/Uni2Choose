@@ -1,16 +1,13 @@
-<!--Functionality of recommender?? --> 
+<!--Home page--> 
 <% provide(:title, 'Uni2choose') %>
 
 <!--containers for design/layout --> 
 <div class = "contenty">
   <div class = "row">
-    
     <div class="col-s-12 col-s-12";>
-      <!--Page information --> 
-      <p>Uni2choose is a website designed to help you find the degree best suited to you, at the University you prefer.</p>
+      <p>Uni2Choose is a website designed to help you find the degree best suited to you. Through our recommender system, quiz, and search functions.</p>
     </div>
 
-    <!--Page information --> 
     <div class="col-s-6 col-s-6";>
       <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
         <div class="hidden">
@@ -26,7 +23,6 @@
             "European Languages, Literature and Related Subjects", 
             "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects", 
             "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: @discipline ) %>
-        
         </div>
         
         <div>
@@ -43,15 +39,32 @@
       <% end %>
     </div>
     
+    <div class="col-s-6 col-s-6";>
+      <%= link_to root_path do %>
+      <%= image_tag "logoplaceholder.png" , :alt => "logo"%>
+      <% end %>    
+    </div>
+  </div>
+    
+  <div class ="row"> 
     <div class="col-s-4 col-s-4";>
-      <div class="home-box">
-        <div class="content2-home-box">
-          <h4>Want to take a quizz and get a degree subject suggested?</h4>
-          <%= link_to "Get a degree suggested to me!", new_path, :class => "btn btn-default" %>
-        </div>
-      </div>
+      <%= link_to new_path do %>
+      <%= image_tag "rec.jpg" , :alt => "recbutton"%>
+      <% end %>
     </div>
     
-
+    <div class="col-s-4 col-s-4";>
+      <%= link_to quiz_path do %>
+      <%= image_tag "quiz.jpg" , :alt => "quizbutton" %>
+      <% end %>
+      
+    </div>
+    <div class="col-s-4 col-s-4";>
+      <%= link_to about_path do %>
+      <%= image_tag "about.jpg" , :alt => "aboutbutton" %>
+      <% end %>
+    </div>
+  </div>
+    
   </div>
 </div>

@@ -19,4 +19,7 @@ Rails.application.configure do
   #Trying with Hartl tutorial
   config.action_mailer.delivery_method = :test
 
+Rails.application.config.assets.precompile += %w( main.js )
+
+
 end

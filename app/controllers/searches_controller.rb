@@ -107,4 +107,6 @@ class SearchesController < ApplicationController
     redirect_to save_search_path
   end
   
+
+  
 end

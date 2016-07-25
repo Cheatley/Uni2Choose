@@ -3,8 +3,6 @@
 @import "shadowbox";
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -31,67 +29,51 @@ $gray-medium-light: #eaeaea;
 
 
 body {
-    background-image: url("bg.jpg");
     background-repeat: no-repeat;
-    background-position: center center;
-	  background-attachment: fixed;
-  	background-size: cover;
+  	background-size: 100% ;
+  	background-color: #f0f0f0 ;
+  	width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 
-
-.header {
-
-	background-color: #e1e8ef;
-	text-align: center;
-	max-height: 30px;;
-    max-width: 100%;
-
+#myNavbar{
+    background-image: url('banner.png');
+    background-size: 100% ;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    padding-right: 20px;
+    padding: 0.8em;
+    font-family:"Segoe UI";
+    color: #f0f0f0;
 }
 
-.header img {
-	text-align: center;
-	max-width: 100%
-}
-
-.headcontainer {
-	width: 970px;
-	margin-left:auto;
-	margin-right: auto;
-	font-size: 20px;
-	font-family:"Segoe UI";
-	float: center;
-	background-color: #f5f8fa;
+#myNavbar a {
+    color: #f0f0f0;
 }
 
 
 
 .navbar .navbar-nav {
+ 
     display: inline-block;
     float: none;
 }
 
 .navbar .navbar-collapse {
-    text-align: center;
+
+    text-align: right;
     font-size: 15px;
-	font-family:"Segoe UI";
+	  font-family:"Segoe UI";
 }
 
 
 
 textarea {
   resize: vertical;
-}
-
-.center {
-  text-align: left;
-  background-color: #0b0c0c;
-  padding: 0px;
-
-  h1 {
-    margin-bottom: 10px;
-
-  }
 }
 
 /* typography */
@@ -102,37 +84,37 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 3em;
-  font:Impact;
+  font-family:"Segoe UI";
   text-transform: uppercase;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: center;
-  color: $gray-light;
+  color: #010916;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 3em;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  font-family:"Segoe UI";
+  color: #010916;
 }
 
 h3 {
-  font-size: 3em;
-  font:Impact;
-  text-transform: uppercase;
+  font-size: 1.5em;
+  font-family:"Segoe UI";
   letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-  color: $gray-light;
+  margin-bottom: 3em;
+  text-align: left;
+  color: #010916;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  color: $gray-light;
+  color: #010916;
+  font-family:"Segoe UI";
+  text-align: left;
 }
 
 
@@ -163,82 +145,27 @@ p {
 }
 }
 
-.bleh {
-      img{
-    width: 100%;
-    height: auto;
-}
-}
-
-.woop {
-      img{
-    width: 120px;
-    height: auto;
-    padding: 2px;
-}
-}
-
-/* footer */
-.footer {
-    width: 100%;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    position: relative;
-    background-color: #0b0c0c;
-    text-align: center;
-}
-
-.container
-{
-  padding: 0px ;
-
-}
 
 
 .btn
 {
-	border-top:		2px solid #a3ceda;
-	border-left:		2px solid #a3ceda;
-	border-right:		2px solid #4f6267;
-	border-bottom:		2px solid #4f6267;
-	padding:		10px 20px !important;
-	font-size:		14px !important;
-	background-color:	#d8f0f3;
 
+	padding:		0.5em 0.5em !important;
+	font-size:		15px !important;
+  color: #010916;
+  font-family:"Segoe UI";
 	font-weight:		bold;
 	color:			#2d525d;
-}
-
-/* sidebar */
-
-aside {
-  section.user_info {
-    margin-top: 20px;
+	
+	  &:hover {
+    color: white;
+    text-decoration: none;
   }
-  section {
-    padding: 0px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
+	
 }
 
 .gravatar {
-  float: left;
+  float: center;
   margin-right: 10px;
 
 }
@@ -288,14 +215,6 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-
-  margin-bottom: 15px;
-  @include box_sizing;
-
-}
 
 input {
   height: auto !important;
@@ -347,56 +266,7 @@ input {
   }
 }
 
-/* microposts */
 
-.microposts {
-  list-style: none;
-  padding: 20;
-  li {
-    padding: 10px 0;
-    border-top: 5px solid #171717;
-  }
-  .user {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-span.picture {
-  margin-top: 10px;
-  input {
-    border: 0;
-  }
-}
-
-* {
-    box-sizing: border-box;
-}
 
 
 
@@ -408,12 +278,12 @@ span.picture {
 
 .row {
   position: relative;
-  top: 20px;
+  top: 10px;
 }
 
 [class*="col-"] {
     float: left;
-    padding: 15px;
+    padding: 1.2em;
     width: 100%;
 }
 @media only screen and (min-width: 600px) {
@@ -478,30 +348,21 @@ span.picture {
 
 
 .navbar-fixed-top {
-	background-color: #e1e8ef;
-	text-align: center;
+	text-align: right;
 	height: auto;
 	font-size: 10px;
-    max-width: 100%;
-	opacity: 0.85
+  max-width: 100%;
+  font-family:"Segoe UI";
+  color: #010916;
 
 
 
 }
+
+
 
 .navbar-brand {
 	background-color: #e1e8ef;
-	text-align: center;
-	height: auto;
-	font-size: 10px;
-    max-width: 100%;
-	opacity: 0.8
-
-
-}
-
-.navbar-footer {
-	background-color: #e1e8ef;
 	text-align: right;
 	height: auto;
 	font-size: 10px;
@@ -510,118 +371,71 @@ span.picture {
 
 
 }
-.footer {
-
-	background-color: #e1e8ef;
-	text-align: right;
-	height: auto;
-	font-size: 10px;
-    max-width: 100%;
-	opacity: 0.8;
-	padding-right:20px;
 
 
+#footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 1.5em;
+    margin-top: -3em;
+   
+    
 }
 
-
-
-.navbar-footer {
-
-	font-size: 10px;
-	text-align: center;
-
+.footer p {
+    font-size: 12px;
+    text-align: right;
+    margin-right: 20px;
+  
+  } 
+  
+.footer h1 {
+    font-size: 12px;
+    text-align: center;
+   
+  
 }
-
-.contentcon {
-	background-color: #dfdfdf;
-	margin-top: 150px;
-	margin-bottom: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
-	padding: 25px;
-	opacity: 0.95;
-
-
-	padding-right: 50px;
-	padding-left: 50px;
-	text-align: left;
-    font-size: 15px;
-	font-family: "Verdana, Geneva, sans-serif"
-
-
-
-}
-
 
 .contenty {
-	background-color: #dfdfdf;
-	margin-top: 100px;
-	margin-bottom: 50px;
-	margin-left: 30px;
-	margin-right: 30px;
-	padding: 15px;
-	opacity: 0.8;
-
-
-	padding-right: 30px;
-	padding-left: 30px;
-	text-align: left;
-    font-size: 15px;
-	font-family: "Verdana, Geneva, sans-serif"
-
-
+	background-color: #f0f0f0;
+	margin-top: 3.2em;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 2em;
 
 }
 
 
 .contenty img {
 
-	text-align: center;
-	max-height: 400px;
-	width: 100%;
+	max-height: 250px;
+	width: 95%;
 	min-width: 10px
-
-
 
 }
 
 
 .signinstyle {
-	background-color: #dfdfdf;
-	margin-top: 150px;
-	margin-bottom: 150px;
-	margin-left: 150px;
-	margin-right: 150px;
-	padding: 25px;
+	margin-left: 1em;
+	margin-right: 1em;
+	padding: 1em;
 	opacity: 0.8;
-
-
-	padding-right: 150px;
-	padding-left: 150px;
-	padding-bottom: 50px;
-	text-align: left;
-    font-size: 15px;
-	font-family: "Verdana, Geneva, sans-serif"
-
-
-
+	padding-right: 2em;
+	padding-left: 2em;
+  font-family:"Segoe UI";
 }
-
-
-
-
 
 
 table  {
     width: 100%;
     font-size: 15px;
-
     border-spacing: 20px;
     min-width: 250px;
     border-collapse: collapse;
-	text-align: left;
+  	text-align: left;
     font-size: 15px;
-	font-family: "Verdana, Geneva, sans-serif"
+    font-family:"Segoe UI";
 }
 
 table  img {
@@ -738,23 +552,6 @@ only screen and (max-width: 760px),
   text-align: left;
 }
 
-#wrapAll h1 { 
-  font-size: 2em;
-  font-weight: 100;
-  text-transform: uppercase;
-  margin: 0px;
- 
-  top: 25px;
-  left: 36px;
- }
-
-#wrapAll span  { 
-  display: block;
-  font-size: 2em;
-  font-weight: 900;
-  font-size: 3.2em;
-  line-height:65px;
-}
 
 /* Advanced Search */
 .home-box {
@@ -765,16 +562,14 @@ only screen and (max-width: 760px),
   border-radius: 25px;
 }
 
-/*
-.content-home-box {
-  padding: 5px;
-  text-align: center;
-  margin-top: 5%;
-}
-*/
 
-.content2-home-box {
-  padding: 5px;
-  text-align: center;
-  margin-top: 15%;
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }

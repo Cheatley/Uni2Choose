@@ -60,7 +60,6 @@ Rails.application.routes.draw do
   get 'scivslang' => 'recquiz#scivslang'
   get 'scivshuman' => 'recquiz#scivshuman'
   
-  get 'sci' => 'recquiz#sci'
   get 'human' => 'recquiz#human'
   get 'humanvscomputer' => 'recquiz#humanvscomputer'
   get 'humanvsmedicine' => 'recquiz#humanvsmedicine'

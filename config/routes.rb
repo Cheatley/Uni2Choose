@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'coursepage' => 'degree#coursepage'
   
   #quiz route
-  get 'quiz' => 'searches#quiz'
+  get 'quiz' => 'personquiz#pquiz'
   
   #contact form routes
   match '/contacts',     to: 'contacts#new',             via: 'get'
@@ -60,7 +60,6 @@ Rails.application.routes.draw do
   get 'scivslang' => 'recquiz#scivslang'
   get 'scivshuman' => 'recquiz#scivshuman'
   
-  get 'sci' => 'recquiz#sci'
   get 'human' => 'recquiz#human'
   get 'humanvscomputer' => 'recquiz#humanvscomputer'
   get 'humanvsmedicine' => 'recquiz#humanvsmedicine'

@@ -39,4 +39,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
 Rails.application.config.assets.precompile += %w( main.js )
+Rails.application.config.assets.precompile += %w( banner.js )
 end

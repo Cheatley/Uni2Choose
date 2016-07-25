@@ -4,11 +4,11 @@
 <a href="/">Home</a> / <%= link_to 'My Profile', current_user %> / User Analysis
 <!--containers for design/layout --> 
 <div class = "signinstyle">
-  <%= link_to "Back", :back %>
+  
     
   <div class = "row">
     <!--Page information --> 
-    
+    <%= link_to "Back", :back %>
       <h1>User Analysis</h1>
         <p><b>User Gender Proportion:</b></p>
         <%= pie_chart @users.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>

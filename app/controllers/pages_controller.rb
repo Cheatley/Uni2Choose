@@ -86,6 +86,14 @@ class PagesController < ApplicationController
     end
   end
 
+def about
+end
+
+def summerschool
+  add_crumb "Home", '/'
+  add_crumb "Prepare for University", summerschool_path, links: false
+end
+
   #About page
   def about
     #breadcrumbs
@@ -96,6 +104,7 @@ class PagesController < ApplicationController
   #Recommender System
   def new
   end
+  
 
 end 
 

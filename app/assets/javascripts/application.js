@@ -17,5 +17,6 @@
 //= require bootstrap/tooltip
 //= require bootstrap/popover
 //= require chartkick
+//= require banner.js
 //= require_tree .
 

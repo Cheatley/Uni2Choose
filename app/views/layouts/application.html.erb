@@ -22,14 +22,16 @@
   
   <%= render 'layouts/navbar' %>
 
+  <div class = "contenty">
   <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
-    <!-- break tags because otherwise breadcrumbs are hidden behind the navigation -->
-  <br><br><br><br>
-  <%= render_crumbs separator: ' / ' %>
+ 
 
   <%= yield %>
+  </div>
+
 
   <%= render 'layouts/footer' %>
   
@@ -47,6 +49,11 @@
     Shadowbox.init();
   </script>
   <!-- Map pop up script ends here -->
-  
+  <%= javascript_include_tag 'banner.js'  %>
+<script type='text/javascript'>
+		window.onload = function(){
+		  generate();
+		};
+	</script>
 </body>
 </html>

@@ -2,13 +2,13 @@
 <% provide(:title, 'Uni2choose') %>
 
 <!--containers for design/layout --> 
-<div class = "contenty">
-  <div class = "row">
-    <div class="col-s-12 col-s-12";>
-      <p>Uni2Choose is a website designed to help you find the degree best suited to you. Through our recommender system, quiz, and search functions.</p>
-    </div>
 
-    <div class="col-s-6 col-s-6";>
+  <div class = "row">
+    <div class="clearfix visible-xs"></div>
+
+      <br>
+      <br>
+      <br>
       <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
         <div class="hidden">
           <%= label_tag :uregion, "Refine By Region:" %><br>
@@ -35,36 +35,33 @@
             <%= f.text_field :uname_cont, placeholder: "University Name" %>
           </div>
         </div>
-        <div class="actions"><%= f.submit "Search", :class => "btn btn-default" %></div>
+        <div class="actions"><%= f.submit "Search", :class => "btn" %></div>
       <% end %>
-    </div>
-    
-    <div class="col-s-6 col-s-6";>
-      <%= link_to root_path do %>
-      <%= image_tag "logoplaceholder.png" , :alt => "logo"%>
-      <% end %>    
-    </div>
+  
+
+  </div>
+  <div class ="row">
+<%= image_tag "line.png" , :alt => "logo"%>    
   </div>
     
   <div class ="row"> 
     <div class="col-s-4 col-s-4";>
       <%= link_to new_path do %>
-      <%= image_tag "rec.jpg" , :alt => "recbutton"%>
+      <%= image_tag "course.png" , :alt => "recbutton"%>
       <% end %>
     </div>
     
     <div class="col-s-4 col-s-4";>
       <%= link_to quiz_path do %>
-      <%= image_tag "quiz.jpg" , :alt => "quizbutton" %>
+      <%= image_tag "quiz.png" , :alt => "quizbutton" %>
       <% end %>
       
     </div>
     <div class="col-s-4 col-s-4";>
       <%= link_to about_path do %>
-      <%= image_tag "about.jpg" , :alt => "aboutbutton" %>
+      <%= image_tag "uni.png" , :alt => "aboutbutton" %>
       <% end %>
     </div>
   </div>
     
   </div>
-</div>

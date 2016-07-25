@@ -92,10 +92,6 @@ class PagesController < ApplicationController
     add_crumb "Home", '/'
     add_crumb "Prepare for University", about_path, links: false
   end
-  
-  #Recommender System
-  def new
-  end
 
 end 
 

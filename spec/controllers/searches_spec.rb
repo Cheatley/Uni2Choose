@@ -2,9 +2,13 @@ require "rails_helper"
 
 RSpec.describe SearchesController, :type => :controller do
   describe "advanced search" do
-    it "displays the scotland regions map" do
+    
+    it "renders the advanced search template" do
       get :adsearch
-      response.should render_template(:partial => 'regions')
+      expect(response).to render_template("adsearch")
+     
+
     end
+    
   end
 end

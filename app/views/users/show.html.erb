@@ -6,8 +6,10 @@
   <div class = "row">
     <%= link_to "Back", :back %>
     <!--Page information --> 
-    <h2>Hi <%= @user.name %></h2></br>
-      <%= gravatar_for @user %>
+    <h2>Hi <%= @user.name %></h2>
+    									<%= image_tag "line.png" , :alt => "logo"%>  
+<div class="gravatar_pro">
+      <%= gravatar_for @user %></div>
         <li><%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %></li>
         <li><%= link_to "My Saved Searches", save_search_path %></li>
         <!--limits below to Admin-->

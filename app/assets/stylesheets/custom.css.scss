@@ -88,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   font-family:"Segoe UI";
+  font-style:bold;
   text-transform: uppercase;
   text-align: center;
   color: #010916;
@@ -96,7 +97,7 @@ h1 {
 h2 {
   font-size: 2em;
   letter-spacing: -1px;
-  margin-bottom: 3em;
+ 
   text-align: center;
   font-weight: normal;
   font-family:"Segoe UI";
@@ -110,6 +111,14 @@ h3 {
   margin-bottom: 3em;
   text-align: left;
   color: #010916;
+}
+
+h4 {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #010916;
+  font-family:"Segoe UI";
+  text-align: center;
 }
 
 p {
@@ -169,17 +178,24 @@ p {
 
 .gravatar {
   float: center;
-  margin-right: 10px;
 
+   width: 150px;
+    height: 150px;
+    padding: 5px;
 }
 
 .gravatar_edit {
   margin-top: 15px;
+  width: 200px;
+  height: auto;
+  float: center;
+  padding: 1em;
+  text-align: center;
 }
 
 .stats {
-
-  margin-top: 0;
+  
+    margin-top: 0;
   padding: 0;
   a {
     float: left;
@@ -204,6 +220,8 @@ p {
 
   margin-top: 10px;
   .gravatar {
+    width: 250px;
+    height: auto;
     margin: 1px 1px;
 
   }
@@ -355,14 +373,8 @@ input {
 	height: auto;
 	font-size: 10px;
   max-width: 100%;
-<<<<<<< HEAD
   font-family:"Segoe UI";
   color: #010916;
-=======
-	opacity: 0.85
->>>>>>> f720da786543b743e3daa91d9de0dc46e3a3aede
-
-
 
 }
 
@@ -406,7 +418,8 @@ input {
 
 .contenty {
 	background-color: #f0f0f0;
-	margin-top: 3.2em;
+	margin-top: 3.3em;
+	padding-top: 1em ;
 	margin-left: 10%;
 	margin-right: 10%;
 	padding: 2em;
@@ -579,4 +592,12 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    
+}
+
+#wrapper {
+  float: center;
+  text-align:center;
+  
+  
 }

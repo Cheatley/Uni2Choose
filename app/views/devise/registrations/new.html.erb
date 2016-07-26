@@ -2,14 +2,18 @@
 <% provide(:title, 'Register') %>
 
 <!-- breadcrumbs -->
+<br>
 <a href='/'>Home</a> / Register
 
 <!--containers for design/layout --> 
 <div class = "signinstyle">
   <div class = "row">
     <!--Page information --> 
-    <h2>Register</h2>
-
+    <h1>Register</h1>
+        <%= image_tag "line.png" , :alt => "line break"%>    
+        </div>
+        <div class = "row">
+     <div class="col-s-6 col-s-6";>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
     
@@ -35,12 +39,25 @@
         <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%= f.input :password_confirmation, required: true %>
       </div>
-    
-      <div class="form-actions">
+       <div class="form-actions">
         <%= f.button :submit, "Sign up" %>
       </div>
       <% end %>
+      
+      </div>
     
+
+      <div class="clearfix visible-xs"></div>
+    <div class="col-s-6 col-s-6";> 
+      <p>Register with Facebook:</p>
+      <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png", :style => "height: 120px; width: 120px;"), omniauth_authorize_path(resource_name, :facebook) %><br><br>
+      <p>Register with Twitter:</p>
+      <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/738px-Twitter_bird_logo_2012.svg.png", :style => "height: 100px; width: 120px;"), omniauth_authorize_path(resource_name, :twitter) %><br />
+    </div>
+    
+    <div class="row"
+     
+    </div>
       <%= render "devise/shared/links" %>
       
       <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

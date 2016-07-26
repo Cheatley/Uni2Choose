@@ -30,8 +30,4 @@ Rails.application.config.assets.precompile += %w( recq/humanvslang.js )
 Rails.application.config.assets.precompile += %w( recq/computervsmedicine.js )
 Rails.application.config.assets.precompile += %w( recq/computervslang.js )
 Rails.application.config.assets.precompile += %w( recq/medicinevslang.js )
-<<<<<<< HEAD
-Rails.application.config.assets.precompile += %w( banner.js )
-=======
 Rails.application.config.assets.precompile += %w( pquiz.js )
->>>>>>> f720da786543b743e3daa91d9de0dc46e3a3aede

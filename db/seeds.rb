@@ -15,7 +15,77 @@ User.create!(name: "Nathalie",
             password_confirmation: "password",
             admin:     true,
             confirmed_at: Time.zone.now)
+
+User.create!(name: "John",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Male",
+            postcode: "AB24 3EX",
+            email: "john@john.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
              
+User.create!(name: "Maria",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Female",
+            postcode: "AB24 3EX",
+            email: "maria@maria.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+             
+User.create!(name: "Mike",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Male",
+            postcode: "AB24 3EX",
+            email: "mike@mike.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+             
+User.create!(name: "Emilie",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Female",
+            postcode: "AB24 3EX",
+            email: "emilie@emilie.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+            
+User.create!(name: "Edward",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Male",
+            postcode: "AB24 3EX",
+            email: "edward@edward.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+             
+User.create!(name: "Lina",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Female",
+            postcode: "AB24 3EX",
+            email: "lina@lina.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+User.create!(name: "Jason",
+            dob: DateTime.new(1993, 9, 13),
+            gender: "Female",
+            postcode: "AB24 3EX",
+            email: "jason@jason.com",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
+                          
+
 User.create!(name: "Bruce",
             dob: DateTime.new(2015, 6, 22),
             gender: "Male",

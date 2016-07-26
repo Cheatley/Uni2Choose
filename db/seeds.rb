@@ -23,7 +23,7 @@ User.create!(name: "John",
             email: "john@john.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
              
 User.create!(name: "Maria",
@@ -33,7 +33,7 @@ User.create!(name: "Maria",
             email: "maria@maria.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
              
 User.create!(name: "Mike",
@@ -43,7 +43,7 @@ User.create!(name: "Mike",
             email: "mike@mike.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
              
 User.create!(name: "Emilie",
@@ -53,7 +53,7 @@ User.create!(name: "Emilie",
             email: "emilie@emilie.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
             
 User.create!(name: "Edward",
@@ -63,7 +63,7 @@ User.create!(name: "Edward",
             email: "edward@edward.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
              
 User.create!(name: "Lina",
@@ -73,7 +73,7 @@ User.create!(name: "Lina",
             email: "lina@lina.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
 User.create!(name: "Jason",
             dob: DateTime.new(1993, 9, 13),
@@ -82,7 +82,7 @@ User.create!(name: "Jason",
             email: "jason@jason.com",
             password:              "password",
             password_confirmation: "password",
-            admin:     true,
+            admin:     false,
             confirmed_at: Time.zone.now)
                           
 

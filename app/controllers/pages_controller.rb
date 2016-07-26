@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         uregion = Degree.all.where(uname: @northern)
       elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
-      elsif @uregion == "South from Dundee"
+      elsif @uregion == "Southern"
         uregion = Degree.all.where(uname: @southern)
       end
     end

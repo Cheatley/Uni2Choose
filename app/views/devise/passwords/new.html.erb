@@ -2,15 +2,19 @@
 <% provide(:title, "Reset Password") %>
 
 <!-- breadcrumbs -->
+<br>
 <a href="/">Home</a> / <%= link_to "Login", new_session_path(resource_name) %> / Forgot Password
 
 <div class = "signinstyle">
   <div class = "row">
     <%= link_to "Back", :back %>
-    <h2>Forgot your password?</h2>
+    <h1>Forgot your password?</h1>
+            <%= image_tag "line.png" , :alt => "line break"%>    
+</div>
+<div class = "row">
     
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= f.error_notification %>
+      <%= f.error_notification %><br>
     
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
@@ -18,6 +22,8 @@
     
       <div class="form-actions">
         <%= f.button :submit, "Send me reset password instructions" %>
+        <br>
+        <br>
       </div>
     <% end %>
     

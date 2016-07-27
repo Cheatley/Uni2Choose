@@ -3,26 +3,24 @@
 
 
 <!--containers for design/layout --> 
-<div class = "signinstyle">
+
   <div class = "row">
     <!--Page information --> 
 
-
 	<div id="wrapAll">
 		<div id="wrapper">
-		
-				<div class="ques-wrap">
-					<h2 id="ques">This is question</h2>
-					<input class="btn1" type="submit" id="opt1" value="Option 1" onclick="optionClick('1')">
-					<input class="btn2" type="submit" id="opt2" value="Option 2" onclick="optionClick('0')">
+			<div class="ques-wrap">
+				<h2 id="ques">This is question</h2>
+					<%= image_tag "line.png" , :alt => "logo"%>   
+					<input class="btn btn-default" type="submit" id="opt1" value="Option 1" onclick="optionClick('1')">
+					<input class="btn btn-default" type="submit" id="opt2" value="Option 2" onclick="optionClick('0')">
 					<div class="clear"></div>
-			
+					<br><br><br><br><br><br><br>
 			</div>
 		</div>
-	</div>
-	
-	</div>
-	</div>
+  	</div>
+  </div>
+
 <%= javascript_include_tag 'recq/computervsmedicine'  %>
 <script type='text/javascript'>
 		window.onload = function(){

@@ -3,37 +3,37 @@
 var data = {
 	questions: [{
 			question: "Which best describes you?",
-			options: [ "Organised" , "Creative", "Flexible", "Resourceful" ]
+			options: [ "Creative", "Flexible", "Organised" , "Resourceful"]
 		}, {
 			question: "You are faced with a problem, how do you overcome it:",
-			options: [ "Using my wit and intuition" , "By thinking up a plan of action and carrying it out", "Ask for help", "Have someone else solve it for you"]
+			options: [ "Ask for help", "Using my wit and intuition", "By thinking up a plan of action and carrying it out", "Have someone else solve it for you"]
 		}, {
 			question: "If you were stranded on a desert island what would you take?",
-			options: [ "Survival Guide" , "Swiss Army Knife", "Diary", "A friend"]
+			options: [ "A friend", "Swiss Army Knife", "Survival Guide", "Diary" ]
 		}, {
 			question: "You have the day off, how do you spend it:",
 			options: [ "Playing games" , "In bed having a long lie", "Studying", "Reading" ]
 		}, {
 			question: "Your ideal holiday would be:",
-			options: [ "Somewhere fun, like Disneyland" , "Somewhere historic, like the Pyramids", "Somewhere I can lay in the sun and read a book", "Anywhere but here"]
+			options: [ "Somewhere fun, like Disneyland" , "Somewhere historic, like the Pyramids", "Somewhere I can lay in the sun and read a book", "Anywhere but here" ]
 	
 		}, {
 		    question: "My room is:",
-			options: [ "Messy enough you could get lost in it" , "Hidden under a pile of clothes and plates", "Lightly seasoned with clothes and towels", "Sparkling"]
+			options: [ "Hidden under a pile of clothes and plates", "Messy enough you could get lost in it", "Sparkling", "Lightly seasoned with clothes and towels"]
 	
 		}, {
 		    question: "You learn best by:",
-			options: [ "Getting stuck in, hands on experience" , "Reading the instructions or manual", "Being told what to do", "Discussing with peers"]
+			options: [ "Getting stuck in, hands on experience" , "Discussing with peers", "Reading the instructions or manual", "Being told what to do" ]
 	
 		}, {
 		    question: "In class you can be found:",
-			options: [ "Distracting others and making them laugh" , "Doodling on your jotter", "Listening and taking notes", "Asking the teacher questions"]
+			options: [ "Doodling on your jotter", "Distracting others and making them laugh", "Asking the teacher questions", "Listening and taking notes" ]
 	
 		}, {question: "If the world was going to end tomorrow, how would you spend today?",
-			options: [ "Learning as much as I could about the world" , "Having as much fun as possible", "Living out a dream", "Spending time with loved ones"]
+			options: [ "Spending time with loved ones", "Living out a dream", "Learning as much as I could about the world", "Having as much fun as possible" ]
 	
 		}, {question: "Another quiz, why are you always procrastinating?! ",
-			options: [ "I'm not, I've finished all my work already" , "Nothing better to do", "You don't know me, man!", "Social media, I'm addicted"]
+			options: [ "Social media, I'm addicted", "You don't know me, man!", "I'm not, I've finished all my work already", "Nothing better to do"]
 	
 		}],
 
@@ -58,7 +58,7 @@ function generate(){
 }
 
 function optionClick(ans) {
-	if(qIndex%1==0){
+	if(qIndex%2==0){
 		aString+=ans;
 		index++;
 	}

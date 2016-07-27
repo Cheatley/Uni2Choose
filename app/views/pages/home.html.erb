@@ -5,10 +5,10 @@
 
   <div class = "row">
     <div class="clearfix visible-xs"></div>
-
+    <div class="col-s-6 col-s-6";>
       <br>
       <br>
-      <br>
+<p>Uni2Choose is a website designed to help you find the degree best suited to you. Through our recommender and personality quizzes and search functionalities.</p>      <br>
       <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
         <div class="hidden">
           <%= label_tag :uregion, "Refine By Region:" %><br>
@@ -24,7 +24,7 @@
             "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects", 
             "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: @discipline ) %>
         </div>
-        
+    
         <div>
           <%= f.text_field :cname_cont, placeholder: "Search for a Degree" %>
         </div>
@@ -35,13 +35,18 @@
             <%= f.text_field :uname_cont, placeholder: "University Name" %>
           </div>
         </div>
-        <div class="actions"><%= f.submit "Search", :class => "btn" %></div>
+        <div class="actions"><%= f.submit "Search", :class => "btn btn-default" %></div>
       <% end %>
   
-
+    </div>
+        <div class="col-s-6 col-s-6";>
+          
+<%= image_tag "logo.png" , :alt => "logo"%>    
+          </div>
   </div>
+  
   <div class ="row">
-<%= image_tag "line.png" , :alt => "logo"%>    
+<%= image_tag "line.png" , :alt => "line break"%>    
   </div>
     
   <div class ="row"> 
@@ -55,6 +60,8 @@
       <%= link_to quiz_path do %>
       <%= image_tag "quiz.png" , :alt => "quizbutton" %>
       <% end %>
+      
+      
       
     </div>
     <div class="col-s-4 col-s-4";>

@@ -2,11 +2,14 @@
 <% provide(:title, 'My Saved Searches') %>
 
 <!--containers for design/layout --> 
-<div class = "signinstyle">
+
   <div class = "row">
     <!--Page information -->    
+<br>
     <%= link_to "Back", :back %>
     <h1>My Saved Searches</h1>
+    <%= image_tag "line.png" , :alt => "logo"%>  
+
       <% if @showsearches != nil %>
       <table>
         <thead>
@@ -30,4 +33,3 @@
       <br>
       <%= link_to 'Delete My Saved Searches', search_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
   </div>
-</div>

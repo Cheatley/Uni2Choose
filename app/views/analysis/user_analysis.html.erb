@@ -1,23 +1,33 @@
 <!--User Analysis Page for admin users--> 
 <% provide(:title, 'User Analysis') %>
 <!--breadcrumbs-->
+<br>
 <a href="/">Home</a> / <%= link_to 'My Profile', current_user %> / User Analysis
 <!--containers for design/layout --> 
 <div class = "signinstyle">
-  
+ 
+  <%= link_to "Back", :back %>
     
   <div class = "row">
     <!--Page information --> 
-    <%= link_to "Back", :back %>
+    
       <h1>User Analysis</h1>
+      
+          <%= image_tag "line.png" , :alt => "line break"%>    
+</div>
+<div class = "row">
+
         <p><b>User Gender Proportion:</b></p>
         <%= pie_chart @users.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
-        
+                  <%= image_tag "line.png" , :alt => "line break"%>    
+
         <p><b>Users' Saved Degrees:</b></p>
         <%= column_chart @searches.group("cname").count, {library: {backgroundColor:'transparent'}} %></br>
-        
+                  <%= image_tag "line.png" , :alt => "line break"%>    
+
         <p><b>Use of Social Media login:</b></p>
         <%= column_chart @socialmedialogin.group("provider").count, {library: {backgroundColor:'transparent'}} %></br>
+          <%= image_tag "line.png" , :alt => "line break"%>    
 
         <p><b>Use of Social Media login:</b></p>
         <%= column_chart @postcodes.group("postcode").count, {library: {backgroundColor:'transparent'}} %></br>

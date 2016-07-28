@@ -7,7 +7,6 @@ RSpec.describe PagesController, :type => :controller do
       get :home
       expect(response).to render_template("home")
     end
-    
     it "should contain the links to" do
       {:get => "/adsearch" }.should be_routable
       {:get => "/new" }.should be_routable      

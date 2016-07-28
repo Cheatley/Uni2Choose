@@ -27,7 +27,7 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   config.omniauth :facebook, "1099941930077096", "b0c1ded4a34c3a13b98b8505466ae628"
   config.omniauth :twitter, "uW8KghdpdozBy9n1Cf3fvLS9M", "gEWd9fFZ1vUddjLMVmSLEQ6Su591yTpU32o0rvH6SV0IUbMIqG"
-  
+
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -238,7 +238,7 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = :get
+  config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

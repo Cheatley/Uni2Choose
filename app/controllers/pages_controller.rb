@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         uregion = Degree.all.where(uname: @northern)
       elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
-      elsif @uregion == "Southern"
+      elsif @uregion == "South from Dundee"
         uregion = Degree.all.where(uname: @southern)
       end
     end
@@ -34,45 +34,45 @@ class PagesController < ApplicationController
       if @discipline == "Any"
         discipline= Degree.all
       elsif @discipline == "Medicine and Dentistry"
-        discipline = Degree.where('ucas ILIKE ?', "A%")
+        discipline = Degree.where('ucas LIKE ?', "A%")
       elsif @discipline == "Subjects allied to Medicine"
-        discipline = Degree.where('ucas ILIKE ?', "B%")
+        discipline = Degree.where('ucas LIKE ?', "B%")
       elsif @discipline == "Biological Sciences"
-        discipline = Degree.where('ucas ILIKE ?', "C%")
+        discipline = Degree.where('ucas LIKE ?', "C%")
       elsif @discipline == "Veterinary Sciences, Agriculture and Related Subjects"
-        discipline = Degree.where('ucas ILIKE ?', "D%")
+        discipline = Degree.where('ucas LIKE ?', "D%")
       elsif @discipline == "Physical Sciences"
-        discipline = Degree.where('ucas ILIKE ?', "F%")
+        discipline = Degree.where('ucas LIKE ?', "F%")
       elsif @discipline == "Mathematical Sciences"
-        discipline = Degree.where('ucas ILIKE ?', "G%")
+        discipline = Degree.where('ucas LIKE ?', "G%")
       elsif @discipline == "Engineering"
-        discipline = Degree.where('ucas ILIKE ?', "H%")
+        discipline = Degree.where('ucas LIKE ?', "H%")
       elsif @discipline == "Computer Sciences"
-        discipline = Degree.where('ucas ILIKE ?', "I%")
+        discipline = Degree.where('ucas LIKE ?', "I%")
       elsif @discipline == "Technologies"
-        discipline = Degree.where('ucas ILIKE ?', "J%")
+        discipline = Degree.where('ucas LIKE ?', "J%")
       elsif @discipline == "Architecture, Building and Planning"
-        discipline = Degree.where('ucas ILIKE ?', "K%")
+        discipline = Degree.where('ucas LIKE ?', "K%")
       elsif @discipline == "Social Studies"
-        discipline = Degree.where('ucas ILIKE ?', "L%")
+        discipline = Degree.where('ucas LIKE ?', "L%")
       elsif @discipline == "Law"
-        discipline = Degree.where('ucas ILIKE ?', "M%")
+        discipline = Degree.where('ucas LIKE ?', "M%")
       elsif @discipline == "Business and Administrative Studies"
-        discipline = Degree.where('ucas ILIKE ?', "N%")
+        discipline = Degree.where('ucas LIKE ?', "N%")
       elsif @discipline == "Mass Communication and Documentation"
-        discipline = Degree.where('ucas ILIKE ?', "P%")
+        discipline = Degree.where('ucas LIKE ?', "P%")
       elsif @discipline == "Linguistics, Classics and Related Subjects"
-        discipline = Degree.where('ucas ILIKE ?', "Q%")
+        discipline = Degree.where('ucas LIKE ?', "Q%")
       elsif @discipline == "European Languages, Literature and Related Subjects"
-        discipline = Degree.where('ucas ILIKE ?', "R%")
+        discipline = Degree.where('ucas LIKE ?', "R%")
       elsif @discipline == "Eastern, Asiatic, African, American and Australasian Languages, Literature and Related Subjects"
-        discipline = Degree.where('ucas ILIKE ?', "T%")
+        discipline = Degree.where('ucas LIKE ?', "T%")
       elsif @discipline == "Historical and Philosophical Studies"
-        discipline = Degree.where('ucas ILIKE ?', "V%")
+        discipline = Degree.where('ucas LIKE ?', "V%")
       elsif @discipline == "Creative Arts and Design"
-        discipline = Degree.where('ucas ILIKE ?', "W%")
+        discipline = Degree.where('ucas LIKE ?', "W%")
       elsif @discipline == "Education"
-        discipline = Degree.where('ucas ILIKE ?', "X%")
+        discipline = Degree.where('ucas LIKE ?', "X%")
       end
     end
     
@@ -86,31 +86,12 @@ class PagesController < ApplicationController
     end
   end
 
-  def about
-  end
-
-  def summerschool
-    add_crumb "Home", '/'
-    add_crumb "Prepare for University", summerschool_path, links: false
-  end
-
   #About page
   def about
     #breadcrumbs
     add_crumb "Home", '/'
     add_crumb "Prepare for University", about_path, links: false
   end
-  
-  #Recommender System
-  def new
-  end
-  
-  def help
-  end
-  
-  def disclaimer
-  end
-  
 
 end 
 

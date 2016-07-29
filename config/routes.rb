@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'quiz' => 'personquiz#pquiz'
   get 'sbear' => 'personquiz#sbear'
   get 'rpanda' => 'personquiz#rpanda'
+  get 'alpach' => 'personquiz#alpach'
+  get 'eleph' => 'personquiz#eleph'
   
   #contact form routes
   match '/contacts',     to: 'contacts#new',             via: 'get'
@@ -43,6 +45,16 @@ Rails.application.routes.draw do
   get 'new' => 'searches#new'
   get 'ques' => 'recquiz#ques'
   get 'result' => 'searches#result'
+  get 'bio' => 'quiz#bio'
+  get 'phys' => 'quiz#phys'
+  get 'math' => 'quiz#math'
+  get 'hum' => 'quiz#hum'
+  get 'law' => 'quiz#law'
+  get 'lin' => 'quiz#lin'
+  get 'lan' => 'quiz#lan'
+  get 'art' => 'quiz#art'
+  get 'draw' => 'quiz#draw'
+  get 'mainquiz' => 'quiz#mainquiz'
   
   get 'computer' => 'recquiz#computer'
   get 'design' => 'recquiz#design'

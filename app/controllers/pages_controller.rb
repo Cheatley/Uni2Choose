@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         uregion = Degree.all.where(uname: @northern)
       elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
-      elsif @uregion == "Southern"
+      elsif @uregion == "South from Dundee"
         uregion = Degree.all.where(uname: @southern)
       end
     end
@@ -86,25 +86,12 @@ class PagesController < ApplicationController
     end
   end
 
-def about
-end
-
-def summerschool
-  add_crumb "Home", '/'
-  add_crumb "Prepare for University", summerschool_path, links: false
-end
-
   #About page
   def about
     #breadcrumbs
     add_crumb "Home", '/'
     add_crumb "Prepare for University", about_path, links: false
   end
-  
-  #Recommender System
-  def new
-  end
-  
 
 end 
 

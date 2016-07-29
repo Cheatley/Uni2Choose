@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   
   #about page
   get 'about' => 'pages#about'
+  
+  #help page
+  get 'help' => 'pages#help'
+  
+  #disclaimer page
+  get 'disclaimer' => 'pages#disclaimer'
 
   #Users and Devise authentication system routes
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }

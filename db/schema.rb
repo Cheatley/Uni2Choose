@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160722135413) do
     t.datetime "updated_at",    null: false
   end
 
+  #table for possible improvement of the recommender system
   create_table "highers", force: :cascade do |t|
     t.string   "higher"
     t.string   "code_letter"
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160722135413) do
     t.datetime "updated_at",  null: false
   end
 
+  #Twitter and Facebook social media login
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -44,30 +46,6 @@ ActiveRecord::Schema.define(version: 20160722135413) do
   create_table "recommenders", force: :cascade do |t|
   end
 
-  create_table "recommends", force: :cascade do |t|
-    t.string   "topic"
-    t.integer  "a"
-    t.integer  "b"
-    t.integer  "c"
-    t.integer  "d"
-    t.integer  "f"
-    t.integer  "g"
-    t.integer  "h"
-    t.integer  "j"
-    t.integer  "k"
-    t.integer  "l"
-    t.integer  "m"
-    t.integer  "p"
-    t.integer  "q"
-    t.integer  "r"
-    t.integer  "t"
-    t.integer  "v"
-    t.integer  "w"
-    t.integer  "x"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -78,7 +56,8 @@ ActiveRecord::Schema.define(version: 20160722135413) do
   end
 
   add_index "searches", ["users_id"], name: "index_searches_on_users_id"
-
+  
+  #table for possible improvement of the recommender system
   create_table "similarities", force: :cascade do |t|
     t.string   "ucas_letter"
     t.string   "compared_ucas_letter"
@@ -87,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160722135413) do
     t.datetime "updated_at",           null: false
   end
 
+  #table for possible improvement of the advanced search, disciplines dropdown field
   create_table "ucasletters", force: :cascade do |t|
     t.string   "ucas_letter"
     t.string   "subject_group"

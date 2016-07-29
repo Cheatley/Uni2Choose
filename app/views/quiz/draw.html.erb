@@ -1,19 +1,61 @@
+<!--Functionality of recommender?? --> 
+<% provide(:title, '') %>
+
+
+
+<!--containers for design/layout --> 
   <div class = "row">
     <!--Page information --> 
 
-<h2> You answers to the quiz were inconclusive, you may be interested in one the following areas:</h2>
-<%= image_tag "line.png" , :alt => "logo"%>  
-</div>
-<div class = "row">
 
+	<div id="wrapAll">
+		<div id="wrapper">
+		
+				<div class="ques-wrap">
+					<h2 id="ques">This is question</h2>
+									<%= image_tag "line.png" , :alt => "logo"%>  
+					<input class="btn btn-default" type="submit" id = "opt1" value="Option 1" onclick="optionClick('1')">
+					<input class="btn btn-default" type="submit" id = "opt2" value="Option 2" onclick="optionClick('0')">
+					<input class="btn btn-default" type="submit" id = "opt3" value="Option 3" onclick="optionClick('2')">
+					<input class="btn btn-default" type="submit" id = "opt4" value="Option 4" onclick="optionClick('3')">
+					<input class="btn btn-default" type="submit" id = "opt5" value="Option 5" onclick="optionClick('4')">
+					<input class="btn btn-default" type="submit" id = "opt6" value="Option 6" onclick="optionClick('5')">
+					<input class="btn btn-default" type="submit" id = "opt7" value="Option 7" onclick="optionClick('6')">
+					<input class="btn btn-default" type="submit" id = "opt8" value="Option 8" onclick="optionClick('7')">
+					<div class="clear"></div>
+										<br><br><br><br><br><br><br>
 
-<h4> <a href="" target="_parent">Medicine, Dentistry, Biological and Veterinary Studies</a> </h4>
-<h4> <a href="" target="_parent">Creative Arts and Design</a> </h4>
-<h4> <a href="" target="_parent">Physical Sciences</a> </h4>
-<h4> <a href="" target="_parent">Historical and Philosophical Studies or Social Studies</a> </h4>
-<h4> <a href="" target="_parent">Law and Business</a> </h4>
-<h4> <a href="" target="_parent">Linguistics, Classics and Related Subjects</a> </h4>
-<h4> <a href="" target="_parent">Languages</a> </h4>
+			
+			</div>
+		</div>
+	</div>
+	
+	</div>
+	
+	
+	<%= javascript_include_tag 'draw.js'  %>
+<script type='text/javascript'>
+		window.onload = function(){
+		  generate();
+		};
+	</script>
+	
+	
+	<!--refreshes the page as the javascript wasn't populating the boxes without hitting refresh or progressing to the second and subsequent questions -->
+	<script type='text/javascript'>
 
+(function()
+{
+  if( window.localStorage )
+  {
+    if( !localStorage.getItem( 'firstLoad' ) )
+    {
+      localStorage[ 'firstLoad' ] = true;
+      window.location.reload();
+    }  
+    else
+      localStorage.removeItem( 'firstLoad' );
+  }
+})();
 
-</div>
+</script>

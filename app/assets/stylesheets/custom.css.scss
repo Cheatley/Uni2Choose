@@ -274,6 +274,9 @@ p {
    margin: 10px;
    text-decoration: none;
    vertical-align: middle;
+   height: 100px;
+   white-space: normal;
+   font-family:"Segoe UI";
    }
    
 .rquiz_button:hover {
@@ -298,7 +301,7 @@ p {
    background: -moz-linear-gradient(top, #545454, #6083bd);
    background: -ms-linear-gradient(top, #545454, #6083bd);
    background: -o-linear-gradient(top, #545454, #6083bd);
-   padding: 5px 10px;
+   padding: 10px 10px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
@@ -308,9 +311,12 @@ p {
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #e3e3e3 !important;
    font-size: 12px;
-   margin: 10px;
+   margin: 20px;
    text-decoration: none;
    vertical-align: middle;
+   height: 100px;
+   white-space: normal;
+   font-family:"Segoe UI";
    }
 .tquiz_button:hover {
    border-top-color: #6a95da;
@@ -330,20 +336,13 @@ p {
     display: inline-block;
 }
 
-.width-150px{
-    width: 150px;
+.width-250px{
+    width: 250px;
     display: inline-block;
 }
 
-.width-250px{
-    width: 250px;
-    height: 80px;
-    display: inline-block;
-}
-
-.width-250px{
-    width: 250px;
-    height: 80px;
+.width-450px{
+    width: 450px;
     display: inline-block;
 }
 
@@ -358,6 +357,15 @@ p {
   text-align: center;
 }
 
+.gravatar_pro {
+  max-width: 300px;
+  height: auto;
+  float: center;
+  padding: 1em;
+  text-align: center;
+  margin: 0 auto;
+  display: block;    
+}
 
 /* forms */
 input {

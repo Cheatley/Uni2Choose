@@ -64,21 +64,6 @@ function generate(){
 	opt4.value= data.questions[qIndex].options[3];
 }
 
-//lets you click buttons and progress
-function optionClick(ans) {
-	if(qIndex%1==0){
-		aString+=ans;
-		index++;
-	}
-	qIndex++;
-	if(qIndex == maxQ){
-		
-		 redirect( generateResult(aString) );
-	} else{
-		generate();
-	}
-}
-
 //Variables defined. Maths behind the quiz. Assigns a var an answer which will increase its number
 function generateResult(answers) {
    // initialize ALL variables
@@ -113,7 +98,7 @@ function generateResult(answers) {
    }
 }
 
-//lets you finish quiz and get results
 function redirect(url) {
 	window.location = url;
 }
+;

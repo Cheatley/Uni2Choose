@@ -1,31 +1,33 @@
-<!-- About page -->
+<!-- About page Title -->
 <% provide(:title, "Preparing for University") %>
-<!--containers for design/layout --> 
-  <div class = "row">
-    <br>
-    <%= link_to "Back", :back %>
-    <!--Page information --> 
+
+<!--Breadcrumb -->
+<br>
+<%= link_to "Back", :back %><br><br>
+
+<!--Page information --> 
+<div class = "row">
     <h1>Preparing for University</h1>
     <%= image_tag "line.png" , :alt => "logo"%>    
 
-        
-<ul><ol>Entry requirements tend to come with upper and lower expectations. The upper expectations show the standard entry requirements, such as AAAB, and lower expectations show the minimum requirements, such as ABBB.</ol></ul>
-<ul><ol>Most universities require you to have English and Maths in National 5 at grade C or above.</ol></ul>
-<ul><ol>For Science based courses Universities tend to expect applicants to have either two Science courses at higher level or one Science and Maths at higher.</ol></ul>
-<ul><ol>However, for the majority of courses, the subjects you study at higher don’t matter so much as the grades you receive.</ol></ul>
-<ul><ol>An applicant’s individual profile will be the most significant factor in a university’s decision whether to accept or decline. The personal statement plays a large role.</ol></ul>
-<ul><ol>Whilst a failure to meet the minimum entry requirements may result in your application being declined, this may be remedied by contacting the admissions team and discussing possible courses you have which may act as substitutes such as History in place of English, or enquiring about summer school programmes offered by the university. Local colleges offer higher courses over shorter periods of time if all of the above fails and your pursuit of these can be discussed with the university you have applied to.</ol></ul>
-<ul><ol>Please see the individual programme for entry requirements of each degree.</ol></ul>
+    <!--Info on Requirements-->    
+    <ul><ol>Entry requirements tend to come with upper and lower expectations. The upper expectations show the standard entry requirements, such as AAAB, and lower expectations show the minimum requirements, such as ABBB.</ol></ul>
+    <ul><ol>Most universities require you to have English and Maths in National 5 at grade C or above.</ol></ul>
+    <ul><ol>For Science based courses Universities tend to expect applicants to have either two Science courses at higher level or one Science and Maths at higher.</ol></ul>
+    <ul><ol>However, for the majority of courses, the subjects you study at higher don’t matter so much as the grades you receive.</ol></ul>
+    <ul><ol>An applicant’s individual profile will be the most significant factor in a university’s decision whether to accept or decline. The personal statement plays a large role.</ol></ul>
+    <ul><ol>Whilst a failure to meet the minimum entry requirements may result in your application being declined, this may be remedied by contacting the admissions team and discussing possible courses you have which may act as substitutes such as History in place of English, or enquiring about summer school programmes offered by the university. Local colleges offer higher courses over shorter periods of time if all of the above fails and your pursuit of these can be discussed with the university you have applied to.</ol></ul>
+    <ul><ol>Please see the individual programme for entry requirements of each degree.</ol></ul>
       
-     <%= image_tag "line.png" , :alt => "logo"%>    
- 
-<p>More Information about National Qualifications: </p>
-<br>
-<p>
+     <!--Line break --> 
+     <%= image_tag "line.png" , :alt => "line break"%>    
 
-<a class="btn btn-default" href="http://www.sqa.org.uk/sqa/58948.html" role="button" target="_blank">SQA website</a><br></p><br>
-<a class="btn btn-default" href="http://scqf.org.uk/wp-content/uploads/2014/04/scqf-timeline-low-res.pdf" role="button" target="_blank">Open the Scottish National Qualifications Table</a><br>
-      
-      
-    <!--closing the design/layout containers --> 
-    </div>
+    <!-- Links to sites and Tables -->
+    <div class ="resultsclass">
+        <p>More Information about National Qualifications: </p>
+        <br>
+        <p>
+        <a class="btn btn-default" href="http://www.sqa.org.uk/sqa/58948.html" role="button" target="_blank">SQA website</a><br></p><br>
+        <a class="btn btn-default" href="http://scqf.org.uk/wp-content/uploads/2014/04/scqf-timeline-low-res.pdf" role="button" target="_blank">Open the Scottish National Qualifications Table</a><br>
+    </div> 
+</div>

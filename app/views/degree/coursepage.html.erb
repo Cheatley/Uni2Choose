@@ -1,18 +1,33 @@
-<!-- Individual degree page -->
+<!-- Individual degree page Title-->
 <% provide(:title, "Degree Page") %>
 
-<!--containers for design/layout --> 
-  <div class = "row">
-  
+<!--Page information --> 
+<div class = "row">
+    
+    <!-- Breadcrumb -->  
     <%= link_to "Back", :back %>
     
+    <!-- Course Title -->
     <h1><%= @coursepage.uname %></h1>
-    
-    <p>Degree Name: <%= @coursepage.cname %></p>
-    <p>Ucas Code: <%= @coursepage.ucas %></p>
-    <p>Duration: <%= @coursepage.duration %></p>
-    <p>Qualification: <%= @coursepage.qualification %></p>
-    <p>Entry Requirements: <%= @coursepage.entry %></p>
+    <%= image_tag "line.png" , :alt => "line break"%>    
 
-    <%= render "share_email_print"%>
-  </div>
+    <!-- Course information -->
+    <div class="resultsclass">
+
+      <h5><strong>Degree Name:</strong><%= @coursepage.cname %></h5>
+      <h5><strong>Ucas Code:</strong><%= @coursepage.ucas %></h5>
+      <h5><strong>Duration:</strong><%= @coursepage.duration %></h5>
+      <h5><strong>Qualification:</strong> <%= @coursepage.qualification %></h5>
+      <h5><strong>Entry Requirements:</strong> <%= @coursepage.entry %></h5>
+
+    </div>
+    
+</div>
+    
+<div class="row">
+
+      <!-- Ability to print/share course -->
+      <%= render "share_email_print"%>
+</div>
+
+</div>

@@ -1,21 +1,24 @@
-<!-- Login page -->
+<!-- Login page Title -->
 <% provide(:title, "Login") %>
 
 <!-- breadcrumbs -->
-<br>
-<a href='/'>Home</a> / Login
-
-<!--containers for design/layout --> 
-
-  <div class = "row">
-    <!--Page information --> 
-    <h1>Log in</h1>
-      <%= image_tag "line.png" , :alt => "line break"%>   
+<div class="row">
+  <br>
+  <a href='/'>Home</a> / Login
 </div>
+
+<!--Page Content --> 
+<div class = "row">
+    <h1>Log in</h1>
+    <%= image_tag "line.png" , :alt => "line break"%>   
+</div>
+
+<!--Login Form -->
 <div class ="row">
     <div class="col-s-6 col-s-6";>
-      <p>Login using your account:</p>
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <p>Login using your account:</p>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        
         <div class="form-inputs">
           <%= f.input :email, required: false, autofocus: true %>
           <%= f.input :password, required: false %>
@@ -28,15 +31,18 @@
       <% end %>
     </div>
     
- 
+    <!--Facebook and Twitter login-->
     <div class="col-s-6 col-s-6";> 
       <p>Login with Facebook:</p>
       <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png", :style => "height: 120px; width: 120px;"), omniauth_authorize_path(resource_name, :facebook) %><br><br>
       <p>Login with Twitter:</p>
       <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/738px-Twitter_bird_logo_2012.svg.png", :style => "height: 100px; width: 120px;"), omniauth_authorize_path(resource_name, :twitter) %><br />
     </div>
-    
+</div>
+
+<!--Devise Share links-->
+<div class="row">
     <div class="col-s-12 col-s-12";> 
       <%= render "devise/shared/links" %>
     </div>
-  </div>
+</div>

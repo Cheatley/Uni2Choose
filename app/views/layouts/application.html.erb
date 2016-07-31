@@ -1,38 +1,38 @@
-<!-- Base layout -->
-
+<!-- Base layout for all Pages -->
 <!DOCTYPE html>
 <html>
+
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
+  <!--Title Page info -->
   <title><%= yield(:title) %> | Uni2choose</title>
 
+  <!--JavaScript extentions -->
   <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true  %>
   <%= csrf_meta_tags %>
 
-
-
 </head>
+
 <body>
-  
-  
+
+  <!-- Display Navigation Bar -->
   <%= render 'layouts/navbar' %>
 
+  <!-- Container to Display information -->
   <div class = "contenty">
-  <% flash.each do |message_type, message| %>
-  
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
- 
-
-  <%= yield %>
+    <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
   </div>
 
-
+  <!-- Display Footer -->
   <%= render 'layouts/footer' %>
   
   <!-- JS for email, share and print buttons -->
@@ -41,19 +41,23 @@
     a2a_config.linkname = "Uni2choose - Check out my degree!";
     a2a_config.linkurl = window.location.href;
   </script>
-  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  
   <!-- Share buttons end here -->
-
+  <script async src="https://static.addtoany.com/menu/page.js"></script>
+  
   <!-- JS for scotland regions popup -->
   <script type="text/javascript">
     Shadowbox.init();
   </script>
+  
   <!-- Map pop up script ends here -->
   <%= javascript_include_tag 'banner.js'  %>
-<script type='text/javascript'>
+  <script type='text/javascript'>
 		window.onload = function(){
 		  generate();
-		};
+		  };
 	</script>
+
 </body>
+
 </html>

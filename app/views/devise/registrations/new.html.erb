@@ -1,65 +1,65 @@
-<!--Reister Page --> 
+<!--Register Page Title--> 
 <% provide(:title, 'Register') %>
 
 <!-- breadcrumbs -->
+<div class="row">
 <br>
 <a href='/'>Home</a> / Register
+<br>
 
-<!--containers for design/layout --> 
-
-  <div class = "row">
-    <!--Page information --> 
-        <h1>Register</h1>
-        <%= image_tag "line.png" , :alt => "line break"%>    
-  </div>
+<!--Page Contents -->
+<div class = "row">
+      <h1>Register</h1>
+      <%= image_tag "line.png" , :alt => "line break"%>    
+</div>
   
-  <div class = "row">
-      <div class="col-s-6 col-s-6";>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-    
-              <div class="form-inputs">
-                  <%= f.input :name, required: true, autofocus: true, placeholder: "Choose a Username" %>
-                  <%= f.label :date_of_birth %>
-                  <%= f.date_select :dob, :start_year=>1900, required: true %><br>
-          
-                    <%= f.label :gender %>
-                    <%= f.label :male %>
-                    <%= f.radio_button :gender, 'Male', :checked => true, required: true %>
-                    <%= f.label :female %>
-                    <%= f.radio_button :gender, 'Female', required: true %>
-                    <%= f.label :prefer_not_to_say %>
-                    <%= f.radio_button :gender, 'Prefer not to say', required: true %><br>
-                    <%= f.label :postcode %>
-                    <%= f.text_field :postcode, required: true %><br>
-          
-                    <%= f.input :email, required: true, autofocus: true %>
-        
-                    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-                    <%= f.input :password_confirmation, required: true %>
-              </div>
-               
-              <div class="form-actions">
-                    <%= f.button :submit, "Sign up" %>
-              </div>
-          
-          <% end %>
+<div class = "row">
+    <div class="col-s-6 col-s-6";>
       
+      <!--Form-->
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+    
+      <div class="form-inputs">
+          <%= f.input :name, required: true, autofocus: true, placeholder: "Choose a Username" %>
+          <%= f.label :date_of_birth %>
+          <%= f.date_select :dob, :start_year=>1900, required: true %><br>
+          <%= f.label :gender %>
+          <%= f.label :male %>
+          <%= f.radio_button :gender, 'Male', :checked => true, required: true %>
+          <%= f.label :female %>
+          <%= f.radio_button :gender, 'Female', required: true %>
+          <%= f.label :prefer_not_to_say %>
+          <%= f.radio_button :gender, 'Prefer not to say', required: true %><br>
+          <%= f.label :postcode %>
+          <%= f.text_field :postcode, required: true %><br>
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation, required: true %>
       </div>
     
-
-      <div class="clearfix visible-xs"></div>
-          <div class="col-s-6 col-s-6";> 
-              <p>Register with Facebook:</p>
-                    <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png", :style => "height: 120px; width: 120px;"), omniauth_authorize_path(resource_name, :facebook) %><br><br>
-                    <p>Register with Twitter:</p>
-                    <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/738px-Twitter_bird_logo_2012.svg.png", :style => "height: 100px; width: 120px;"), omniauth_authorize_path(resource_name, :twitter) %><br />
-          </div>
-    
-   
-      <%= render "devise/shared/links" %>
+      <!-- Allows you to submit form -->         
+      <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+      </div>
+          
+      <% end %>
       
+    </div>
+    
+    <!--Register with Facebook and Twitter-->
+    <div class="col-s-6 col-s-6";> 
+        <p>Register with Facebook:</p>
+        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png", :style => "height: 120px; width: 120px;"), omniauth_authorize_path(resource_name, :facebook) %><br><br>
+        <p>Register with Twitter:</p>
+        <%= link_to image_tag("https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/738px-Twitter_bird_logo_2012.svg.png", :style => "height: 100px; width: 120px;"), omniauth_authorize_path(resource_name, :twitter) %><br />
+        <br><br>
+        
+        <!-- Register Share links -->
+        <%= render "devise/shared/links" %>
+        
         <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
         <%= link_to "Didn't receive account activation instructions?", new_confirmation_path(resource_name) %><br />
         <% end -%>
   </div>
+</div>

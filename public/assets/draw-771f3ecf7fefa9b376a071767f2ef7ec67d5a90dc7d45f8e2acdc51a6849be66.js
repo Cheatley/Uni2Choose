@@ -1,38 +1,11 @@
-//Java Scipt for Course Suggestion Quiz 
+//Java Scipt for Personality Quiz 
+
 
 //Questions Which populate the main quiz html view
 var data = {
 	questions: [{
 			question: "Which interests you most?",
-			options: [ "Medicine", "Fashion", "Archaeology", "Engineering", "History","Law", "English", "Foreign Languages"]
-		}, {
-			question: "Which interests you most?",
-			options: [ "Dentistry",  "Art", " Geology", "Mathematics", "Philosophy", "Accountancy", "Linguistics", "Historic Languages"]
-		}, {
-			question: "Which interests you most?",
-			options: [ "Biology", "Drawing", "Geography", "Chemical Engineering", "Religious Education", "Economics", "Creative Writing", "Philology"]
-		}, {
-			question: "Which interests you most?",
-			options: [ "Animal Behaviour", "Media Design", "Physics", "Computing", "Politics", "Business Management", "Classics", "Translating"]
-		}, {
-			question: "Which interests you most?",
-			options: [ "Genetics", "Graphics", "Forensic Sciences", "Mechanical Engineering", "Film Studies", "Debating", "English Literature", "Interpreting"]
-	
-		}, {
-		    question: "Which interests you most?",
-			options: [ "Marine Biology", "Sculpting", "Astrophysics", "Game Design",  "Ancient History", "Finance", "Acting", "Working abroad"]
-	
-		}, {
-		    question: "Which interests you most?",
-			options: [ "Psychology",  "Animation", "Chemistry", "Artificial Intelligence" , "Ethnology", "Event Management", "Latin", "Travel"]
-	
-		}, {
-		    question: "Which interests you most?",
-			options: [ "Zoology",  "Painting", "Astronomy", "Information Technology", "Anthropology", "Tourism", "Greek", "Hebrew Studies"]
-	
-		}, {question: "Which interests you most?",
-			options: [ "Vet", "Photography", "Earth Sciences", "Ethical Hacking",  "Sociology", "Hospitality", "Social Policy", "Saga Studies"]
-	
+			options: [ "Medicine, Biology, Veterinary, Physcology", "Fashion, Art, Photography, Animation", "Archaeology, Physics, Forensic Sciences, Chemistry", "Engineering, Mathematics, Game Design, Ethical Hacking", "History, Philosophy, Politics, Anthropology", "Law, Economics, Debating, Event Management", "English, Linguistics, Creative Writing, Classics", "Foreign Languages, Historic Languages, Translation, Working Abroad"]
 		}],
 
 };
@@ -42,7 +15,7 @@ var data = {
 var qIndex = 0,
 	index = 0,
 	aString = "",
-	maxQ = 10,
+	maxQ = 1,
 	q = document.getElementById('ques'),
 	opt1 = document.getElementById('opt1'),
 	opt2 = document.getElementById('opt2'),
@@ -52,7 +25,7 @@ var qIndex = 0,
 	opt6 = document.getElementById('opt6'),
 	opt7 = document.getElementById('opt7'),
 	opt8 = document.getElementById('opt8');
-
+	
 //populates the questions and answers in html view
 function generate(){
 	q.innerHTML= data.questions[qIndex].question;
@@ -74,22 +47,22 @@ function generateResult(answers) {
       if(answers[i] == 1){ 
          bio++;
       }
-      else if(answers[i] == 2) { 
+      else if(answers[i] == 2) {
          phys++;
       }
-      else if(answers[i] == 3) {
+      else if(answers[i] == 3) { 
          math++;
       }
       else if(answers[i] == 4) {
          hum++;
       }
-      else if(answers[i] == 5) { 
+      else if(answers[i] == 5) {
          law++;
       }
-      else if(answers[i] == 6) {
+      else if(answers[i] == 6) { 
          lin++;
       }
-      else if(answers[i] == 7) {
+      else if(answers[i] == 7) { 
          lan++;
       }
       else { 
@@ -97,8 +70,8 @@ function generateResult(answers) {
       }
    }
    
-//determines which results page is returned based on the calculations made above
-if (bio > phys && bio > math && bio > hum && bio > law && bio > lin && bio > lan && bio > art) {
+   //determines which results page is returned based on the calculations made above
+   if (bio > phys && bio > math && bio > hum && bio > law && bio > lin && bio > lan && bio > art) {
       return "bio.html";
    }
    else if (phys > bio && phys > math && phys > hum && phys > law && phys > lin && phys > lan && phys > art) {
@@ -119,10 +92,8 @@ if (bio > phys && bio > math && bio > hum && bio > law && bio > lin && bio > lan
    else if (lan > bio && lan > phys && lan > hum && lan > law && lan > lin && lan > math && lan > art) {
       return "lan.html";
    }
-   else if (art > bio && art > phys && art > hum && art > law && art > lin && art > math && art > lan) {
+   else {
       return "art.html";
    }
-   else {
-      return "draw.html";
-   }
 }
+;

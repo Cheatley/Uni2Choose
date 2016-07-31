@@ -1,7 +1,8 @@
+//Java Scipt for the draw Quiz which comes about if suggestion quiz ends in draw
 
 
 
-
+// Question which populates the draw html view
 var data = {
 	questions: [{
 			question: "Which interests you most?",
@@ -10,6 +11,8 @@ var data = {
 
 };
 
+// variables defined, maximum number of questions dictated, 
+// and the questions between js and html linked, as well as answers
 var qIndex = 0,
 	index = 0,
 	aString = "",

@@ -6,7 +6,7 @@ end
 def alpach
 end
 
-def eleph
+def tiger
 end
 
 def rpanda

@@ -1,57 +1,50 @@
-<!--Functionality of recommender?? --> 
-<% provide(:title, '') %>
+<!--Personality Quiz title  --> 
+<% provide(:title, ' Personality Quiz') %>
 
-
-
-<!--containers for design/layout --> 
+  <!--Page information --> 
   <div class = "row">
-    <!--Page information --> 
-
-
-	<div id="wrapAll">
-		<div id="wrapper">
-		
-				<div class="ques-wrap">
-					<h2 id="ques">This is question</h2>
-									<%= image_tag "line.png" , :alt => "logo"%>  
-					<input class="btn btn-default" type="submit" id = "opt1" value="Option 1" onclick="optionClick('1')">
-					<input class="btn btn-default" type="submit" id = "opt2" value="Option 2" onclick="optionClick('0')">
-					<input class="btn btn-default" type="submit" id = "opt3" value="Option 3" onclick="optionClick('2')">
-					<input class="btn btn-default" type="submit" id = "opt4" value="Option 4" onclick="optionClick('3')">
-					<div class="clear"></div>
-										<br><br><br><br><br><br><br>
-
+			<div id="wrapAll">
+				<div id="wrapper">
+						
+						<!--Questions holders for JavaScipt -->
+						<div class="ques-wrap">
+							<h2 id="ques">This is question</h2>
+							<%= image_tag "line.png" , :alt => "logo"%>  
+							<input class="quiz_button" type="submit" id = "opt1" value="Option 1" onclick="optionClick('1')">
+							<input class="quiz_button" type="submit" id = "opt2" value="Option 2" onclick="optionClick('0')">
+							<input class="quiz_button" type="submit" id = "opt3" value="Option 3" onclick="optionClick('2')">
+							<input class="quiz_button" type="submit" id = "opt4" value="Option 4" onclick="optionClick('3')">
+							
+							<div class="clear"></div>
 			
+			 		</div>
+				</div>
 			</div>
-		</div>
 	</div>
 	
-	</div>
-	
-	
+	<!-- Pulling JavaScipt to run quiz -->
 	<%= javascript_include_tag 'pquiz.js'  %>
-<script type='text/javascript'>
-		window.onload = function(){
-		  generate();
-		};
-	</script>
+		<script type='text/javascript'>
+					window.onload = function(){
+		  		generate();
+					};
+		</script>
 	
 	
 	<!--refreshes the page as the javascript wasn't populating the boxes without hitting refresh or progressing to the second and subsequent questions -->
 	<script type='text/javascript'>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
-
-</script>
+					(function()
+					{
+					  if( window.localStorage )
+					  {
+					    if( !localStorage.getItem( 'firstLoad' ) )
+					    {
+					      localStorage[ 'firstLoad' ] = true;
+					      window.location.reload();
+					    }  
+					    else
+					      localStorage.removeItem( 'firstLoad' );
+					  }
+					})();
+	</script>

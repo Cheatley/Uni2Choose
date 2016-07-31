@@ -29,13 +29,9 @@
 
 
 body {
-    background-repeat: no-repeat;
   	background-size: 100% ;
   	background-color: #f0f0f0 ;
-  	width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+
 }
 
 
@@ -131,49 +127,82 @@ p {
 
 
 /* header */
+   .pquiz_button{
+   border-top: 1px solid #969696;
+   background: #6083bd;
+   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
+   background: -webkit-linear-gradient(top, #545454, #6083bd);
+   background: -moz-linear-gradient(top, #545454, #6083bd);
+   background: -ms-linear-gradient(top, #545454, #6083bd);
+   background: -o-linear-gradient(top, #545454, #6083bd);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #e3e3e3 !important;
+   font-size: 12px;
+   margin: 10px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.pquiz_button:hover {
+   border-top-color: #6a95da;
+   background: #6a95da;
+   color: #ccc;
+   text-decoration:none;
+   }
+.pquiz_button:active {
+   border-top-color: #425e8b;
+   background: #425e8b;
+   }
 
-#logo {
-  float: left;
-  margin-right: 0px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 0px;
-  font-weight: bold;
-  background-color: #0b0c0c;
 
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
+   .rquiz_button{
+   border-top: 1px solid #969696;
+   background: #6083bd;
+   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
+   background: -webkit-linear-gradient(top, #545454, #6083bd);
+   background: -moz-linear-gradient(top, #545454, #6083bd);
+   background: -ms-linear-gradient(top, #545454, #6083bd);
+   background: -o-linear-gradient(top, #545454, #6083bd);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #e3e3e3 !important;
+   font-size: 12px;
+   margin: 10px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.rquiz_button:hover {
+   border-top-color: #6a95da;
+   background: #6a95da;
+   color: #ccc;
+   text-decoration:none;
+   }
+.rquiz_button:active {
+   border-top-color: #425e8b;
+   background: #425e8b;
+   }
+
+
+.width-150px{
+    width: 150px;
+    display: inline-block;
 }
 
-.sideimg {
-      img{
-    width: 70%;
-    height: auto;
-    padding: 5px;
-}
-}
-
-
-
-.btn
-{
-
-	padding:		0.5em 0.5em !important;
-	font-size:		15px !important;
-  color: #010916;
-  font-family:"Segoe UI";
-	font-weight:		bold;
-	color:			#2d525d;
-
-	  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-
+.width-150px{
+    width: 150px;
+    display: inline-block;
 }
 
 .gravatar {
@@ -426,11 +455,6 @@ input {
 
 }
 
-#btn-default {
-  
-  
-  
-}
 
 
 .contenty img {
@@ -461,7 +485,7 @@ table  {
 
 table  img {
 
-	padding:20px;
+	padding: 20px;
 	opacity: 1;
 	width: 350px;
 	height: 350px;
@@ -601,4 +625,43 @@ input[type=text], select {
   text-align:center;
 
 
+}
+
+.quizimg img {
+  
+    width:"90%";
+    margin: 0 auto;
+    padding-bottom: 70px;
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    min-height: 300px;
+}
+
+.quizimg h2 {
+  
+  font-size: 2em;
+  letter-spacing: -1px;
+  font-style: italic;
+  text-align: center;
+  font-weight: normal;
+  font-family:"Segoe UI";
+  color: #010916;
+  
+}
+
+.quizwriting {
+  
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #010916;
+  font-family:"Segoe UI";
+  text-align: left;
+  margin-left: 2em;
+  padding-left: 30px;
+   margin-right: 2em;
+  padding-right: 30px;
+  
 }

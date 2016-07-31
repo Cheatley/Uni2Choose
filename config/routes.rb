@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   get 'sbear' => 'personquiz#sbear'
   get 'rpanda' => 'personquiz#rpanda'
   get 'alpach' => 'personquiz#alpach'
-  get 'eleph' => 'personquiz#eleph'
+  get 'tiger' => 'personquiz#tiger'
   
   #contact form routes
   match '/contacts',     to: 'contacts#new',             via: 'get'

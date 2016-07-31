@@ -63,7 +63,7 @@ function generate(){
 
 function generateResult(answers) {
    // initialize ALL variables
-   var panda = bear = elephant = alpacha = 0;
+   var panda = bear = tiger = alpacha = 0;
    for(var i =0; i < answers.length; i++){
       if(answers[i] == 1){ // assuming bear == 1
          bear++;
@@ -71,23 +71,23 @@ function generateResult(answers) {
       else if(answers[i] == 2) { // assuming panda == 2
          panda++;
       }
-      else if(answers[i] == 3) { // assuming elephant == 3
-         elephant++;
+      else if(answers[i] == 3) { // assuming tiger == 3
+         tiger++;
       }
       else { // assuming alpacha == 4
          alpacha++;
       }
    }
-   if (bear > alpacha && bear > panda && bear > elephant) {
+   if (bear > alpacha && bear > panda && bear > tiger) {
       return "sbear.html";
    }
-   else if (alpacha > bear && alpacha > panda && alpacha > elephant) {
+   else if (alpacha > bear && alpacha > panda && alpacha > tiger) {
       return "alpach.html";
    }
-   else if (panda > alpacha && panda > bear && panda > elephant) {
+   else if (panda > alpacha && panda > bear && panda > tiger) {
       return "rpanda.html";
    }
    else {
-      return "eleph.html";
+      return "tiger.html";
    }
 }

@@ -86,10 +86,7 @@ function generateResult(answers) {
    else if (lan > bio && lan > phys && lan > hum && lan > law && lan > lin && lan > math && lan > art) {
       return "lan.html";
    }
-   else if (art > bio && art > phys && art > hum && art > law && art > lin && art > math && art > art) {
-      return "art.html";
-   }
    else {
-      return "draw.html";
+      return "art.html";
    }
 }

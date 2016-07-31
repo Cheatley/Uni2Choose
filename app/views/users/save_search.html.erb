@@ -1,16 +1,19 @@
-<!--Saved searches page in each users' profile--> 
+<!--Saved searches page in each users' profile Title --> 
 <% provide(:title, 'My Saved Searches') %>
 
-<!--containers for design/layout --> 
-
-  <div class = "row">
-    <!--Page information -->    
-<br>
-    <%= link_to "Back", :back %>
-    <h1>My Saved Searches</h1>
+<!-- Breadcrumbs -->
+<div class= "row">
+  <br>
+  <%= link_to "Back", :back %>
+</div>  
+  
+<!-- Page Content -->
+<div class= "row">
+  <h1>My Saved Searches</h1>
     <%= image_tag "line.png" , :alt => "logo"%>  
 
-      <% if @showsearches != nil %>
+    <!---Saved Searches Table-->
+    <% if @showsearches != nil %>
       <table>
         <thead>
           <tr>
@@ -32,4 +35,7 @@
       <% end %>
       <br>
       <%= link_to 'Delete My Saved Searches', search_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
-  </div>
+
+  <!--Page Breaks -->
+  <br><br>
+</div>

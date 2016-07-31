@@ -1,29 +1,25 @@
-<!--Contact Us Form Page --> 
+<!--Contact Us Form Page Title --> 
 <% provide(:title, 'Contact') %>
 
-<!--containers for design/layout --> 
-<div class = "signinstyle">
+<!--Page information --> 
   <div class = "row">
-    <!--Page information --> 
     <%= link_to "Back", :back %>
-      <h1>Send A message to Us</h1>
-              <%= image_tag "line.png" , :alt => "line break"%>    
+    <h1>Send A message to Us</h1>
+    <%= image_tag "line.png" , :alt => "line break"%>    
 
-    
-      <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-        <%= f.input :email, :required => true %>
-        <%= f.input :subject, :required => true %>
-        <%= f.input  :message, :as => :text, :required => true %>
-        <div class= "hidden">
-          <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-        </div>
-        <div>
-          </br>
-          <%= f.button :submit, 'Send message', :class=> "btn btn-default" %>
-            
+    <!--Form for contacting -->
+    <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :subject, :required => true %>
+    <%= f.input  :message, :as => :text, :required => true %>
 
-        </div>
-      <% end %>
-    <!--closing the design/layout containers --> 
+    <div class= "hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
     </div>
+
+    <div>
+      </br>
+      <%= f.button :submit, 'Send message', :class=> "btn btn-default" %>
+    </div>
+    <% end %>
 </div>

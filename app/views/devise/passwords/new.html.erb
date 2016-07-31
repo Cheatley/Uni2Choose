@@ -1,21 +1,26 @@
-<!-- Reset password -->
+<!-- Reset password Page title-->
 <% provide(:title, "Reset Password") %>
 
 <!-- breadcrumbs -->
-<br>
-<a href="/">Home</a> / <%= link_to "Login", new_session_path(resource_name) %> / Forgot Password
-
-<div class = "signinstyle">
-  <div class = "row">
-    <%= link_to "Back", :back %>
-    <h1>Forgot your password?</h1>
-            <%= image_tag "line.png" , :alt => "line break"%>    
+<div class="row">
+  <br>
+  <a href="/">Home</a> / <%= link_to "Login", new_session_path(resource_name) %> / Forgot Password
+  <br>
+  <%= link_to "Back", :back %>
 </div>
+
+<!-- Page Content -->
 <div class = "row">
-    
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= f.error_notification %><br>
-    
+    <h1>Forgot your password?</h1>
+    <%= image_tag "line.png" , :alt => "line break"%>    
+</div>
+
+<!--Form -->
+<div class = "row">
+  <div class ="resultsclass">
+  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %><br>
+
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true %>
       </div>
@@ -25,8 +30,10 @@
         <br>
         <br>
       </div>
+    
     <% end %>
     
+    <!--Device Share links -->
     <%= render "devise/shared/links" %>
-  </div>
+    </div>
 </div>

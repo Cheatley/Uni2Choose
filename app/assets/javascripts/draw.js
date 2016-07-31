@@ -1,8 +1,7 @@
-//Java Scipt for the draw Quiz which comes about if suggestion quiz ends in draw
+//Java Scipt for Personality Quiz 
 
 
-
-// Question which populates the draw html view
+//Questions Which populate the main quiz html view
 var data = {
 	questions: [{
 			question: "Which interests you most?",
@@ -26,7 +25,8 @@ var qIndex = 0,
 	opt6 = document.getElementById('opt6'),
 	opt7 = document.getElementById('opt7'),
 	opt8 = document.getElementById('opt8');
-
+	
+//populates the questions and answers in html view
 function generate(){
 	q.innerHTML= data.questions[qIndex].question;
 	opt1.value= data.questions[qIndex].options[0];
@@ -39,35 +39,38 @@ function generate(){
    opt8.value= data.questions[qIndex].options[7];
 }
 
+//Variables defined. Maths behind the quiz. Assigns a var an answer which will increase its number
 function generateResult(answers) {
    // initialize ALL variables
    var bio = phys = math = hum = law = lin = lan = art = 0;
    for(var i =0; i < answers.length; i++){
-      if(answers[i] == 1){ // assuming bear == 1
+      if(answers[i] == 1){ 
          bio++;
       }
-      else if(answers[i] == 2) { // assuming panda == 2
+      else if(answers[i] == 2) {
          phys++;
       }
-      else if(answers[i] == 3) { // assuming elephant == 3
+      else if(answers[i] == 3) { 
          math++;
       }
-      else if(answers[i] == 4) { // assuming panda == 2
+      else if(answers[i] == 4) {
          hum++;
       }
-      else if(answers[i] == 5) { // assuming elephant == 3
+      else if(answers[i] == 5) {
          law++;
       }
-      else if(answers[i] == 6) { // assuming panda == 2
+      else if(answers[i] == 6) { 
          lin++;
       }
-      else if(answers[i] == 7) { // assuming elephant == 3
+      else if(answers[i] == 7) { 
          lan++;
       }
-      else { // assuming alpacha == 4
+      else { 
          art++;
       }
    }
+   
+   //determines which results page is returned based on the calculations made above
    if (bio > phys && bio > math && bio > hum && bio > law && bio > lin && bio > lan && bio > art) {
       return "bio.html";
    }

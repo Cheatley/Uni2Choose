@@ -36,8 +36,8 @@
 	
 	</div>
 	
-	
-	<%= javascript_include_tag 'draw.js'  %>
+<!-- Pulling Java Script file in --> 
+<%= javascript_include_tag 'draw.js'  %>
 <script type='text/javascript'>
 		window.onload = function(){
 		  generate();
@@ -45,13 +45,12 @@
 	</script>
 	
 	
-	<!--refreshes the page as the javascript wasn't populating the boxes without hitting refresh or progressing to the second and subsequent questions -->
-	<script type='text/javascript'>
-
-(function()
-{
-  if( window.localStorage )
-  {
+<!--refreshes the page as the javascript wasn't populating the boxes without hitting refresh or progressing to the second and subsequent questions -->
+<script type='text/javascript'>
+	(function()
+	{
+  	if( window.localStorage )
+  	{
     if( !localStorage.getItem( 'firstLoad' ) )
     {
       localStorage[ 'firstLoad' ] = true;

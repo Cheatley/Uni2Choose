@@ -1,13 +1,32 @@
-  <div class = "row">
-    <!--Page information --> 
+ <!--Art title  --> 
+<% provide(:title, 'Art') %>
 
-<h2> Based on your answers you may be interested in:</h2>
-<%= image_tag "line.png" , :alt => "logo"%>  
-</div>
+<!--Page information --> 
 <div class = "row">
+  <h2> Based on your answers you may be interested in:</h2>
+  <%= image_tag "line.png" , :alt => "logo"%>  
+</div>
 
+<!-- Recommendations -->
+<div class = "row">
+  <div class="col-s-6 col-s-6";>
+    
+    <div class="resultsclass">
+      <h3>Course groupings by subject area:</h3>
+      
+        <h2> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Creative+Arts+and+Design&q%5Bcname_cont%5D=&q%5Buname_cont%5D=&commit=Search" target="_parent">Creative Art and Design</a> </h2>
 
-<h4> <a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Creative+Arts+and+Design&q%5Bcname_cont%5D=&q%5Buname_cont%5D=&commit=Search" target="_parent">Creative Art and Design</a> </h4>
-
+    </div>
+  </div>
+  
+  <div class="col-s-6 col-s-6";>
+    <div class="resultsclass">
+      <h3>More specific courses:</h3>
+        <h2><a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=film&q%5Buname_cont%5D=&commit=Search" target="_parent">Film</a></h2>
+        <h2><a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=design&q%5Buname_cont%5D=&commit=Search" target="_parent">Design</a></h2>
+        <h2><a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=digital+media&q%5Buname_cont%5D=&commit=Search" target="_parent">Digital Media</a></h2>
+        <h2><a href="http://notanything-iamkatiewatson.c9users.io:8080/adsearch?utf8=%E2%9C%93&uregion=Anywhere&discipline=Any&q%5Bcname_cont%5D=game&q%5Buname_cont%5D=&commit=Search" target="_parent">Game Development (Design, Sound, Programming)</a></h2>
+    </div>
+  </div>
 
 </div>

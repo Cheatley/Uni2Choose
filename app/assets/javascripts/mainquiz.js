@@ -25,7 +25,7 @@ var data = {
 	
 		}, {
 		    question: "Which interests you most?",
-			options: [ "Physcology",  "Animation", "Chemistry", "Artificial Intelligence" , "Ethnology", "Event Management", "Latin", "Travel"]
+			options: [ "Psychology",  "Animation", "Chemistry", "Artificial Intelligence" , "Ethnology", "Event Management", "Latin", "Travel"]
 	
 		}, {
 		    question: "Which interests you most?",

@@ -1,18 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "shadowbox";
-/* mixins, variables, etc. */
 
+
+/* mixins, variables, etc. */
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
-
 }
 
 
-
 /* miscellaneous */
-
 .debug_dump {
   clear: both;
   float: left;
@@ -21,62 +19,42 @@
   margin-top: 45px;
   @include box_sizing;
 }
+
 .hidden {
   display: none;
 }
-/* universal */
 
 
-
+/* Body */
 body {
   	background-size: 100% ;
-  	background-color: #f0f0f0 ;
-
+  	background-color: #fefefe ;
 }
-
-
-#myNavbar{
-    background-image: url('banner.png');
-    background-size: 100% ;
-    width: 100%;
-    height: 100%;
-    opacity: 100%;
-    padding-right: 20px;
-    padding: 0.8em;
-    font-family:"Segoe UI";
-    color: #f0f0f0;
-}
-
-#myNavbar a {
-    color: #f0f0f0;
-}
-
-
-
-.navbar .navbar-nav {
-
-    display: inline-block;
-    float: none;
-}
-
-.navbar .navbar-collapse {
-    background-image: url('banner.png');
-    background-size: 100% ;
-    width: 100%;
-    height: 100%;
-    text-align: right;
-    font-size: 15px;
-	  font-family:"Segoe UI";
-}
-
-
 
 textarea {
   resize: vertical;
 }
 
-/* typography */
+.contenty {
+	background-color: #fefefe;
+	margin-top: 3.3em;
+	padding-top: 1em ;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 2em;
 
+}
+
+.contenty img {
+
+	max-height: 250px;
+	width: 95%;
+	min-width: 10px
+}
+
+
+
+/* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -117,6 +95,16 @@ h4 {
   text-align: center;
 }
 
+h5 {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  color: #010916;
+  font-style: italic;
+  font-family:"Segoe UI";
+  text-align: left;
+  
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -126,7 +114,105 @@ p {
 }
 
 
-/* header */
+/* Navagation Bar */
+#myNavbar{
+    background-image: url('banner.png');
+    background-size: 100% ;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    padding-right: 20px;
+    padding: 0.8em;
+    font-family:"Segoe UI";
+    color: #f0f0f0;
+}
+
+#myNavbar a {
+    color: #f0f0f0;
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    background-image: url('banner.png');
+    background-size: 100% ;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    font-size: 15px;
+	  font-family:"Segoe UI";
+}
+
+
+.navbar-fixed-top {
+	text-align: right;
+	height: auto;
+	font-size: 10px;
+  max-width: 100%;
+  font-family:"Segoe UI";
+  color: #010916;
+
+}
+
+
+
+.navbar-brand {
+	background-color: #e1e8ef;
+	text-align: right;
+	height: auto;
+	font-size: 10px;
+  max-width: 100%;
+	opacity: 0.8
+
+
+}
+
+
+/* Quiz */
+#wrapper {
+  float: center;
+  text-align:center;
+}
+
+.quizimg img {
+    width:"90%";
+    margin: 0 auto;
+    padding-bottom: 70px;
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    min-height: 300px;
+}
+
+.quizimg h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  font-style: italic;
+  text-align: center;
+  font-weight: normal;
+  font-family:"Segoe UI";
+  color: #010916;
+}
+
+.quizwriting {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  color: #010916;
+  font-family:"Segoe UI";
+  text-align: left;
+  margin-left: 2em;
+  padding-left: 30px;
+  margin-right: 2em;
+  padding-right: 30px;
+}
+
+
+/* Personality Quiz buttons*/
    .pquiz_button{
    border-top: 1px solid #969696;
    background: #6083bd;
@@ -135,7 +221,7 @@ p {
    background: -moz-linear-gradient(top, #545454, #6083bd);
    background: -ms-linear-gradient(top, #545454, #6083bd);
    background: -o-linear-gradient(top, #545454, #6083bd);
-   padding: 5px 10px;
+   padding: 10px 10px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
    border-radius: 8px;
@@ -144,10 +230,15 @@ p {
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: #e3e3e3 !important;
-   font-size: 12px;
+   font-size: 14px;
+   font-style: bold;
    margin: 10px;
    text-decoration: none;
    vertical-align: middle;
+   height: 100px;
+   white-space: normal;
+   font-family:"Segoe UI";
+
    }
 .pquiz_button:hover {
    border-top-color: #6a95da;
@@ -161,6 +252,7 @@ p {
    }
 
 
+/* Recommender Quiz buttons */
    .rquiz_button{
    border-top: 1px solid #969696;
    background: #6083bd;
@@ -183,18 +275,56 @@ p {
    text-decoration: none;
    vertical-align: middle;
    }
+   
 .rquiz_button:hover {
    border-top-color: #6a95da;
    background: #6a95da;
    color: #ccc;
    text-decoration:none;
    }
+   
 .rquiz_button:active {
    border-top-color: #425e8b;
    background: #425e8b;
    }
 
 
+/* Tie Recommender Quiz buttons */
+.tquiz_button{
+   border-top: 1px solid #969696;
+   background: #6083bd;
+   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
+   background: -webkit-linear-gradient(top, #545454, #6083bd);
+   background: -moz-linear-gradient(top, #545454, #6083bd);
+   background: -ms-linear-gradient(top, #545454, #6083bd);
+   background: -o-linear-gradient(top, #545454, #6083bd);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #e3e3e3 !important;
+   font-size: 12px;
+   margin: 10px;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.tquiz_button:hover {
+   border-top-color: #6a95da;
+   background: #6a95da;
+   color: #ccc;
+   text-decoration:none;
+   }
+.tquiz_button:active {
+   border-top-color: #425e8b;
+   background: #425e8b;
+   }
+
+
+/* Buttons width restriction */
 .width-150px{
     width: 150px;
     display: inline-block;
@@ -205,14 +335,20 @@ p {
     display: inline-block;
 }
 
-.gravatar {
-  float: center;
-
-   width: 150px;
-    height: 150px;
-    padding: 5px;
+.width-250px{
+    width: 250px;
+    height: 80px;
+    display: inline-block;
 }
 
+.width-250px{
+    width: 250px;
+    height: 80px;
+    display: inline-block;
+}
+
+
+/* Gravatar edit Image */
 .gravatar_edit {
   margin-top: 15px;
   width: 200px;
@@ -222,50 +358,8 @@ p {
   text-align: center;
 }
 
-.stats {
-
-    margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $gray-light;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-
-  margin-top: 10px;
-  .gravatar {
-    width: 250px;
-    height: auto;
-    margin: 1px 1px;
-
-  }
-  a {
-    padding: 0;
-  }
-}
-
-.users.follow {
-  padding: 10;
-}
 
 /* forms */
-
-
 input {
   height: auto !important;
 }
@@ -304,22 +398,8 @@ input {
   border-left: solid #cccccc;
 }
 
-/* Users index */
 
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
-}
-
-
-
-
-
+/* Bootstrap */
 .row:after {
     content: "";
     clear: both;
@@ -366,112 +446,7 @@ input {
 }
 
 
-.menu ul {
-    list-style-type: none;
-    margin: 5;
-    padding: 5;
-
-
-}
-.menu li {
-    padding: 5px;
-    margin-bottom: 10px;
-    background-color :#61585f;
-    color: #61585f;
-    text-align: center;
-    font: Impact;
-
-}
-.menui li:hover {
-    background-color: #363f43;
-
-}
-.bside {
-
-    padding: 5px;
-    color: #61585f;
-    text-align: center;
-    font-size: 8px;
-
-
-}
-
-
-.navbar-fixed-top {
-	text-align: right;
-	height: auto;
-	font-size: 10px;
-  max-width: 100%;
-  font-family:"Segoe UI";
-  color: #010916;
-
-}
-
-
-
-.navbar-brand {
-	background-color: #e1e8ef;
-	text-align: right;
-	height: auto;
-	font-size: 10px;
-    max-width: 100%;
-	opacity: 0.8
-
-
-}
-
-
-#footer {
-    clear: both;
-    position: relative;
-    z-index: 10;
-    height: 1.5em;
-    margin-top: -3em;
-
-
-}
-
-.footer p {
-    font-size: 12px;
-    text-align: right;
-    margin-right: 20px;
-
-  }
-
-.footer h1 {
-    font-size: 12px;
-    text-align: center;
-
-
-}
-
-.contenty {
-	background-color: #f0f0f0;
-	margin-top: 3.3em;
-	padding-top: 1em ;
-	margin-left: 10%;
-	margin-right: 10%;
-	padding: 2em;
-
-}
-
-
-
-.contenty img {
-
-	max-height: 250px;
-	width: 95%;
-	min-width: 10px
-
-}
-
-
-.signinstyle {
-
-  font-family:"Segoe UI";
-}
-
-
+/* Tables */
 table  {
     width: 100%;
     font-size: 15px;
@@ -490,15 +465,12 @@ table  img {
 	width: 350px;
 	height: 350px;
 	min-width: 250px;
-
-
 	text-align: center;
 	width:100% !important;
-    height:100% !important;
-
+  height:100% !important;
 }
 
-/* Zebra striping */
+/* Zebra striping to Tables */
 tr:nth-of-type(odd) {
   background: #eee;
 }
@@ -514,16 +486,17 @@ td, th {
   text-align: left;
 }
 
+/* Table bootstrap */
 @media
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-	/* Force table to not be like tables anymore */
+	/* tables to disappear*/
 	table, thead, tbody, th, td, tr {
 		display: block;
 	}
 
-	/* Hide table headers (but not display: none;, for accessibility) */
+	/* Compress table headers into tables for accessibility) */
 	thead tr {
 		position: absolute;
 		top: -9999px;
@@ -537,7 +510,6 @@ only screen and (max-width: 760px),
 		border: none;
 		border-bottom: 1px solid #eee;
 		position: relative;
-
 	}
 
 	td:before {
@@ -550,10 +522,8 @@ only screen and (max-width: 760px),
 		padding-right: 10px;
 		white-space: nowrap;
 	}
-
-
-
 }
+
 
 .errorthing {
   text-align: center;
@@ -598,16 +568,26 @@ only screen and (max-width: 760px),
 }
 
 
-/* Advanced Search */
-.home-box {
-  background-color: #e6e6e6;
-  height: 200px;
-  width: 300px;
-  border: solid #A9A9A9 3px;
-  border-radius: 25px;
+/* Results from Search */
+.resultsclass {
+  padding-left: 4em;
+  padding-right: 4em;
 }
 
+.resultsclass h4 {
+  font-size: 1em;
+  color: #010916;
+  text-align: right;
+  font-style: italic;
+}
 
+.resultsclass h2 {
+  font-size: 1.4em;
+  color: #010916;
+  text-align: left;
+  font-style: italic;
+  
+}
 
 input[type=text], select {
     width: 100%;
@@ -617,51 +597,26 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
 
-#wrapper {
-  float: center;
-  text-align:center;
 
-
+/* Footer */
+#footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 1.5em;
+    margin-top: -3em;
 }
 
-.quizimg img {
-  
-    width:"90%";
-    margin: 0 auto;
-    padding-bottom: 70px;
-    padding-top: 10px;
-    display: block;
+.footer p {
+    font-size: 12px;
+    text-align: right;
+    margin-right: 20px;
     text-align: center;
-    max-width: 500px;
-    max-height: 500px;
-    min-height: 300px;
 }
 
-.quizimg h2 {
-  
-  font-size: 2em;
-  letter-spacing: -1px;
-  font-style: italic;
-  text-align: center;
-  font-weight: normal;
-  font-family:"Segoe UI";
-  color: #010916;
-  
-}
-
-.quizwriting {
-  
-  font-size: 1.1em;
-  line-height: 1.7em;
-  color: #010916;
-  font-family:"Segoe UI";
-  text-align: left;
-  margin-left: 2em;
-  padding-left: 30px;
-   margin-right: 2em;
-  padding-right: 30px;
-  
+.footer h1 {
+    font-size: 12px;
+    text-align: center;
 }

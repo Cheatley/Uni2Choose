@@ -1,6 +1,6 @@
 <!-- Account activation mailer -->
 <p>Welcome <%= @name %>!</p>
 
-<p>Activate your Uni2choose account following the the link below:</p>
+<p>Activate your Uni2choose account by following the the link below:</p>
 
 <p><%= link_to 'Activate my account', confirmation_url(@resource, confirmation_token: @token) %></p>

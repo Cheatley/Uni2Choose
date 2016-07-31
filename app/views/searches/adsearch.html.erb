@@ -1,25 +1,28 @@
-<!-- Advanced search page --> 
+<!-- Advanced search page title  --> 
 <% provide(:title, 'Search') %>
 <br>
-    <%= link_to "Back", :back %><br><br>
-<!--containers for design/layout --> 
-  <div class ="row">
-    
-    <h1>Search</h1>
 
+<!-- Back Breadcrumb -->
+<%= link_to "Back", :back %><br><br>
+
+<!--Page title --> 
+  <div class ="row">
+    <h1>Search</h1>
     <%= image_tag "line.png" , :alt => "line break"%>    
   </div>
+  
+<!-- Search Categories -->  
   <div class = "row">
-    
     <div class="col-s-4 col-s-4";>
-    
-      
-      <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
-      
+        
+        <%= search_form_for @adsearch, url: adsearch_path, method: :get do |f| %>
+               
+        <!-- Regions defined (hardcoded) for the region dropdown in advanced search -->
         <%= label_tag :uregion, "Refine By Region:" %><br>
         <%= render "regions" %><br>
         <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "South from Dundee"], selected: @uregion)  %>
-  
+        
+        <!-- Discipline Categories defined (hardcoded) for the discipline dropdown in advanced search -->
         <%= label_tag :discipline, "Refine By Degree Category:" %><br>
         <%= select_tag :discipline, options_for_select(["Any", "Medicine and Dentistry", "Subjects allied to Medicine", "Biological Sciences",
           "Veterinary Sciences, Agriculture and Related Subjects", "Physical Sciences", "Mathematical Sciences", "Engineering", 
@@ -30,42 +33,71 @@
           "Historical and Philosophical Studies", "Creative Arts and Design", "Education"], selected: @discipline ) %>
       
         <div>
-          <%= f.label :cname_cont, "Degree Name Contains:" %>
-          <%= f.text_field :cname_cont, placeholder: "Degree Name" %>
+          
+            <!-- Ransack Keyword Search for Degree name -->
+            <%= f.label :cname_cont, "Degree Name Contains:" %>
+            <%= f.text_field :cname_cont, placeholder: "Degree Name" %>
+            
         </div>
         
         <div>
+          
+          <!-- Ransack Keyword Search for University name -->
           <%= f.label :uname_cont, "University Name Contains:" %>
           <%= f.text_field :uname_cont, placeholder: "University Name" %>
+        
         </div>
-      
-        <div class="actions"><%= f.submit "Search", :class => "btn btn-default" %></div>
+        <!-- Search Button -->
+        <div class="actions">
+          <%= f.submit "Search", :class => "btn btn-default" %>
+          
+        </div>
+        
       <% end %>
+      
     </div>
+    
+    <!-- Returns results for search -->
     <div class="col-s-8 col-s-8";>
       <% if @data != nil %>
       <h2>Results:</h2>
+      <%= image_tag "line.png" , :alt => "line break"%>    
 
-    <%= image_tag "line.png" , :alt => "line break"%>    
-
+      
+      <!-- Counts how many results there are for each search -->
+      <div class="resultsclass">
       <p><%= @data.count %> results</p>
       <% end %>
   
+      <!-- Returns all results which meet the criteria and populates the page with their information -->
+      
       <% if @data != nil %>
         <% @data.each do |degree| %>
-        <hr>
+       
+        
           <strong><%= degree.cname %></strong><br>
           <%= degree.uname %><br>
           <%= degree.qualification %><br>
           <%= degree.duration %><br>
           <%= degree.entry %><br>
           <% if user_signed_in? %><br>
-            <%= link_to "Save", coursepage_path(indcoursepage: degree.id), :class => "btn btn-default"%>
+          
+          <!-- Saves the search result to users profile page if logged in -->
+          <%= link_to "Save", coursepage_path(indcoursepage: degree.id), :class => "btn btn-default"%>
+      
           <% else %>
-            <p>Login to save this degree to your Profile page.</p>
+          <!-- Text replaces save button if user not logged in, prompting them to log in -->
+            <h4> <a href="users/sign_in">Login</a> to save this degree to your Profile page.</h4>
+            
+            <% end %>
+           
+          <%= image_tag "lineresults.png" , :alt => "line break"%>    
+          <br>
           <% end %>
-        <% end %>
-      <% end %>
+             
+          <% end %>
+        </div>
+    
     </div>
 
   </div>

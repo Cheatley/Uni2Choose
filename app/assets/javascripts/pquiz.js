@@ -1,14 +1,14 @@
+//Java Scipt for Personality Quiz 
 
 
-
-
+//Questions for Quiz
 var data = {
 	questions: [{
 			question: "Which best describes you?",
 			options: [ "Flexible", "Organised", "Creative", "Resourceful"]
 		}, {
 			question: "You are faced with a problem, how do you overcome it:",
-			options: [ "Using my wit and intuition", "By thinking up a plan of action and carrying it out", "Ask for help", "Have someone else solve it for you"]
+			options: [ "Using my wit and intuition", "By thinking up a plan of action  and carrying it out", "Ask for help", "Have someone else solve it for you"]
 		}, {
 			question: "If you were stranded on a desert island what would you take?",
 			options: [ "Swiss Army Knife", "Survival Guide", "A friend", "Diary" ]
@@ -43,6 +43,7 @@ var data = {
 
 };
 
+// Calculating the results 
 var qIndex = 0,
 	index = 0,
 	aString = "",
@@ -61,33 +62,34 @@ function generate(){
 	opt4.value= data.questions[qIndex].options[3];
 }
 
+// Generating the results
 function generateResult(answers) {
    // initialize ALL variables
    var panda = bear = tiger = alpacha = 0;
    for(var i =0; i < answers.length; i++){
-      if(answers[i] == 1){ // assuming bear == 1
+      if(answers[i] == 1){ 
          bear++;
       }
-      else if(answers[i] == 2) { // assuming panda == 2
+      else if(answers[i] == 2) {
          panda++;
       }
-      else if(answers[i] == 3) { // assuming tiger == 3
+      else if(answers[i] == 3) { 
          tiger++;
       }
-      else { // assuming alpacha == 4
+      else { 
          alpacha++;
       }
    }
    if (bear > alpacha && bear > panda && bear > tiger) {
-      return "sbear.html";
+      return "sbear";
    }
    else if (alpacha > bear && alpacha > panda && alpacha > tiger) {
-      return "alpach.html";
+      return "alpach";
    }
    else if (panda > alpacha && panda > bear && panda > tiger) {
-      return "rpanda.html";
+      return "rpanda";
    }
    else {
-      return "tiger.html";
+      return "tiger";
    }
 }

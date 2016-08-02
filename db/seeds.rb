@@ -75,6 +75,7 @@ User.create!(name: "Lina",
             password_confirmation: "password",
             admin:     false,
             confirmed_at: Time.zone.now)
+            
 User.create!(name: "Jason",
             dob: DateTime.new(1993, 9, 13),
             gender: "Female",
@@ -84,15 +85,14 @@ User.create!(name: "Jason",
             password_confirmation: "password",
             admin:     false,
             confirmed_at: Time.zone.now)
-                          
-
-User.create!(name: "Bruce",
+            
+User.create!(name: "Admin",
             dob: DateTime.new(2015, 6, 22),
             gender: "Male",
             postcode: "AB10 9FG",
-            email: "b.scharlau@abdn.ac.uk",
-            password:              "RoR-master",
-            password_confirmation: "RoR-master",
+            email: "admin@uni2choose.com",
+            password:              "password",
+            password_confirmation: "password",
             admin:     true,
             confirmed_at: Time.zone.now)
              

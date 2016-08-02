@@ -28,6 +28,6 @@
         <%= column_chart @socialmedialogin.group("provider").count, {library: {backgroundColor:'transparent'}} %></br>
         <%= image_tag "line.png" , :alt => "line break"%>    
 
-        <p><b>Use of Social Media login:</b></p>
+        <p><b>User's postcode proportions:</b></p>
         <%= column_chart @postcodes.group("postcode").count, {library: {backgroundColor:'transparent'}} %></br>
   </div>

@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     #breadcrumbs
     add_crumb "My Profile", user_path, links: false
     @user = current_user
+        #breadcrumbs
+    add_crumb "My Profile", user_path
+    add_crumb "My Saved Searches", save_search_path, links: false
+    @showsearches = Search.all.where(users_id: current_user)
   end
   
   #user's saved searches page

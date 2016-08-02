@@ -19,12 +19,7 @@ class DegreeController < ApplicationController
     end
   end
   
-  def computer
-    @select = Degree.all.select(:cname).distinct.order(id: :ASC)
-    if params[:select]
-    @select_degree = Degree.search.(params[:cname])
-    @search = Degree.all.select(:cname)
-    end
+  def courses
   end 
   
 end

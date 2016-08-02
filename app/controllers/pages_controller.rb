@@ -93,5 +93,13 @@ class PagesController < ApplicationController
     add_crumb "Prepare for University", about_path, links: false
   end
 
+  def courses
+    @degreecourses = Degree.all
+  end
+
+def unis
+  @unis = University.all
+
 end 
 
+end

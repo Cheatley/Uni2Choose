@@ -1,0 +1,33 @@
+<!-- Index of all Courses -->
+<% provide(:title, "Course Index") %>
+
+<!--containers for design/layout --> 
+<div class = "signinstyle">
+  <div class = "row">
+    <!--Page information --> 
+    
+          
+          <h2>List of Scotland University </h2>
+          <a href="google.com"><erp</a>
+            <table border="1" class="table">
+              <thead>
+                <tr>
+                  <th>University Name</th>
+                  <th>Region</th>
+                  <th>Logo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @unis.each do |uni| %>
+                <tr>
+                  <td><%= uni.uname %></td>
+                  <td><%= uni.uregion %></td>
+                  <td><%= uni.ulogo %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          
+    <!--closing the design/layout containers --> 
+    </div>
+</div>

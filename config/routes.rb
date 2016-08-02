@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   
   #disclaimer page
   get 'disclaimer' => 'pages#disclaimer'
+  
+  #course page
+  get 'courses' => 'pages#courses'
+  get 'unis' => 'pages#unis'
 
   #Users and Devise authentication system routes
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }

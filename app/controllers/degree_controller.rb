@@ -18,8 +18,4 @@ class DegreeController < ApplicationController
       @save_search = Search.create(:saved_search => request.fullpath, :users_id => current_user.id, :cname => @coursepage.cname, :uname => @coursepage.uname)
     end
   end
-  
-  def courses
-  end 
-  
 end

@@ -15,6 +15,16 @@ User.create!(name: "Nathalie",
             password_confirmation: "password",
             admin:     true,
             confirmed_at: Time.zone.now)
+            
+User.create!(name: "Katie",
+            dob: DateTime.new(1991, 9, 13),
+            gender: "Female",
+            postcode: "AB24 3EX",
+            email: "watsonkati@hotmail.co.uk",
+            password:              "password",
+            password_confirmation: "password",
+            admin:     true,
+            confirmed_at: Time.zone.now)
 
 User.create!(name: "John",
             dob: DateTime.new(1993, 9, 13),

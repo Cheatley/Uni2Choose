@@ -46,13 +46,17 @@ textarea {
 }
 
 .contenty img {
-
 	max-height: 250px;
 	width: 95%;
 	min-width: 10px
 }
 
-
+.colorbg {
+    background-color: #e8f4ff;
+    padding: 10px;
+    border-radius: 12px;
+    
+}
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
@@ -82,7 +86,6 @@ h3 {
   font-size: 1.5em;
   font-family:"Segoe UI";
   letter-spacing: -2px;
-  margin-bottom: 3em;
   text-align: left;
   color: #23406f;
 }
@@ -113,6 +116,37 @@ p {
   text-align: left;
 }
 
+
+/* button */
+
+.btn {
+  background: #fefefe;
+  background-image: -webkit-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -moz-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -ms-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -o-linear-gradient(top, #fefefe, #fefefe);
+  background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: helvetica;
+  color: #23236b;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #5172a7 1.8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #5172a7;
+  background-image: -webkit-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -moz-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -ms-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -o-linear-gradient(top, #5172a7, #5172a7);
+  background-image: linear-gradient(to bottom, #5172a7, #5172a7);
+  color: #fefefe;
+  text-decoration: none;
+}
 
 /* Navagation Bar */
 #myNavbar{
@@ -217,125 +251,117 @@ p {
 
 /* Personality Quiz buttons*/
    .pquiz_button{
-   border-top: 1px solid #969696;
-   background: #6083bd;
-   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
-   background: -webkit-linear-gradient(top, #545454, #6083bd);
-   background: -moz-linear-gradient(top, #545454, #6083bd);
-   background: -ms-linear-gradient(top, #545454, #6083bd);
-   background: -o-linear-gradient(top, #545454, #6083bd);
-   padding: 10px 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #e3e3e3 !important;
-   font-size: 14px;
-   font-style: bold;
-   margin: 10px;
-   text-decoration: none;
-   vertical-align: middle;
-   height: 100px;
-   white-space: normal;
-   font-family:"Segoe UI";
+  background: #fefefe;
+  background-image: -webkit-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -moz-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -ms-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -o-linear-gradient(top, #fefefe, #fefefe);
+  background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: helvetica;
+  color: #23236b;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+  border: solid #5172a7 1.8px;
+  text-decoration: none;
+  margin: 1em;
+  vertical-align: middle;
+  white-space: normal;
+  display: inline-block; 
+  
 
    }
 .pquiz_button:hover {
-   border-top-color: #6a95da;
-   background: #6a95da;
-   color: #ccc;
-   text-decoration:none;
-   }
-.pquiz_button:active {
-   border-top-color: #425e8b;
-   background: #425e8b;
+  background: #5172a7;
+  background-image: -webkit-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -moz-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -ms-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -o-linear-gradient(top, #5172a7, #5172a7);
+  background-image: linear-gradient(to bottom, #5172a7, #5172a7);
+  color: #fefefe;
+  text-decoration: none;
    }
 
 
 /* Recommender Quiz buttons */
    .rquiz_button{
-   border-top: 1px solid #969696;
-   background: #6083bd;
-   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
-   background: -webkit-linear-gradient(top, #545454, #6083bd);
-   background: -moz-linear-gradient(top, #545454, #6083bd);
-   background: -ms-linear-gradient(top, #545454, #6083bd);
-   background: -o-linear-gradient(top, #545454, #6083bd);
-   padding: 5px 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #e3e3e3 !important;
-   font-size: 12px;
-   margin: 10px;
-   text-decoration: none;
-   vertical-align: middle;
-   height: 100px;
-   white-space: normal;
-   font-family:"Segoe UI";
+     background: #fefefe;
+      background-image: -webkit-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -moz-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -ms-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -o-linear-gradient(top, #fefefe, #fefefe);
+      background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+      -webkit-border-radius: 12;
+      -moz-border-radius: 12;
+      border-radius: 12px;
+      font-family: helvetica;
+      color: #23236b;
+      font-size: 13px;
+      padding: 10px 20px 10px 20px;
+      border: solid #5172a7 1.8px;
+      text-decoration: none;
+      margin: 1em;
+      vertical-align: middle;
+
    }
    
 .rquiz_button:hover {
-   border-top-color: #6a95da;
-   background: #6a95da;
-   color: #ccc;
-   text-decoration:none;
+  background: #5172a7;
+  background-image: -webkit-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -moz-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -ms-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -o-linear-gradient(top, #5172a7, #5172a7);
+  background-image: linear-gradient(to bottom, #5172a7, #5172a7);
+  color: #fefefe;
+  text-decoration: none;
    }
    
-.rquiz_button:active {
-   border-top-color: #425e8b;
-   background: #425e8b;
-   }
 
 
 /* Tie Recommender Quiz buttons */
 .tquiz_button{
-   border-top: 1px solid #969696;
-   background: #6083bd;
-   background: -webkit-gradient(linear, left top, left bottom, from(#545454), to(#6083bd));
-   background: -webkit-linear-gradient(top, #545454, #6083bd);
-   background: -moz-linear-gradient(top, #545454, #6083bd);
-   background: -ms-linear-gradient(top, #545454, #6083bd);
-   background: -o-linear-gradient(top, #545454, #6083bd);
-   padding: 10px 10px;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
-   text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: #e3e3e3 !important;
-   font-size: 12px;
-   margin: 20px;
-   text-decoration: none;
-   vertical-align: middle;
-   height: 100px;
-   white-space: normal;
-   font-family:"Segoe UI";
+  background: #fefefe;
+  background-image: -webkit-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -moz-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -ms-linear-gradient(top, #fefefe, #fefefe);
+  background-image: -o-linear-gradient(top, #fefefe, #fefefe);
+  background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: helvetica;
+  color: #23236b;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  border: solid #5172a7 1.8px;
+  text-decoration: none;
+  margin: 2em;
+  vertical-align: middle;
+  white-space: normal;
+  
    }
 .tquiz_button:hover {
-   border-top-color: #6a95da;
-   background: #6a95da;
-   color: #ccc;
-   text-decoration:none;
-   }
-.tquiz_button:active {
-   border-top-color: #425e8b;
-   background: #425e8b;
+  background: #5172a7;
+  background-image: -webkit-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -moz-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -ms-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -o-linear-gradient(top, #5172a7, #5172a7);
+  background-image: linear-gradient(to bottom, #5172a7, #5172a7);
+  color: #fefefe;
+  text-decoration: none;
    }
 
 
 /* Buttons width restriction */
-.width-150px{
-    width: 150px;
+.width-180px{
+    width: 180px;
+    display: inline-block;
+}
+
+.width-200px{
+    width: 200px;
     display: inline-block;
 }
 
@@ -345,7 +371,7 @@ p {
 }
 
 .width-450px{
-    width: 450px;
+    width: 350px;
     display: inline-block;
 }
 
@@ -409,12 +435,48 @@ input {
   border-left: solid #cccccc;
 }
 
-.homesearch {
-    
-    
+
+/*Profile Page*/
+.profilep h2 {
+  font-size: 2em;
+  letter-spacing: -1px;
+  text-align: left;
+  font-weight: normal;
+  font-family:"Segoe UI";
+  color: #23406f;
 }
 
+.probut_button {
+      background: #fefefe;
+      background-image: -webkit-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -moz-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -ms-linear-gradient(top, #fefefe, #fefefe);
+      background-image: -o-linear-gradient(top, #fefefe, #fefefe);
+      background-image: linear-gradient(to bottom, #fefefe, #fefefe);
+      -webkit-border-radius: 12;
+      -moz-border-radius: 12;
+      border-radius: 12px;
+      font-family: helvetica;
+      color: #23236b;
+      font-size: 13px;
+      padding: 10px 20px 10px 20px;
+      border: solid #5172a7 1.8px;
+      text-decoration: none;
+      margin: 0.5em;
+      vertical-align: middle;
 
+   }
+   
+.probut_button:hover {
+  background: #5172a7;
+  background-image: -webkit-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -moz-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -ms-linear-gradient(top, #5172a7, #5172a7);
+  background-image: -o-linear-gradient(top, #5172a7, #5172a7);
+  background-image: linear-gradient(to bottom, #5172a7, #5172a7);
+  color: #fefefe;
+  text-decoration: none;
+   }
 
 /* Bootstrap */
 .row:after {
@@ -467,41 +529,51 @@ input {
 table  {
     width: 100%;
     font-size: 15px;
-    border-spacing: 20px;
     min-width: 250px;
     border-collapse: collapse;
   	text-align: left;
     font-size: 15px;
     font-family:"Segoe UI";
+    border: none;
+
 }
 
 table  img {
 
 	padding: 20px;
 	opacity: 1;
-	width: 350px;
-	height: 350px;
-	min-width: 250px;
+	width: 150px;
+	height: 150px;
+	min-width: 150px;
 	text-align: center;
 	width:100% !important;
-  height:100% !important;
+    height:100% !important;
+    
 }
 
-/* Zebra striping to Tables */
+/* Striping of the Tables */
 tr:nth-of-type(odd) {
-  background: #eee;
+  background: #e8f4ff;
 }
 th {
-  background: #333;
+  background: #5172a7;
   color: white;
   font-weight: bold;
   text-align: center;
 }
 td, th {
   padding: 6px;
-  border: 1px solid #ccc;
+  border: none;
+ 
   text-align: left;
 }
+
+
+.a
+{
+    max-width: 150px;
+}
+
 
 /* Table bootstrap */
 @media
@@ -520,7 +592,7 @@ only screen and (max-width: 760px),
 		left: -9999px;
 	}
 
-	tr { border: 1px solid #ccc; }
+	tr { border: none; }
 
 	td {
 		/* Behave  like a "row" */
@@ -637,4 +709,30 @@ input[type=text], select {
 .footer h1 {
     font-size: 12px;
     text-align: center;
+}
+
+
+/* Responsive button */
+@media (max-width: 768px) {
+  .btn-responsive {
+    font-size:80%;
+    line-height: 1;
+    width: 450px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    font-size:90%;
+    line-height: 1.2;
+    width: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .btn-responsive {
+    font-size:90%;
+    line-height: 1.2;
+    width: 150px;
+  }
 }

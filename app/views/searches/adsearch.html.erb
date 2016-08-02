@@ -61,12 +61,15 @@
     <!-- Returns results for search -->
     <div class="col-s-8 col-s-8";>
       <% if @data != nil %>
+       <div class="colorbg"> 
       <h2>Results:</h2>
       <%= image_tag "line.png" , :alt => "line break"%>    
 
       
       <!-- Counts how many results there are for each search -->
+          
       <div class="resultsclass">
+     
       <p><%= @data.count %> results</p>
       <% end %>
   
@@ -98,7 +101,7 @@
              
           <% end %>
         </div>
-    
+      </div>
     </div>
 
   </div>

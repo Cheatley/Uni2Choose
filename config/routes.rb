@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   #help page
   get 'help' => 'pages#help'
   
-  #disclaimer page
-  get 'disclaimer' => 'pages#disclaimer'
-  
-  #course page
+  #university and course pages
   get 'courses' => 'pages#courses'
   get 'unis' => 'pages#unis'
+  
+  #keyword search
+  get 'keywordsearch' => 'searches#keywordsearch'
 
   #Users and Devise authentication system routes
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
@@ -65,40 +65,5 @@ Rails.application.routes.draw do
   get 'art' => 'quiz#art'
   get 'draw' => 'quiz#draw'
   get 'mainquiz' => 'quiz#mainquiz'
-  
-  get 'computer' => 'recquiz#computer'
-  get 'design' => 'recquiz#design'
-  get 'human' => 'recquiz#human'
-  get 'lang' => 'recquiz#lang'
-  get 'sci' => 'recquiz#sci'
-  get 'medicine' => 'recquiz#medicine'
-  get 'designvslaw' => 'recquiz#designvslaw'
-  get 'scivslaw' => 'recquiz#scivslaw'
-  get 'designvshuman' => 'recquiz#designvshuman'
-  get 'designvsmedicine' => 'recquiz#designvsmedicine'
-  get 'designvslang' => 'recquiz#designvslang'
-  get 'design' => 'recquiz#design'
-  get 'designvscomputer' => 'recquiz#designvscomputer'
-  get 'scivscomputer' => 'recquiz#scivscomputer'
-  get 'scivsmedicine' => 'recquiz#scivsmedicine'
-  get 'scivslang' => 'recquiz#scivslang'
-  get 'scivshuman' => 'recquiz#scivshuman'
-  
-  get 'human' => 'recquiz#human'
-  get 'humanvscomputer' => 'recquiz#humanvscomputer'
-  get 'humanvsmedicine' => 'recquiz#humanvsmedicine'
-  get 'medicinevslang' => 'recquiz#medicinevslang'
-  get 'humanvs=medicine' => 'recquiz#humanvsmedicine'
-  get 'humanvslang' => 'recquiz#humanvslang'
-  get 'computervsmedicine' => 'recquiz#computervsmedicine'
-  get 'computervslang' => 'recquiz#computervslang'
-  get 'computer' => 'recquiz#aah'
-  get 'medicine' => 'recquiz#comp'
-  get 'lang' => 'recquiz#lang'
-  get 'law' => 'recquiz#law'
-  get 'lawvshuman' => 'recquiz#lawvshuman'
-  get 'lawvscomputer' => 'recquiz#lawvscomputer'
-  get 'lawvsmedicine' => 'recquiz#lawvsmedicine'
-  get 'lawvslang' => 'recquiz#lawvslang'
 
 end

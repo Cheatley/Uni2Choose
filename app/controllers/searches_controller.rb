@@ -107,6 +107,13 @@ class SearchesController < ApplicationController
     redirect_to save_search_path
   end
   
-
+  
+  
+  def keywordsearch
+    @search = Degree.all.select(:uname, :cname, :ucas, :duration, :qualification, :entry).distinct.order(id: :ASC)
+    if params[:search]
+      @search_degree = Degree.search(params[:search]).order('uname ASC')
+    end
+  end
   
 end

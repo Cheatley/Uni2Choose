@@ -7,71 +7,74 @@
 <!--Page information --> 
 <div class= "row">
     
-    <!--Welcoming User -->
-    <h2>Hi <%= @user.name %></h2>
-    <%= image_tag "line.png" , :alt => "logo"%>
-    
+
 </div>
 
-<div class= "row">
-  
-  <div class="gravatar_pro">
-        <%= gravatar_for @user %>
-  </div>
-  
   <div class="row">
-    <div class="col-s-6 col-s-6";>
-        <h2><%= link_to "Edit my Account Details",  edit_user_registration_path(current_user) %><h2>   </h2>
-
-          <h2><%= link_to "My Saved Searches", save_search_path %></h2>
-
-        <!--limits below to Admin-->
-        <% if current_user.admin? %>
-        <h2><%= link_to "User Analysis", analysis_path %></h2>
-
-        <h2><%= link_to "Admin Dashboard", rails_admin_path %></h2>
-        <% end %>  
-  
-  </div>
-  
-  
-
-    <div class="col-s-6 col-s-6";>
-
-  <h1>My Saved Searches</h1>
-    <%= image_tag "line.png" , :alt => "logo"%>  
-
-    <!---Saved Searches Table-->
-    <% if @showsearches != nil %>
-      <table>
-        <thead>
-          <tr>
-            <th>Saved Degree</th>
-            <th>University Name</th>
-            <th>Date / Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @showsearches.each do |search| %>
-            <tr>
-              <td><a href="<%= search.saved_search %>"><%= search.cname %></a></td>
-              <td><%= search.uname %></td>
-              <td><%= search.created_at %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <% end %>
-      <br>
-      <%= link_to 'Delete My Saved Searches', search_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
-
-  <!--Page Breaks -->
-  <br><br>
-
-
-        
-        
+    <div class="col-s-5 col-s-5";>
+        <div class="gravatar_pro">
+              <%= gravatar_for @user %>
+              
+              <!--Links for all Users -->
+               <div class="colorbg"> 
+               <div class ="profilep">
+                 
+                   <%= button_to "Edit my Account Details", edit_user_registration_path(current_user),
+                        :class => "probut_button width-180px", :method => :get %>
+            
+                    <!--limits below to Admin-->
+                    <% if current_user.admin? %>
+                    
+                    <%= button_to "User Analysis", analysis_path,
+                    :class => "probut_button width-180px", :method => :get %>
+                    <%= button_to "Admin Dashboard", rails_admin_path,
+                    :class => "probut_button width-180px", :method => :get %>
+                    <% end %>  
+                    </div>
+              </div>
+        </div>
     </div>
-   
-  </div>
- 
+  
+  
+
+    <div class="col-s-7 col-s-7";>
+    <div class ="profilep">  
+          <!--Welcoming User -->
+          <h2>Hi <%= @user.name %></h2>
+          <%= image_tag "lineresults.png" , :alt => "logo"%>
+          
+                 <div class="colorbg"> 
+                        <h3>My Saved Searches</h3>
+                        <%= image_tag "lineresults.png" , :alt => "logo"%>  
+                        <br><br><br>
+                        
+                        <!---Saved Searches Table-->
+                        <% if @showsearches != nil %>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Saved Degree</th>
+                                  <th>University Name</th>
+                                  <th>Date / Time</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <% @showsearches.each do |search| %>
+                                  <tr>
+                                    <td><a href="<%= search.saved_search %>"><%= search.cname %></a></td>
+                                    <td><%= search.uname %></td>
+                                    <td><%= search.created_at %></td>
+                                  </tr>
+                                <% end %>
+                              </tbody>
+                            </table>
+                            <% end %>
+                            <br>
+                            <%= link_to 'Delete My Saved Searches', search_path, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>
+                      
+                        <!--Page Breaks -->
+                        <br><br>
+              </div>
+    </div>
+</div>
+         

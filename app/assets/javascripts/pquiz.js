@@ -8,13 +8,13 @@ var data = {
 			options: [ "Flexible", "Organised", "Creative", "Resourceful"]
 		}, {
 			question: "You are faced with a problem, how do you overcome it:",
-			options: [ "Using my wit and intuition", "By thinking up a plan of action  and carrying it out", "Ask for help", "Have someone else solve it for you"]
+			options: [ "Using my wit and intuition", "By thinking up a plan of action  and carrying it out", "Ask for help", "By tackling it head on without thinking"]
 		}, {
 			question: "If you were stranded on a desert island what would you take?",
-			options: [ "Swiss Army Knife", "Survival Guide", "A friend", "Diary" ]
+			options: [ "Swiss Army Knife", "Survival Guide", "A friend", "Machete" ]
 		}, {
 			question: "You have the day off, how do you spend it:",
-			options: [ "In bed having a long lie", "Studying", "Playing games", "Reading" ]
+			options: [ "In bed having a long lie", "Studying", "Playing games", "Doing something active" ]
 		}, {
 			question: "Your ideal holiday would be:",
 			options: [ "Somewhere historic, like the Pyramids", "Somewhere I can lay in the sun and read a book", "Somewhere fun, like Disneyland", "Anywhere but here" ]
@@ -25,7 +25,7 @@ var data = {
 	
 		}, {
 		   question: "You learn best by:",
-			options: [ "Discussing with peers", "Reading the instructions or manual", "Getting stuck in, hands on experience" , "Being told what to do" ]
+			options: [ "Discussing with peers", "Reading the instructions or manual", "Getting stuck in, hands on experience" , "Being thrown in the deep end" ]
 	
 		}, {
 		   question: "In class you can be found:",

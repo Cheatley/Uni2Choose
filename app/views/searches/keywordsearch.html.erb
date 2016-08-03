@@ -1,5 +1,5 @@
 <!-- Index of all Courses -->
-<% provide(:title, "Search") %>
+<% provide(:title, "Courses Page") %>
 
 
 <!--Breadcrumbs -->
@@ -16,7 +16,7 @@
   
   <div class ="row">
     
-      <!-- Form for Keyword Search, to Querry Database for University courses -->
+      <!-- Form for Keyword Search, to Querry Database for University courses. It is hidden so as to not appear as a search on the page -->
       <div class = "hidden">         
       <%= form_tag(keywordsearch_path, :method => "get", id: "search-data") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
@@ -35,6 +35,7 @@
               <th>Duration</th>
               <th>Qualification</th>
               <th>Entry Requirements</th>
+              <th>Course Page</th>
             </tr>
           </thead>
           <tbody>
@@ -45,6 +46,7 @@
               <td><%= degree.duration %></td>
               <td><%= degree.qualification %></td>
               <td><%= degree.entry %></td>
+              <td><%= link_to 'View Course Page on University Website', url_for(degree.url), target: "_blank" %></a></td>
             </tr>
             <% end %>
           </tbody>

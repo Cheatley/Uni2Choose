@@ -202,10 +202,17 @@ class Scraper
             
     
             
-            # Sets all data in hash
+            # Sets all data in hash and cleans characters, removing apostrophes, less than and more than signs, text and other such characters
             @details_url = course_details.search('div.coursedetails_programmeurl a')
             @merp = @details_url.to_s.gsub("'", '')
-            details_info[:url]  = @merp
+            @yus = @merp.to_s.gsub("<", '')
+            @blerp = @yus.to_s.gsub(">", '')
+            @please = @blerp.to_s.gsub("View course details on providers website", '')
+            @ahref = @please.to_s.gsub("a href=", '')
+            @slasha = @ahref.to_s.gsub("\/a", '')
+            @quotes = @slasha.to_s.gsub(/"/,"'")
+            @quote = @quotes.to_s.gsub("'", '')
+            details_info[:url]  = @quote
 
             
                 
@@ -238,7 +245,7 @@ class Scraper
             print_entry_info(entry_info)
                 
             db = SQLite3::Database.open('uni2choose.sqlite3')
-            db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, url, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@merp}', '#{@requirements}')"
+            db.execute "INSERT INTO suc (uname, cname, ucas, duration, qualification, url, entry) VALUES ('#{@uni_name}', '#{@course_name}', '#{@ucas_numb}', '#{@course_duration}', '#{@course_qual}', '#{@quote}', '#{@requirements}')"
     end
 
 

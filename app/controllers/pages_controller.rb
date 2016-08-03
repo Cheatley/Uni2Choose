@@ -24,7 +24,7 @@ class PagesController < ApplicationController
         uregion = Degree.all.where(uname: @northern)
       elsif @uregion == "Central belt"
         uregion = Degree.all.where(uname: @central)
-      elsif @uregion == "South from Dundee"
+      elsif @uregion == "Southern"
         uregion = Degree.all.where(uname: @southern)
       end
     end
@@ -93,5 +93,146 @@ class PagesController < ApplicationController
     add_crumb "Prepare for University", about_path, links: false
   end
 
+ #course page used for testing
+  def courses
+    @degreecourses = Degree.all
+  end
+
+#uni page 
+def unis
+  @unis = University.all
 end 
 
+#aberdeen course page
+def abdn
+  @degreecourses = Degree.all
+  @abdn = Degree.where(:uname => "The University of Aberdeen").all
+end
+
+#abertay course page
+def abty
+  @degreecourses = Degree.all
+  @abty = Degree.where(:uname => "Abertay University").all
+end
+
+#city of glasgow college course page
+def cogc
+  @degreecourses = Degree.all
+  @cogc = Degree.where(:uname => "City of Glasgow College").all
+end
+
+#dundee uni course page
+def dund
+  @degreecourses = Degree.all
+  @dund = Degree.where(:uname => "University of Dundee").all
+end
+
+#Edinburgh Uni course page
+def edin
+  @degreecourses = Degree.all
+  @edin = Degree.where(:uname => "The University of Edinburgh").all
+end
+
+#napier course page
+def nap
+  @degreecourses = Degree.all
+  @nap = Degree.where(:uname => "Edinburgh Napier University").all
+end
+
+#glsgw course page
+def glsgw
+  @degreecourses = Degree.all
+  @glsgw = Degree.where(:uname => "University of Glasgow").all
+end
+
+#glasgow cale course page
+def cale
+  @degreecourses = Degree.all
+  @cale = Degree.where(:uname => "Glasgow Caledonian University").all
+end
+
+#glasgow school of art course page
+def gsoa
+  @degreecourses = Degree.all
+  @gsoa = Degree.where(:uname => "The Glasgow School of Art").all
+end
+
+#heriot-watt uni course page
+def hw
+  @degreecourses = Degree.all
+  @hw = Degree.where(:uname => "Heriot-Watt University, Edinburgh").all
+end
+
+#university of highlands and islands course page
+def uhi
+  @degreecourses = Degree.all
+  @uhi = Degree.where(:uname => "University of the Highlands and Islands").all
+end
+
+#middlesex course page
+def mdlsex
+  @degreecourses = Degree.all
+  @mdlsex = Degree.where(:uname => "Middlesex University").all
+end
+
+#open uni course page
+def ou
+  @degreecourses = Degree.all
+  @ou = Degree.where(:uname => "The Open University").all
+end
+
+#queen margaret uni course page
+def qmu
+  @degreecourses = Degree.all
+  @qmu = Degree.where(:uname => "Queen Margaret University, Edinburgh").all
+end
+
+#robert gordon course page
+def rgu
+  @degreecourses = Degree.all
+  @rgu = Degree.where(:uname => "Robert Gordon University").all
+end
+
+#royal conservatoire of scotland course page
+def rcos
+  @degreecourses = Degree.all
+  @rcos = Degree.where(:uname => "Royal Conservatoire of Scotland").all
+end
+
+#sae institute course page
+def sae
+  @degreecourses = Degree.all
+  @sae = Degree.where(:uname => "SAE Institute").all
+end
+
+#SRUC course page
+def srcu
+  @degreecourses = Degree.all
+  @srcu = Degree.where(:uname => "SRUC - Scotlands Rural College").all
+end
+
+#st andrews uni course page
+def sta
+  @degreecourses = Degree.all
+  @sta = Degree.where(:uname => "University of St Andrews").all
+end
+
+#stirling course page
+def strl
+  @degreecourses = Degree.all
+  @strl = Degree.where(:uname => "The University of Stirling").all
+end
+
+#strathclyde course page
+def strath
+  @degreecourses = Degree.all
+  @strath = Degree.where(:uname => "The University of Strathclyde").all
+end
+
+#uws course page
+def uws
+  @degreecourses = Degree.all
+  @uws = Degree.where(:uname => "University of the West of Scotland").all
+end
+
+end

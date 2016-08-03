@@ -1,0 +1,39 @@
+<!-- Index of all Courses -->
+<% provide(:title, "University Index") %>
+
+<!--Breadcrumbs -->
+<br>
+<%= link_to "Back", :back %><br><br>
+
+
+<!--Page information -->
+<div class = "row">
+ 
+          <!--Title -->
+          <h1>Universities in Scotland </h1>
+          <%= image_tag "line.png" , :alt => "line break"%>    
+            
+            <!-- Table to display all Unis -->
+            <table border="1" class="table">
+              <tbody>
+                <% @unis.each do |uni| %>
+                <tr>
+                  
+                <!-- University logo -->
+                <td class="a"><img src="<%= uni.ulogo %>"></td>
+                <td></td>
+                
+                <!-- Linking to Keyword Search to pull courses for the clicked upon university -->
+                <td><br><%= link_to uni.uname, keywordsearch_path(search: uni.uname) %>
+                <br>
+                <br>
+                
+                <!--Region University is in, and map -->
+                <b>Region:<b><%= uni.uregion %>
+                <br>
+                <%= render "regions" %><br></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+</div>

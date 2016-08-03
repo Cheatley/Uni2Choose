@@ -1,0 +1,53 @@
+<!-- Index of all Courses -->
+<% provide(:title, "Search") %>
+
+
+<!--Breadcrumbs -->
+<br>
+<%= link_to "Back", :back %><br><br>
+
+<!--Page Contents --> 
+ 
+ 
+  <div class ="row">
+    <h1>Degrees Offered</h1>
+    <%= image_tag "line.png" , :alt => "line break"%>    
+  </div>
+  
+  <div class ="row">
+    
+      <!-- Form for Keyword Search, to Querry Database for University courses -->
+      <div class = "hidden">         
+      <%= form_tag(keywordsearch_path, :method => "get", id: "search-data") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search course" %>
+      <%= submit_tag "Search" %>
+      <% end %>
+      </div>     
+      <% if @search_degree != nil %>
+      <% end %>
+      
+      <% if @search_degree != nil %>
+        <table border="1" class="table">
+          <thead>
+            <tr>
+              <th>University Name</th>
+              <th>Course Name</th>
+              <th>Duration</th>
+              <th>Qualification</th>
+              <th>Entry Requirements</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @search_degree.each do |degree| %>
+            <tr>
+              <td><%= degree.uname %></td>
+              <td><%= degree.cname %></td>
+              <td><%= degree.duration %></td>
+              <td><%= degree.qualification %></td>
+              <td><%= degree.entry %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>

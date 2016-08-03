@@ -21,7 +21,7 @@
         <!-- Regions defined (hardcoded) for the region dropdown in advanced search -->
         <%= label_tag :uregion, "Refine By Region:" %><br>
         <%= render "regions" %><br>
-        <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "South from Dundee"], selected: @uregion)  %>
+        <%= select_tag :uregion, options_for_select(["Anywhere", "Northern", "Central belt", "Southern"], selected: @uregion)  %>
         
         <!-- Discipline Categories defined (hardcoded) for the discipline dropdown in advanced search -->
         <%= label_tag :discipline, "Refine By Degree Category:" %><br>
@@ -61,12 +61,15 @@
     <!-- Returns results for search -->
     <div class="col-s-8 col-s-8";>
       <% if @data != nil %>
+       <div class="colorbg"> 
       <h2>Results:</h2>
       <%= image_tag "line.png" , :alt => "line break"%>    
 
       
       <!-- Counts how many results there are for each search -->
+          
       <div class="resultsclass">
+     
       <p><%= @data.count %> results</p>
       <% end %>
   
@@ -98,7 +101,7 @@
              
           <% end %>
         </div>
-    
+      </div>
     </div>
 
   </div>

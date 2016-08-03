@@ -7,6 +7,7 @@
     <h1>Send A message to Us</h1>
     <%= image_tag "line.png" , :alt => "line break"%>    
 
+
     <!--Form for contacting -->
     <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
     <%= f.input :email, :required => true %>

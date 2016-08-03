@@ -16,18 +16,30 @@
   
   <!-- Charts for Analysis -->
   <div class = "row">
+      <div class = "colorbg">
         <p><b>User Gender Proportion:</b></p>
         <%= pie_chart @users.group("gender").count("gender"), {library: {backgroundColor:'transparent'}} %></br>
-        <%= image_tag "line.png" , :alt => "line break"%>    
-
+      </div>
+      <br>
+              <%= image_tag "line.png" , :alt => "line break"%>    
+      <div class = "colorbg">
         <p><b>Users' Saved Degrees:</b></p>
         <%= column_chart @searches.group("cname").count, {library: {backgroundColor:'transparent'}} %></br>
-        <%= image_tag "line.png" , :alt => "line break"%>    
+      </div>
+      <br>
+              <%= image_tag "line.png" , :alt => "line break"%>    
 
+      
+      <div class = "colorbg">
         <p><b>Use of Social Media login:</b></p>
         <%= column_chart @socialmedialogin.group("provider").count, {library: {backgroundColor:'transparent'}} %></br>
-        <%= image_tag "line.png" , :alt => "line break"%>    
+      </div>
+      <br>
+              <%= image_tag "line.png" , :alt => "line break"%>    
 
+
+      <div class = "colorbg">
         <p><b>Use of Social Media login:</b></p>
         <%= column_chart @postcodes.group("postcode").count, {library: {backgroundColor:'transparent'}} %></br>
+      </div>
   </div>

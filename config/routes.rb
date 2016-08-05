@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #help page
   get 'help' => 'pages#help'
   
+  #privacy page
+  get 'privacy' => 'pages#privacy'
   #university and course pages
   get 'courses' => 'pages#courses'
   get 'unis' => 'pages#unis'

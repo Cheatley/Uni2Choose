@@ -93,6 +93,13 @@ class PagesController < ApplicationController
     add_crumb "Prepare for University", about_path, links: false
   end
 
+#privacy policy page
+def privacy
+   #breadcrumbs
+    add_crumb "Home", '/'
+    add_crumb "Privacy Policy", privacy_path, links: false
+end 
+
  #course page used for testing
   def courses
     @degreecourses = Degree.all

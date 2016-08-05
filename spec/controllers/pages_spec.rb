@@ -36,4 +36,11 @@ RSpec.describe PagesController, :type => :controller do
     end
   end
   
+      describe "GET #privacy" do
+    it "renders the about template" do
+      get :privacy
+      expect(response).to render_template("privacy")
+    end
+  end
+  
 end

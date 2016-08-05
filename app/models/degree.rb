@@ -1,5 +1,7 @@
 class Degree < ActiveRecord::Base
-  
+  validates :cname, presence: true
+
+
   def Degree.search(search)
     where("uname LIKE :p", p: "%#{search}%")
   end

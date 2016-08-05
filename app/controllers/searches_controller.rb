@@ -104,7 +104,7 @@ class SearchesController < ApplicationController
   #delete all my search results functionality
   def destroy
     Search.destroy_all(users_id: current_user)
-    redirect_to save_search_path
+    redirect_to user_path(current_user)
   end
   
   

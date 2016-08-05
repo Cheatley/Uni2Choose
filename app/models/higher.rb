@@ -1,8 +1,7 @@
 class Higher < ActiveRecord::Base
   
-  #used?
-  def home
-    subjectform = Higher.all.order(id: :asc)
-    @subject = subjectform.higher 
-  end
+    validates :higher, presence: true
+    validates :code_letter, presence: true
+
+
 end

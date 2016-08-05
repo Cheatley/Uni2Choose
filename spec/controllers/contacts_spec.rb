@@ -12,4 +12,7 @@ RSpec.describe ContactsController, :type => :controller do
       {:get => "/" }.should be_routable
     end
   end
+  
+  
+
 end

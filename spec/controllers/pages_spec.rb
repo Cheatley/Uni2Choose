@@ -22,4 +22,18 @@ RSpec.describe PagesController, :type => :controller do
     end
   end
   
+    describe "GET #help" do
+    it "renders the help template" do
+      get :help
+      expect(response).to render_template("help")
+    end
+  end
+  
+    describe "GET #unis" do
+    it "renders the about template" do
+      get :unis
+      expect(response).to render_template("unis")
+    end
+  end
+  
 end
